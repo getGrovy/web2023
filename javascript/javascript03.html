@@ -7,6 +7,8 @@
     <title>Javascript : 데이터 실행하기</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
     <link rel="shortcut icon" href="assets/ico/javascript.ico"> 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
 <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
@@ -82,6 +84,178 @@
                     <li><a href="#">01. 클래스 상속</a></li>
                 </ul>
             </div>
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 선언적 함수</h3>
+                    <p>변수 안에 저장된 데이터를 불러오는 방법</p>
+                    <pre class="line-numbers"><code class="language-js">{
+    let x = 100, y = 200, z = "javascript";
+    console.log(x, y, z);
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- sample01 -->
+                <div id="sample02" class="sample">
+                    <h3>02. 익명 함수</h3>
+                    <p>변수 안에 저장된 데이터를 불러오는 방법</p>
+                    <pre class="line-numbers"><code class="language-js">{
+    const x = 100, y = 200, z = "javascript";
+    console.log(x, y, z);
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+                <!-- sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. 매개변수 함수</h3>
+                    <p>각배열을 호출하여 배열안의 데이터를 불러오기</p>
+                    <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    console.log(arr[0], arr[1], arr[2]);
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+                <!-- sample03 -->
+
+                <div id="sample04" class="sample">
+                    <h3>04. 리턴값 함수</h3>
+                    <p>각배열을 호출하여 배열안 배열의 데이터까지 불러오기</p>
+                    <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, ["javascript", "react"]];
+    console.log(arr[0], arr[1], arr[2][0], arr[2][1]);
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript<br>
+                            react
+                        </div>
+                    </details>
+                </div>
+                <!-- sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. 화살표 함수 : 선언적 함수</h3>
+                    <p>length()함수를 이용하여 길이 출력</p>
+                    <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    console.log(arr.length);
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            3<br>
+                            arr 배열의 길이는 3임 !
+                        </div>
+                    </details>
+                </div>
+                <!-- sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 화살표 함수 : 익명 함수</h3>
+                    <p>for문에서 length()함수를 이용하여 길이를 구해 배열 데이터 출력 </p>
+                    <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200,  300, 400 , 500 , 600 , 700, 800 , 900] ;
+    for (let i = 0; i &lt; arr.length; i++ ) {
+        console.log(arr[i]);
+    }
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            400<br>
+                            500<br>
+                            600<br>
+                            700<br>
+                            800<br>
+                            900
+                        </div>
+                    </details>
+                </div>
+                <!-- sample06 -->
+
+                <div id ="sample07" class="sample">
+                    <h3>07. 화살표 함수 : 매개변수 함수</h3>
+                    <p>length()함수를 이용하여 길이 출력</p>
+<pre class="line-numbers"><code class="language-js">{
+    
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            111
+                        </div>
+                    </details>
+                </div>
+                <!-- sample08 -->
+
+                <div id ="sample08" class="sample">
+                    <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                    <p>length()함수를 이용하여 길이 출력</p>
+<pre class="line-numbers"><code class="language-js">{
+    
+}
+</code></pre>
+                </div>
+                <div class="resultDark">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            222
+                        </div>
+                    </details>
+                </div>
+                <!-- sample08 -->
+
+            </div>
         </div>            
     </main>
     <!-- //main -->
@@ -90,95 +264,95 @@
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- footer -->  
-
+    <script src="assets/js/prism.js"></script>
     <script>
         // //변수 상수 배열 객체 : 데이터 저장
         // //함수 데이터 실행
         
-        // // 선언적함수
-        // {
-        //     function func(){
-        //         document.write("실행했어요<br>");
-        //     }
-        //     func();
-        // }
-        // //익명 함수 
-        // {
-        //     const func = function(){
-        //         document.write("실행했어요 !<br>");
-        //     }
-        //     func();
-        // }
-        // //매개변수함수
-        // {
-        //     function func(str){
-        //         document.write(str);
-        //     }
-        //     func("실행하였어요<br>");
-        // }
-        // //리턴값 (결과 /끝) 함수
-        // {
-        //     function func(){
-        //         const str = "함수가실행되었습니다.<br>";
-        //         return str;
-        //     }
-        //     document.write(func());
+        // 선언적함수
+        {
+            function func(){
+                document.write("실행했어요<br>");
+            }
+            func();
+        }
+        //익명 함수 
+        {
+            const func = function(){
+                document.write("실행했어요 !<br>");
+            }
+            func();
+        }
+        //매개변수함수
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("실행하였어요<br>");
+        }
+        //리턴값 (결과 /끝) 함수
+        {
+            function func(){
+                const str = "함수가실행되었습니다.<br>";
+                return str;
+            }
+            document.write(func());
             
-        // }
-        // document.write("<br><br>");
-        // // 05. 선언적함수 
-        // {
-        //     // function func(){
-        //     //     document.write("실행했어요<br>");
-        //     // }
-        //     // func =() => {
-        //     //     document.write("05실행했어요 <br>")
-        //     // }
-        //     func =() => document.write("05실행했어요 <br>")
+        }
+        document.write("<br><br>");
+        // 05. 선언적함수 
+        {
+            // function func(){
+            //     document.write("실행했어요<br>");
+            // }
+            // func =() => {
+            //     document.write("05실행했어요 <br>")
+            // }
+            func =() => document.write("05실행했어요 <br>")
             
-        //     func();
-        // }
-        // //06 익명함수
-        // {
-        //     // const func = function(){
-        //     //     document.write("06익명");
-        //     // }
-        //     // func();
+            func();
+        }
+        //06 익명함수
+        {
+            // const func = function(){
+            //     document.write("06익명");
+            // }
+            // func();
 
             
-        //     const func1 =() =>{
-        //         document.write("06익명<br>");
-        //     }
-        //     // const func1 =() =>document.write("06익명");
-        //     func1();
+            const func1 =() =>{
+                document.write("06익명<br>");
+            }
+            // const func1 =() =>document.write("06익명");
+            func1();
 
-        // }
-        // //07 매개변수
-        // {
-        //     // function func(str){
-        //     //     document.write(str);
-        //     // }
-        //     // func("07매개변수<br>");
-        //     func1 = (str) =>{
-        //         document.write(str);
-        //     }
-        //     func1("07매개변수<br>");
-        // }
-        // //08 리턴
-        // {   
-        //     function func1(){
-        //         const str1 = '08리턴 asis <br>'
-        //         return str1;
-        //     }
-        //     document.write(func1());
-        //     const func=() =>{
-        //         const str = "08리턴<br> =>" ;
-        //         return str
-        //     }
-        //     document.write(func());
-        // }
+        }
+        //07 매개변수
+        {
+            // function func(str){
+            //     document.write(str);
+            // }
+            // func("07매개변수<br>");
+            func1 = (str) =>{
+                document.write(str);
+            }
+            func1("07매개변수<br>");
+        }
+        //08 리턴
+        {   
+            // function func1(){
+            //     const str1 = '08리턴 asis <br>'
+            //     return str1;
+            // }
+            // document.write(func1());
+            const func=() =>{
+                const str = "08리턴<br> =>" ;
+                return str
+            }
+            document.write(func());
+        }
 
-        //10부터 88까지 짝수만 출력 
+        // 10부터 88까지 짝수만 출력 
 
         // for(let i = 10; i <=88 ; i+=2){
         //     document.write(`${i}  `);
@@ -247,36 +421,36 @@
         // document.write(func7());
 
 
-        function fuc1(){
-            document.write("선언");
-        }
-        const fuc2 = function(){
-            document.write("숨김");
-        }
-        function fuc3(str){
-            document.write(str);
-        }
-        function fuc4(){
-            let str = "리턴 <br>";
-            return str;
-        }
-        fuc1();
-        fuc2();
-        fuc3("매개변수");
-        document.write(fuc4());
+        // function fuc1(){
+        //     document.write("선언");
+        // }
+        // const fuc2 = function(){
+        //     document.write("숨김");
+        // }
+        // function fuc3(str){
+        //     document.write(str);
+        // }
+        // function fuc4(){
+        //     let str = "리턴 <br>";
+        //     return str;
+        // }
+        // fuc1();
+        // fuc2();
+        // fuc3("매개변수");
+        // document.write(fuc4());
 
-        fuc5 =() => document.write("선언");
-        let fun6= () =>document.write("익명");
-        fun7 = (str) => document.write(str);
-        fun8 = () => {
-                let str1= "리턴";
-                return str1;
-            }
+        // fuc5 =() => document.write("선언");
+        // let fun6= () =>document.write("익명");
+        // fun7 = (str) => document.write(str);
+        // fun8 = () => {
+        //         let str1= "리턴";
+        //         return str1;
+        //     }
             
-        fuc5();
-        fun6();
-        fun7("ㅁㅐ개변수");
-        document.write(fun8());
+        // fuc5();
+        // fun6();
+        // fun7("ㅁㅐ개변수");
+        // document.write(fun8());
 
         
     </script>
