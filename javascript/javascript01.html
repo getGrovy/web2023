@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 데이터 저장하기</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="shortcut icon" href="/assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/ico/javascript192x192.png">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">페럴랙스 효과</a></li>
+                <li><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. 변수 : 데이터 저장</a></li>
+                    <li><a href="#">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                    <li><a href="#">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                    <li><a href="#">04. 상수 : 데이터 저장 + 데이터 변경(x)</a></li>
+                    <li><a href="#">😫기본 연산자 정리</a></li>
+                    <br>
+                    <li><a href="#">05. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+                    <li><a href="#">06. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+                    <li><a href="#">07. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+                    <li><a href="#">08. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+                    <li><a href="#">😫배열엔 키가 있을까?</a></li>
+                    <br>
+                    <li><a href="#">9. 객체 : 데이터 저장(키와값) : 표현방법1</a></li>
+                    <li><a href="#">10. 객체 : 데이터 저장(키와값) : 표현방법2</a></li>
+                    <li><a href="#">11. 객체 : 데이터 저장(키와값) : 표현방법3</a></li>
+                    <li><a href="#">12. 객체 : 데이터 저장(키와값) : 표현방법4</a></li>
+                    <li><a href="#">13. 객체 : 데이터 저장(키와값) : 표현방법5</a></li>
+                    <li><a href="#">14. 객체 : 데이터 저장(키와값) : 표현방법6</a></li>
+                    <li><a href="#">15. 객체 : 데이터 저장(키와값) : 표현방법7</a></li>
+                    <li><a href="#">16. 객체 : 데이터 저장(키와값) : 표현방법8</a></li>
+                    <li><a href="#">😫 Object에 값을 넣는 다양한 방식을 알아보자</a></li>
+                </ul>
+            </div>
+            <div class="main__sample">
+                <div id="sample01" class="sample" >
+                    <h3>01. 변수 : 데이터 저장</h3>
+                    <p>데이터를 저장하는뎅 쓰이는 사회적 약속 이름을 변수라 칭하고 저장가능</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    var x = 100;    //변수x에 숫자 100을 저장함
+    var y = 200;    //변수y에 숫자 200을 저장함
+    var z = "javascript";    //변수 z에 javascript을 저장함
+    
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample01 -->
+
+                <div id="smaple02" class="sample" >
+                    <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
+                    <p>데이터를 저장하는뎅 쓰이는 사회적 약속 이름을 가진 녀석은 변경이 가능</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x = 300;
+    y = 200;
+    x = "react"
+
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}
+</pre></code>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                300<br>
+                                200<br>
+                                react
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- smaple02 -->
+
+                <div id="sample03" class="sample" >
+                    <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
+                    <p>데이터를 저장하는뎅 쓰이는 사회적 약속 이름을 가진 녀석은 메타몽같음</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300; 
+    y += 400;
+    z += "react"
+
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                300<br>
+                                400<br>
+                                react
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>변수로 연산이 가능하다.</h4>
+                        <p>변수를 이용해서 연산이 가능하고, 연산에는 산술 연산자, 대입 연산자, 비교 연산자, 논리 연산자,비트 연산자, 삼항 연산자가 있음.</p>
+                    </div>
+
+                </div>
+                <!-- sample03 -->
+
+                <div id="sample04" class="sample" >
+                    <h3>04. 상수 : 데이터 저장</h3>
+                    <p>데이터를 저장하는뎅 쓰지만 변경불가함</p>
+<pre><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+
+    //x=300;  //Assignment to constant variable. 
+    //y=400;
+    //z="react";
+
+    console.log(x)
+    console.log(y)
+    console.log(z)
+} 
+</pre></code>                   
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+                <!-- sample04 -->
+
+                <div id="sampleEtc01" class="sample" >
+                    <h3>😫기본 연산자 정리</h3>
+                    <p>변수 한번 연산해보겠습니다</p>
+<pre><code class="language-js">{
+    const a = 10000 ;
+    const b = 20000 ;
+
+    연산자
+    console.log(a+b);    
+    console.log(a-b);   
+    console.log(a>b);   //논리연산자
+    console.log(a*b);   
+    console.log(a/b);   
+    console.log(a%b);   //나머지값구하기
+
+    let c = 10;     
+    c = "100"       //숫자 10 >> 문자"100"
+    c = 1000;       //숫자 1000으로
+    c += 1000;      //1000이 더해져 2000이 되었습니다.
+    console.log(c); 
+} 
+</pre></code>                   
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            30000</br>
+                            -10000</br>
+                            false</br>
+                            0.5</br>
+                            10000</br>
+                            2000
+                        </div>
+                    </details>
+                </div>
+                <!-- sampleEtc -->
+
+                <div id="sample05" class="sample" >
+                    <h3>05. 배열 : 데이터 저장(여러개) : 표현방법1</h3>
+                    <p>Array()생성자를 명시하여 직접 저장</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const arr = new Array();
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample05 -->
+
+                <div id="sample06" class="sample" >
+                    <h3>06. 배열 : 데이터 저장(여러개) : 표현방법2</h3>
+                    <p>Array()생성자를 명시하여 저장2</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
+            
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample06 -->
+
+                <div id="sample07" class="sample" >
+                    <h3>07. 배열 : 데이터 저장(여러개) : 표현방법3</h3>
+                    <p>리터럴 표기법으로 배열생성 값 저장</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const arr = [];
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample07 -->
+
+                <div id="sample08" class="sample" >
+                    <h3>08. 배열 : 데이터 저장(여러개) : 표현방법4</h3>
+                    <p>리터럴 표기법으로 배열생성과 값 저장</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample08 -->
+                
+                <div id="sampleEtc02" class="sample" >
+                    <h3>😫배열엔 키가 있을까?</h3>
+                    <p>🙂배열은 생성과 동시에 자동적으로 키값이 0, 1, 2, 3...생성됨<br>
+                        why? 원시 타입을 제외한 모든 데이터 타입(객체, 함수, 배열, 정규표현식 등)은 객체(Object)이므로
+                    </p>
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+} </pre></code>                   
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>  
+                            200<br>
+                            javascript<br>
+                            키값을 직접 명시하진 않았으나 디폴트 키로 들어감
+                        </div>
+                    </details>
+                </div>
+                <!-- sampleEtc02 -->
+
+                <div id="sample09" class="sample" >
+                    <h3>09. 객체 : 데이터 저장(키와값) : 표현방법1</h3>
+                    <p>Object()생성자를 선언후 숫자 키에 값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = new Object();
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript";
+
+    console.log(obj[0]);
+    console.log(obj[1]);
+    console.log(obj[2]);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>  
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample9 -->
+
+                <div id="sample10" class="sample" >
+                    <h3>10. 객체 : 데이터 저장(키와값) : 표현방법2</h3>
+                    <p>Object()생성자를 선언후 문자키에 값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = new Object();
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>  
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample10 -->
+
+                <div id="sample11" class="sample" >
+                    <h3>11. 객체 : 데이터 저장(키와값) : 표현방법3</h3>
+                    <p>리터럴표기법으로 객체생성후 키값과 각값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = {} ;
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript"
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>  
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample11 -->
+
+                <div id="sample12" class="sample" >
+                    <h3>12. 객체 : 데이터 저장(키와값) : 표현방법4</h3>
+                    <p>리터럴표기법으로 객체생성후 키와 값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = {a:100, b:200, c:"javascript"};
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>  
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample12 -->
+
+                <div id="sample13" class="sample" >
+                    <h3>13. 객체 : 데이터 저장(키와값) : 표현방법5</h3>
+                    <p>리터럴표기법으로 생성한 배열에 객체 키와 값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = [
+        {a:100, b:200},
+        {c:"javascript"}
+    ];
+
+    console.log(obj[0].a);
+    console.log(obj[0].b);
+    console.log(obj[1].c);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample13 -->
+
+                <div id="sample14" class="sample" >
+                    <h3>14. 객체 : 데이터 저장(키와값) : 표현방법6</h3>
+                    <p>리터럴표기법으로 객체생성후 키와 값을 입력(배열&객체)</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x:400, y:500},
+        d: "javascript"
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0], obj.b[1]);
+    console.log(obj.c.x);
+    console.log(obj.c.y);
+    console.log(obj.d);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>  
+                                200 300<br>
+                                400<br>
+                                500<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample14 -->
+
+                <div id="sample15" class="sample" >
+                    <h3>15. 객체 : 데이터 저장(키와값) : 표현방법7</h3>
+                    <p>생성한 상수를 리터럴표기법으로 객체에 키와 값을 입력</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = {a, b, c};
+
+    console.log(a, b , c);
+    console.log(obj.a, obj.b , obj.c);
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 200 javascript<br>
+                                100 200 javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample15 -->
+
+                <div id="sample16" class="sample" >
+                    <h3>16. 객체 : 데이터 저장(키와값) : 표현방법8</h3>
+                    <p>리터럴표기법으로 객체생성후 키와 값을 입력(함수추가)</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const j = "javascript";
+    const obj = {
+        a: 100,
+        b: [200,300],
+        c: "javascript",
+        d: function(){
+            console.log("javascript가 실행됨!");
+        },
+        e: function(){
+            console.log(j+"가 실행됨!!(변수+문자열)");
+        },
+        f: function(){
+            console.log(this.c + "실행됨!!( this + 문자열)");
+        }
+    }
+
+    console.log(obj.a);
+    console.log(obj.b[0]);  
+    console.log(obj.b[1]);  
+    console.log(obj.b[2]);  //undefined
+    console.log(obj.c);
+    
+    obj.d();
+    obj.e();
+    obj.f();
+}
+</pre></code>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                300<br>
+                                undefined<br>
+                                javascript<br>
+                                javascript가 실행됨!!(변수+문자열)<br>
+                                javascript가 실행됨!!실행됨!!( this + 문자열)<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample16 -->
+
+            </div>           
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        // let x = 100 ;  atom-one-dark.min.css
+        // let y = 200;
+        // let z = "javascript";
+
+        // x -= 1000;
+        // x += 1000;
+
+        // console.log("x:"+x,"y:"+y,"z:"+z);
+
+        //숫자, 문자, 블린, 언디파인, null 객체 함수 --> 자료형 typefo() 확인
+        // document.write(x); 문서내 표시
+        // console.log("x:"+x,"y:"+y,"z:"+z); 콘솔에 표시
+        // alert(z);
+        // confirm(z);
+
+        // const brr = new Array();
+        // const crr = new Array(200, "react", false);
+        // const drr = [];
+        // const err = [300, "arrat", true];
+
+        // brr[0] = 100;
+        // brr[1] = "javascript";
+        // brr[2] = true;
+
+        // drr[0] = 300;
+        // drr[1] = "javascript";
+        // drr[2] = true;
+
+        // console.log(brr[0], brr[1], brr[2]);
+        // console.log(crr[0], crr[1], crr[2]);
+        // console.log(drr[0], drr[1], drr[2]);
+        // console.log(err[0], err[1], err[2]);
+
+        //데이터 저장(키와값) : 표현방법1
+        {
+            const obj = new Object();
+
+            obj[0] = 100;
+            obj[1] = 100;
+            obj[2] = "javascript";
+
+            // console.log(obj[0], obj[1], obj[2]);
+        }
+
+        //데이터 저장(키와값) : 표현방법2
+        {
+            const obj = new Object();
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "javascript";
+
+            // console.log(obj.a, obj.b, obj.c);
+        }
+        //데이터 저장(키와값) : 표현방법3
+        {
+            const obj = {};
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "javascript";
+
+            // console.log(obj.a, obj.b, obj.c);
+        }
+
+        //데이터 저장(키와값) : 표현방법4
+        {
+            const obj = {a:100, b:200, c:"javascript"};
+
+            // console.log(obj.a, obj.b, obj.c);
+        }
+        //데이터 저장(키와값) : 표현방법5 : 배열 안에 객체는 배열의 순서대로 입력된 키로 접근
+        {
+            const obj = [
+                {a:100, b:200},
+                {c:"javascript"}
+            ];
+
+            
+            // console.log(obj[0]);
+            // console.log(obj[0].a);
+            // console.log(obj[0].b);
+            // console.log(obj[1].c);
+        }
+        //데이터 저장(키와값) : 표현방법6 : 객체 안에 배열 , 객체안에 객체 접근하기
+        {
+            const obj = {
+                a: 100,
+                b: [200, 300],
+                c: {x:400, y:500},
+                d: "javascript"
+            }
+
+            // console.log(obj.a);
+            // console.log(obj.b[0], obj.b[1]);
+            // console.log(obj.c.x);
+            // console.log(obj.c.y);
+            // console.log(obj.d);
+
+        }
+        //데이터 저장(키와값) : 표현방법7
+        {
+            const a = 100;
+            const b = 200;
+            const c = "javascript";
+
+            const obj = {a, b, c};
+
+            // console.log(a, b , c);
+            // console.log(obj.a, obj.b , obj.c);
+        }
+        //데이터 저장(키와값) : 표현방법8 : 함수
+        
+        // 데이터 저장(키와값) : 표현방법8
+        {
+            const j = "javascript";
+            const obj = {
+                a: 100,
+                b: [200,300],
+                c: "javascript",
+                d: function(){
+                    console.log("javascript가 실행됨!");
+                },
+                e: function(){
+                    console.log(j+"가 실행됨!!(변수+문자열)");
+                },
+                f: function(){
+                    console.log(this.c + "실행됨!!( this + 문자열)");
+                }
+            }
+
+            // console.log(obj.a);
+            // console.log(obj.b[0]);  
+            // console.log(obj.b[1]);  
+            // console.log(obj.b[2]);  //undefined
+            // console.log(obj.c);
+            
+            // obj.d();
+            // obj.e();
+            // obj.f();
+
+        }
+    </script>
+   
+</body>
+</html>

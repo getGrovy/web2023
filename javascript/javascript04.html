@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 데이터 제어하기</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li class="active"><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">페럴랙스 효과</a></li>
+                <li><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. if 문</a></li>
+                    <li><a href="#">02. if문 생략</a></li>
+                    <li><a href="#">03. 다중 if문</a></li>
+                    <li><a href="#">04. 삼항 연산자</a></li>
+                    <li><a href="#">05. 중첩 if문</a></li>
+                    <li><a href="#">06. swich문</a></li>
+                    <li><a href="#">07. while문</a></li>
+                    <li><a href="#">08. do while문</a></li>
+                    <li><a href="#">09. for문</a></li>
+                    <li><a href="#">10. 중첩 for문</a></li>
+                    <li><a href="#">11. break문</a></li>
+                    <li><a href="#">12. continue문</a></li>
+                </ul>
+            </div>
+            <div class="main__sample">
+                <div id="sampleEtc01" class="sample" >
+                    <h3>😫 조건절 주의사항</h3>
+                    <p>조건식에 들어가는 값에따라 true인지 false인지 알아보자</p>
+                    
+<pre><code class="language-js">{
+    // false : 0 , null, undefined , false , ""(빈문자열)
+    // true : 1, "0", "1", "abc", [], {}, true
+    if(조건식){
+        document.write("실행됨 true")
+    }else{
+        document.write("실행됨 false")
+    }
+} 
+</pre></code>                   
+                    <div class="noticeDark">
+                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
+                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
+                    </div>
+                </div>
+                <!-- sampleEtc -->
+
+                <div id="sample01" class="sample" >
+                    <h3>01. if 문</h3>
+                    <p>조건절의 값에 따라 true false를 구별하여 출력함 <br>
+                        let i 값이 0 일때와 1일때의 차이를 알아보자
+                    </p>
+                    
+<pre><code class="language-js">{
+    if("조건절"){
+        document.write("실행됨 true")
+    }else{
+        document.write("실행됨 false")
+} 
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 == 100 실행됨 true</br>
+                                100 != 100 실행됨 false
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample01 -->
+
+                <div id="sample02" class="sample" >
+                    <h3>02. if문 생략</h3>
+                    <p>if문을 줄여 보자 ! </p>
+<pre><code class="language-js">{
+    // if("조건"){
+    //     document.write("실행됨 true")
+    // }else{
+    //     document.write("실행됨 false")
+    // }  
+    
+    if(true) document.write("실행됨(true)");
+    else document.write("실행됨(false)");
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 == 100 실행됨 true</br>
+                                100 != 100 실행됨 false</br>
+                                100</br>
+                            </div>
+                        </details>
+                    </div>   
+                </div>
+                <!-- sample02 -->
+                
+                <div id="sample03" class="sample" >
+                    <h3>03. 다중 if문</h3>
+                    <p>if문을 여러게 ! 
+                    </p>
+                    
+<pre><code class="language-js">{
+    if(num == 90){
+        document.write("실행됨 num = 90");
+    }else if( num == 100){
+        document.write("실행됨 num = 100");
+    }else if( num == 110){
+        document.write("실행됨 num = 110");
+    }else if( num == 120){
+        document.write("실행됨 num = 120");
+    }else{
+        document.write("실행은됨");
+    }
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                let = 100 >>결과>> 실행됨 num = 100</br>
+                                let = 10 &nbsp;&nbsp;>>결과>> 실행은됨</br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample03 -->
+
+                <div id="sample04" class="sample" >
+                    <h3>04. 삼항 연산자</h3>
+                    <p>for문에서 선언한 let i 값에 따른 결과가 차이나는걸 주의해야해!</p>
+                    
+<pre><code class="language-js">{
+    // if(조건절){
+    //     document.write("true");
+    // }else{
+    //     document.write("false");
+    // } 
+    // 아래 처럼 간단히 표현할수있어 !
+    (조건절) ? document.write("true") : document.write("false")
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100 == 100 실행됨 true</br>
+                                100 != 100 실행됨 false
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+                <!-- sample04 -->
+
+                <div id="sample05" class="sample" >
+                    <h3>05. 중첩 if 문</h3>
+                    <p>if문안에 if문 안에 if문을 쓸수있어</p>
+                    
+<pre><code class="language-js">{
+    if(num == 100){
+        document.write("실행되었습니다1")
+        if(num==100){
+            document.write("실행되었습니다2")
+            if(num==100){
+                document.write("실행되었습니다3")
+            }
+        }
+    }else{
+        document.write("실행되었습니다4")
+    }
+}
+</pre></code>                   
+                    <div class="resultDark sampleEx1">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <button id="my-button1" value ='100'class="custom-btn btn-3">
+                                    <span>value<br>100</span>
+                                </button>
+                                <button id="my-button2" value ='101'class="custom-btn btn-3">
+                                    <span>value<br>101</span>
+                                </button>
+                                <script>
+                                    {
+                                        let num1 =0;
+                                        let resultTxt1="";
+                                        // alert(document.getElementById("my-button1").value);
+                                        document.getElementById("my-button1").onclick = function () {
+                                            num1= document.getElementById("my-button1").value;
+                                            chk();
+                                        }
+                                        document.getElementById("my-button2").onclick = function () {
+                                            num1= document.getElementById("my-button2").value;
+                                            chk();
+                                        }
+                                        function chk(){
+                                            if(num1 == 100){
+                                                resultTxt1 += "실행되었습니다1 ";
+                                                if(num1==100){
+                                                    resultTxt1 += "실행되었습니다2 "
+                                                    if(num1==100){
+                                                        resultTxt1 += "실행되었습니다3"
+                                                    }
+                                                }
+                                                alert(resultTxt1);
+                                            }else{
+                                                resultTxt1 = "실행되었습니다4";
+                                                alert(resultTxt1);
+                                            }
+                                            resultTxt1="";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample05 -->
+                
+                <!--  -->
+                <div id="sample09" class="sample" >
+                    <h3>09. for문</h3>
+                    <p>for문안에 조건절에 따라 실행되어 반복시켜줌</p>
+<pre><code class="language-js">{
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let a = "";
+    for(let i = 0 ; i &lt;arr.length ; i++){
+        a+= arr[i]+" ";
+    }
+    document.write(`&lt;span style='color:red'&gt;${a}&lt;/span&gt;${b}`);
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                                    let a = "";
+                                    for(let i = 0 ; i <arr.length ; i++){
+                                        a+= arr[i]+" ";
+                                    }
+                                    document.write(`<span style='color:red'>${a}</span>`);
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample09 -->
+        </div>            
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- footer -->
+<script src="assets/js/prism.js"></script>
+    <script>
+       {   
+            // 01. if 문
+            
+            // let userNumber = prompt("당신이 좋아하는 숫자는 무엇입니까");
+            // if( userNumber == 100){
+            //     // alert("맞아요");
+            //     document.write("당신은 100점짜리 !");
+            //     //참
+            // } else if(userNumber == 99){
+            //     // alert("틀려요");
+            //     document.write("당신은 99점짜리 !")
+            // } else if(userNumber == 98){
+            //     // alert("틀려요");
+            //     document.write("당신은 98점짜리 !")
+            // } else{
+            //     document.write("당신은 1점짜리 !")
+            // }
+            // false : 0
+            // true : 1
+            // if(undefined){
+            //     document.write("실행됨 true")
+            // }else{
+            //     document.write("실행됨 false")
+            // }
+            // 02. if문 생략
+            // const num = 100;
+            // if(num == 1010) document.write("실행됨(true)");
+            // else document.write("실행됨(false)");
+            // if(undefined){
+            //     document.write("실행됨 true")
+            // }else{
+            //     document.write("실행됨 false")
+            // }
+            // 03. 삼항 연산자
+            // if(조건절){
+            //     document.write("true");
+            // }else{
+            //     document.write("false");
+            // }
+            // (조건절) ? document.write("true") : document.write("false")
+            // 04. 다중 if
+            // const num = 100;
+            // if(num == 90){
+            //     document.write("실행됨 num = 90");
+            // }else if( num == 100){
+            //     document.write("실행됨 num = 100");
+            // }else if( num == 110){
+            //     document.write("실행됨 num = 110");
+            // }else if( num == 120){
+            //     document.write("실행됨 num = 120");
+            // }else{
+            //     document.write("실행은됨");
+            // }
+            // 속성미포함
+            // if(num === 90){}    
+            // 속성포함
+            // 05. 중첩 if 문
+            
+            // document.write('<br>');
+            // let num1 = prompt("100을 입력하세요 ! ");
+            // if(num1 ==1010){
+            //     document.write("실행되었습니다1")
+            //     if(num1==100){
+            //         document.write("실행되었습니다2")
+            //         if(num1==100){
+            //             document.write("실행되었습니다3")
+            //         }
+            //     }
+            // }else{
+            //     document.write("실행되었습니다4")
+            // }
+            // // const num = 100;
+            // if(num == 1001) document.write("실행됨(true)");
+            // else if (num == 110)document.write("실행됨(false)");
+            
+
+            // 반복
+            
+            // const arr = [1,2,3,4,5,6,7,8,9];
+            // let a = "";
+            // let b = "";
+            // for(let i = 0 ; i <arr.length ; i++){
+            //         if(i%2)a+= i+" ";
+            //         else b+= i + " ";
+            // }
+            
+            // document.write(`<span style='color:red'>${a}</span>  ${b}`);
+            // document.write("<br>");
+            // document.write("<span style='color:red'>"+a+"</span>",b);
+
+            // {
+            //     for(let i = 1 ; i <arr.length ; i+=2){
+            //         document.write(arr[i]);
+            //     }
+            // }
+            // document.write("<br>");
+            // {
+            //     for(let i = 0 ; i <arr.length ; i+=2){
+            //         document.write(arr[i]);
+            //     }
+            // }
+            // document.write("<br>");
+
+            
+            // (100 != 100) ? document.write("true") : document.write("false")
+            
+            // let table2 ="<table border = '1'><tr>";
+            // 짝수는 빨 홀수는 파
+            let table1 ="<table border = '1'><tr>";
+            let num = 1;
+            for(let i = 1; i <= 5 ; i++){
+                table1+="<tr>";
+                for(let j = 1; j <= 5 ; j++){
+                    // table1+="<td>"+j+"</td>";
+                    // table1+=`<td>${num}</td>`;
+                    // if(num%2)table1+=`<td><span style='color:blue'>${num}</span></td>`;
+                    // else table1+=`<td><span style='color:red'>${num}</span></td>`;
+                    (num%2) ? table1+=`<td><span style='color:blue'>${num}</span></td>` : table1+=`<td><span style='color:red'>${num}</span></td>`;
+                    num++
+                }
+                table1 +="</tr>";
+            }
+            table1 +="</tr></table>";
+            document.write(`${table1}`);
+            // for(let i = 1 ; i<=25; i++){
+            //     document.write(i);
+            //     document.write('<br>');
+            //     num++;
+            // }
+            // document.write("num : " +num);
+
+        }
+    </script>
+</body>
+</html>

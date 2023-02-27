@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #bfbad3;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        #header1 {
+            width: 300px;
+            height: 100px;
+            background-color: #b0a6db;
+            float: left;
+        }
+        #header2 {
+            width: 900px;
+            height: 100px;
+            float: right;
+            background-color: #797297;
+        }
+        #banner {
+            width: 1200px;
+            height: 580px;
+            background-color: #9080d8;
+        }
+        #contents1 {
+            width: 400px;
+            height: 300px;
+            float: left;
+            background-color: #53d164;
+        }
+        #contents2 {
+            width: 400px;
+            height: 300px;
+            float: left;
+            background-color: #20ca37;
+        }
+        #contents3 {
+            width: 400px;
+            height: 300px;
+            float: left;
+            background-color: #92be98;
+        }
+        #footer1 {
+            width: 200px;
+            height: 100px;
+            background-color: #4a2bd3;
+            float: left;
+            /* clear: both; */
+        }
+        #footer2 {
+            width: 800px;
+            height: 100px;
+            background-color: #5f5d68;
+            float: left;
+            /* clear: both; */
+        }
+        #footer3 {
+            width: 200px;
+            height: 100px;
+            background-color: #1a0e4d;
+            float: left;
+            /* clear: both; */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header1"></header>
+        <header id="header2"></header>
+        <div id ="banner"></div>
+        <main>
+            <div id="contents1"></div>
+            <div id="contents2"></div>
+            <div id="contents3"></div>
+        </main>
+        <footer id="footer">
+            <div id="footer1"></div>
+            <div id="footer2"></div>
+            <div id="footer3"></div>
+        </footer>
+    </div>
+</body>
+</html>

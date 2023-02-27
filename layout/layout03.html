@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #FFE0B2;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #FFCC80;
+        }
+        #section {
+            width: 1200px;
+            height: 780px;
+            background-color: #11C384;
+        }
+        #aside1 {
+            width: 400px;
+            height: 390px;
+            background-color: #009688;
+            /* float: left; */
+        }
+        #aside2 {
+            width: 400px;
+            height: 390px;
+            background-color: #29B6F6;
+            float: left; 
+        }
+        #footer1 {
+            width: 100%;
+            height: 100px;
+            background-color: #FF9800;
+        }
+        #footer2 {
+            width: 50%;
+            height: 100px;
+            background-color: #43A047;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="section">
+        <div id="aside1"></div>
+            <div id="aside2"></div>
+        </div>
+        <div id="footer1">
+            <div id="footer2"></div>
+        </div>
+    </div>
+</body>
+</html>

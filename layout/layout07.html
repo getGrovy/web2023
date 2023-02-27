@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃06 - float 반응형</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E8F5E9;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto; 
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+        #section {
+            overflow: hidden;
+            /* 
+                overflow: hidden; 으로 footer탭 
+            */
+        }
+        #article1 {
+            width: 30%;
+            height: 780px;
+            background-color: #81C784;
+            float: left;
+        }
+        #article2 {
+            width: 40%;
+            height: 780px;
+            background-color: #66BB6A;
+            float: left;
+        }
+        #article3 {
+            width: 30%;
+            height: 780px;
+            background-color: #4CAF50;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #3CB641;
+        }
+        /* #footer1 {
+            width: 50%;
+            height: 100px;
+            background-color: #3cb2b6;
+            float: left;
+        }
+        #footer2 {
+            width: 50%;
+            height: 100px;
+            background-color: #3e3cb6;
+            float: left;
+        } */
+        @media (max-width: 1200px) {
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px) {
+            #wrap {
+                width: 96%;
+            }
+            #article1 {
+                width: 30%;
+                height: 630px;
+            }
+            #article2 {
+                width: 70%;
+                height: 630px;
+            }
+            #article3 {
+                width: 100%;
+                height: 150px;
+            }
+        }
+        @media (max-width: 600px) {
+            @media (max-width: 768px) {
+           
+            #article1 {
+                width: 100%;
+                height: 200px;
+            }
+            #article2 {
+                width: 100%;
+                height: 430px;
+            }
+            #article2 {
+                width: 100%;
+                height: 150px;
+            }
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="section">
+            <div id="article1"></div>
+            <div id="article2"></div>
+            <div id="article3"></div>
+        </div>
+        <div id="footer">
+            <div id="footer1"></div>
+            <div id="footer2"></div>
+        </div>
+    </div>
+</body>
+</html>
