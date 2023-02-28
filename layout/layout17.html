@@ -4,88 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃02 - flaot 유형</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-        body {
-            background-color: #E8F5E9;
-        }
+
         #wrap {
             width: 1200px;
             margin: 0 auto;
+            background-color: #E8F5E9;
         }
         #header {
-            width: 100%;;
+            /* width: 100%; */
             height: 100px;
             background-color: #C8E6C9;
         }
-        #nav { 
-            width: 100%;
+        #nav {
+            /* width: 100%; */
             height: 100px;
             background-color: #A5D6A7;
-
         }
-        #aside {
-            width: 30%;
+        #main {
+            /* width: 100%; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .constents1 {
+            width: 25%;
             height: 780px;
             background-color: #81C784;
-            float: left;
-
         }
-        #section {
-            width: 40%;
+        .constents2 {
+            width: 50%;
             height: 780px;
             background-color: #66BB6A;
-            float: left;
-
         }
-        #article {
-            width: 30%;
+        .constents3 {
+            width: 25%;
             height: 780px;
             background-color: #4CAF50;
-            float: left;
-
         }
         #footer {
             width: 100%;
             height: 100px;
             background-color: #43A047;
-            clear: both;
         }
-        @media (max-width:1300px){
+        @media(max-width:1220px){
             #wrap {
-                width: 96%;
+            width: 96%;
             }
         }
-        @media (max-width:768px){
+        @media(max-width:780px){
             #wrap {
-                width: 100%;
+            width: 100%;
             }
-            #aside{
-                width: 40%;
+            .constents1 {
+                width: 30%;
                 height: 630px;
             }
-            #section{
-                width: 60%;
+            .constents2 {
+                width: 70%;
                 height: 630px;
             }
-            #article{
+            .constents3 {
                 width: 100%;
                 height: 150px;
             }
         }
-        @media (max-width:480px){
-            #aside{
+        @media(max-width:480px){
+            
+            .constents1 {
                 width: 100%;
                 height: 200px;
             }
-            #section{
+            .constents2 {
                 width: 100%;
                 height: 430px;
             }
+            
         }
     </style>
 </head>
@@ -93,9 +91,11 @@
     <div id="wrap">
         <header id="header"></header>
         <nav id="nav"></nav>
-        <aside id="aside"></aside>
-        <section id="section"></section>
-        <article id="article"></article>
+        <main id="main">
+            <div class="constents1"></div>
+            <div class="constents2"></div>
+            <div class="constents3"></div>
+        </main>
         <footer id="footer"></footer>
     </div>
 </body>

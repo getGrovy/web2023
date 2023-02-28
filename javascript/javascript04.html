@@ -71,11 +71,9 @@
 <pre><code class="language-js">{
     // false : 0 , null, undefined , false , ""(빈문자열)
     // true : 1, "0", "1", "abc", [], {}, true
-    if(조건식){
-        document.write("실행됨 true")
-    }else{
-        document.write("실행됨 false")
-    }
+    
+    if(조건식) document.write("실행됨 true")
+    else document.write("실행됨 false")
 } 
 </pre></code>                   
                     <div class="noticeDark">
@@ -298,140 +296,206 @@
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- footer -->
-<script src="assets/js/prism.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script>
-       {   
-            // 01. if 문
-            
-            // let userNumber = prompt("당신이 좋아하는 숫자는 무엇입니까");
-            // if( userNumber == 100){
-            //     // alert("맞아요");
-            //     document.write("당신은 100점짜리 !");
-            //     //참
-            // } else if(userNumber == 99){
-            //     // alert("틀려요");
-            //     document.write("당신은 99점짜리 !")
-            // } else if(userNumber == 98){
-            //     // alert("틀려요");
-            //     document.write("당신은 98점짜리 !")
-            // } else{
-            //     document.write("당신은 1점짜리 !")
-            // }
-            // false : 0
-            // true : 1
-            // if(undefined){
-            //     document.write("실행됨 true")
-            // }else{
-            //     document.write("실행됨 false")
-            // }
-            // 02. if문 생략
-            // const num = 100;
-            // if(num == 1010) document.write("실행됨(true)");
-            // else document.write("실행됨(false)");
-            // if(undefined){
-            //     document.write("실행됨 true")
-            // }else{
-            //     document.write("실행됨 false")
-            // }
-            // 03. 삼항 연산자
-            // if(조건절){
-            //     document.write("true");
-            // }else{
-            //     document.write("false");
-            // }
-            // (조건절) ? document.write("true") : document.write("false")
-            // 04. 다중 if
-            // const num = 100;
-            // if(num == 90){
-            //     document.write("실행됨 num = 90");
-            // }else if( num == 100){
-            //     document.write("실행됨 num = 100");
-            // }else if( num == 110){
-            //     document.write("실행됨 num = 110");
-            // }else if( num == 120){
-            //     document.write("실행됨 num = 120");
-            // }else{
-            //     document.write("실행은됨");
-            // }
-            // 속성미포함
-            // if(num === 90){}    
-            // 속성포함
-            // 05. 중첩 if 문
-            
-            // document.write('<br>');
-            // let num1 = prompt("100을 입력하세요 ! ");
-            // if(num1 ==1010){
-            //     document.write("실행되었습니다1")
-            //     if(num1==100){
-            //         document.write("실행되었습니다2")
-            //         if(num1==100){
-            //             document.write("실행되었습니다3")
-            //         }
-            //     }
-            // }else{
-            //     document.write("실행되었습니다4")
-            // }
-            // // const num = 100;
-            // if(num == 1001) document.write("실행됨(true)");
-            // else if (num == 110)document.write("실행됨(false)");
+        // 짝수는 빨 홀수는 파
+        // let table1 ="<table border = '1'>";
+        // let num = 1;
+        // for(let i = 1; i <= 5 ; i++){
+        //     table1+="<tr>";
+        //     for(let j = 1; j <= 5 ; j++){
+        //         // table1+="<td>"+j+"</td>";
+        //         // table1+=`<td>${num}</td>`;
+        //         // if(num%2)table1+=`<td><span style='color:blue'>${num}</span></td>`;
+        //         // else table1+=`<td><span style='color:red'>${num}</span></td>`;
+        //         (num%2) ? table1+=`<td><span style='color:blue'>${num}</span></td>` : table1+=`<td><span style='color:red'>${num}</span></td>`;
+        //         num++
+        //     }
+        //     table1 +="</tr>";
+        // }
+        // table1 +="</tr></table>";
+        // document.write(`${table1}`);
+
+        // ("")?document.write("true") : document.write("false");        
+
+        // //06. swich문 ( 다중 if 문)
+        // {
+        //     const num = 100;
+        //     if(num ==90){
+        //         document.write("실행90");
+        //     }else if(num == 80){
+        //         document.write("실행80");
+        //     }else if(num == 70){
+        //         document.write("실행70");
+        //     }else if(num == 60){
+        //         document.write("실행60");
+        //     }else if(num == 50){
+        //         document.write("실행50");
+        //     }else{
+        //         document.write("빵 ! ");
+        //     }
+
+        //     const num1 = 100;
+
+        //     switch(num1){
+        //         case 90:
+        //             document.write("실행90");
+        //             break;
+        //         case 80:
+        //             document.write("실행80");
+        //             break;
+        //         case 70:
+        //             document.write("실행70");
+        //             break;
+        //         case 60:
+        //             document.write("실행60");
+        //             break;
+        //         case 50:
+        //             document.write("실행50");
+        //             break;
+        //         default:
+        //             document.write("빵!!!");
+        //             break;
+        //     }
+
+        //     // break 를 빼면 모든 case가 실행됨!
+        //     // 07. while문
+        //     document.write("<br>");
+        //     for(let i = 0 ; i <=5 ; i++){
+        //         document.write(i);
+        //     }
+        //     document.write("<br>");
+
+        //     let numWhile = 0;
+
+        //     while(numWhile<5){
+        //         document.write(numWhile);
+        //         numWhile++;
+        //     }
             
 
-            // 반복
-            
-            // const arr = [1,2,3,4,5,6,7,8,9];
-            // let a = "";
-            // let b = "";
-            // for(let i = 0 ; i <arr.length ; i++){
-            //         if(i%2)a+= i+" ";
-            //         else b+= i + " ";
-            // }
-            
-            // document.write(`<span style='color:red'>${a}</span>  ${b}`);
-            // document.write("<br>");
-            // document.write("<span style='color:red'>"+a+"</span>",b);
+        //     // 08. do while문
+        //     document.write("<br>");
 
-            // {
-            //     for(let i = 1 ; i <arr.length ; i+=2){
-            //         document.write(arr[i]);
-            //     }
-            // }
-            // document.write("<br>");
-            // {
-            //     for(let i = 0 ; i <arr.length ; i+=2){
-            //         document.write(arr[i]);
-            //     }
-            // }
-            // document.write("<br>");
+        //     let numWhile1 = 0;
+        //     do{
+        //         document.write(numWhile1);
+        //         numWhile1++;
+        //     }while(numWhile1<=10);
+            
+        //     // 09. for문
+        //     document.write("<br>");
 
+        //     for(let i = 1 ; i < 100 ; i++){
+        //         document.write(i);
+        //     }
+        //     document.write("<br>");
+        //     let numArr =[1,2,3,4,5,6,7,8,9];
+        //     let sumTot = 0;
+        //     for(let i = 0 ; i < numArr.length; i++){
+        //         // document.write(numArr[i] + " ");
+        //         document.write(`${numArr[i]}  `);
+        //         sumTot += numArr[i];
+        //     }
+        //     document.write(`${sumTot}`);
+
+
+        //     // 10. 중첩 for문
+        //     document.write("<br>");
+
+        //     for(let i = 0 ; i <=10 ; i++){
+        //         document.write(`<br>${i}  : `)
+        //         for(let j = 0 ; j <=10 ; j++){
+        //             document.write(j);
+        //         }
+        //     };
+
+            // 11. break문
+            document.write("<br>");
             
-            // (100 != 100) ? document.write("true") : document.write("false")
-            
-            // let table2 ="<table border = '1'><tr>";
-            // 짝수는 빨 홀수는 파
-            let table1 ="<table border = '1'>";
-            let num = 1;
-            for(let i = 1; i <= 5 ; i++){
-                table1+="<tr>";
-                for(let j = 1; j <= 5 ; j++){
-                    // table1+="<td>"+j+"</td>";
-                    // table1+=`<td>${num}</td>`;
-                    // if(num%2)table1+=`<td><span style='color:blue'>${num}</span></td>`;
-                    // else table1+=`<td><span style='color:red'>${num}</span></td>`;
-                    (num%2) ? table1+=`<td><span style='color:blue'>${num}</span></td>` : table1+=`<td><span style='color:red'>${num}</span></td>`;
-                    num++
-                }
-                table1 +="</tr>";
+            for(let i=1 ; i < 100 ; i++){
+                if(i ==10)break;
+                document.write(i);
             }
-            table1 +="</tr></table>";
-            document.write(`${table1}`);
-            // for(let i = 1 ; i<=25; i++){
-            //     document.write(i);
-            //     document.write('<br>');
-            //     num++;
-            // }
-            // document.write("num : " +num);
 
-        }
+            // 12. continue문
+            document.write("<br>");
+
+            for(let i=1 ; i < 20 ; i++){
+                if(i ==10)continue;
+                document.write(i);
+                //10을 pass
+            }
+
+        // }
+
+            document.write("<br>");
+
+            let table = "<table border='1'>";
+            let numCount =1;
+            let numMulti =3; 
+            //1부터 25 까지 3의배수 25 5의배수 빨간색
+                
+            for(let i = 0 ; i<5 ; i++){
+                table += "<tr>";
+                for(let j = 0 ; j<5 ; j++){    
+                    //
+                    ( (numCount*numMulti)%5 == 0 )? table += `<td><span style='color:red'>${numCount*numMulti}</span></td>`:table += `<td>${numCount*numMulti}</td>`;
+                    // table += `<td>${numCount}</td>`;
+                    // table += "<td>"+numCount+"</td>";
+                    numCount++;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.write(table);
+
+
+            document.write("<br>");
+
+            
+
+            
+            function chkNum(){
+                let inputNum = prompt();
+                if(inputNum == 0){
+                    document.write("0입니다");
+                } else{
+                    (inputNum>0)? document.write("양수") :document.write("음수");
+                }
+            }
+            // chkNum();
+
+            function gcfNum(){
+                let inputGcfNum1 = prompt("작은수");
+                let inputGcfNum2 = prompt("큰수");
+                // let inputGcfNum1 = 10;
+                // let inputGcfNum2 = 170;
+                let gcfNum = 1;
+                for(let i =1 ; i <=inputGcfNum1; i++ ){
+                    if(inputGcfNum1%i ==0 && inputGcfNum2%i==0){
+                        gcfNum = i;
+                    }
+                }
+                document.write(`두수의 최대 공약수는 ${gcfNum} 입니다`);
+            }
+            // gcfNum();
+            
+
+// <h2>홀짝 구분 if문</h2>
+// <button id="my-button" class="custom-btn btn-3">
+//   <span>click me</span></button>
+// 
+            // document.getElementById("my-button").onclick = function () {
+            //     let userNumber = prompt("숫자를입력하세요")
+            //     if(inputNum == 0){
+            //         document.write("0입니다");
+            //     } else{
+            //         (inputNum>0)? document.write("양수") :document.write("음수");
+            //     }
+            // }  
+
+
     </script>
 </body>
 </html>
