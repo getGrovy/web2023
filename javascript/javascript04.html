@@ -94,6 +94,7 @@
         document.write("실행됨 true")
     }else{
         document.write("실행됨 false")
+    }
 } 
 </pre></code>                   
                     <div class="resultDark">
@@ -257,8 +258,134 @@
                     </div>
                 </div>
                 <!-- sample05 -->
-                
-                <!--  -->
+
+                <div id="sample06" class="sample" >
+                    <h3>06. swich문</h3>
+                    <p>if else문과 비슷한 swich문</p>
+<pre><code class="language-js">{06. swich문 ( 다중 if 문)
+        const num = 90;
+        if(num ==90){
+            document.write("실행90");
+        }else if(num == 80){
+            document.write("실행80");
+        }else if(num == 70){
+            document.write("실행70");
+        }else if(num == 60){
+            document.write("실행60");
+        }else if(num == 50){
+            document.write("실행50");
+        }else{
+            document.write("빵 ! ");
+        }
+
+        const num1 = 90;
+
+        switch(num1){
+            case 90:
+                document.write("실행90");
+                break;
+            case 80:
+                document.write("실행80");
+                break;
+            case 70:
+                document.write("실행70");
+                break;
+            case 60:
+                document.write("실행60");
+                break;
+            case 50:
+                document.write("실행50");
+                break;
+            default:
+                document.write("빵!!!");
+                break;
+        }
+}
+</pre></code>                   
+                    <div class="resultDark sampleEx1">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                실행90 <br>
+                                실행90 <br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>if문과 case문을 문법은 틀리지만 결과는 같다!</h4>
+                    </div>
+                </div>
+                <!-- sample06 -->
+
+                <div id="sample07" class="sample" >
+                    <h3>07. while문</h3>
+                    <p> for과 비슷한 while문</p>
+<pre><code class="language-js">{
+    // 07. while문
+    for(let i = 0 ; i &lt;=5 ; i++){
+        document.write(i);
+    }
+    document.write("<br>");
+
+    let numWhile = 0;
+
+    while(numWhile&lt;=5){
+        document.write(numWhile);
+        numWhile++;
+    }
+}
+</pre></code>                   
+                    <div class="resultDark sampleEx1">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                0 <br>
+                                1 <br>
+                                2 <br>
+                                3 <br>
+                                4 <br>
+                                5
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>for문과 while문을 문법은 틀리지만 결과는 같다!</h4>
+                        
+                    </div>
+                </div>
+                <!-- sample07 -->
+
+                <div id="sample08" class="sample" >
+                    <h3>08. do while문</h3>
+                    <p>for문과 do- while문을 문법은 틀리지만 결과는 같다!</p>
+<pre><code class="language-js">{
+    document.write("<br>");
+
+    let numWhile1 = 10;
+    do{
+        document.write("numWhile " +numWhile1 );
+        numWhile1++;
+    }while(numWhile1&lt;10);
+    document.write("numWhile " +numWhile1 );
+}
+</pre></code>                   
+                    <div class="resultDark sampleEx1">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                10 <br>
+                                11 <br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>do while문은 조건식을 일단은 실행! </h4>
+                        <p>그래서 10과 11이 동시에 출력</p>
+                    </div>
+                </div>
+                <!-- sample08 -->
+
+
                 <div id="sample09" class="sample" >
                     <h3>09. for문</h3>
                     <p>for문안에 조건절에 따라 실행되어 반복시켜줌</p>
@@ -288,6 +415,92 @@
                     </div>
                 </div>
                 <!-- sample09 -->
+
+                <div id="sample10" class="sample" >
+                    <h3>10. 중첩for문</h3>
+                    <p>for문안에 for문! </p>
+<pre><code class="language-js">{
+    for(let i = 0 ; i &lt;=10 ; i++){
+        document.write( ` ${i}  : `)
+        for(let j = 0 ; j &lt;=10 ; j++){
+            document.write(j);
+        }
+        document.write("&lt;br&gt;")
+    };
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    for(let i = 0 ; i <=10 ; i++){
+                                        document.write(`${i}  : `)
+                                        for(let j = 0 ; j <=10 ; j++){
+                                            document.write(j);
+                                        }
+                                        document.write("<br>")
+                                    };
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample10 -->
+
+                <div id="sample11" class="sample" >
+                    <h3>11. break문</h3>
+                    <p>for문안에 반복하다 break문이 나오면 stop</p>
+<pre><code class="language-js">{
+    for(let i=1 ; i &lt; 100 ; i++){
+        if(i ==10)break;
+        document.write(i);
+    }
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                     for(let i=1 ; i < 100 ; i++){
+                                            if(i ==10)break;
+                                            document.write(i);
+                                     }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample11 -->
+
+                <div id="sample12" class="sample" >
+                    <h3>12. continue문</h3>
+                    <p>for문안에 조건절에 따라 실행되어 반복시켜줌</p>
+<pre><code class="language-js">{
+    for(let i=1 ; i &lt; 20 ; i++){
+        if(i ==10)continue;
+        document.write(i);
+        //10을 pass
+    }
+}
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    for(let i=1 ; i < 20 ; i++){
+                                        if(i ==10)continue;
+                                        document.write(i);
+                                    }
+                                </script>
+                                <br>10이란 숫자는 없음 !
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- sample12 -->
         </div>            
     </main>
     <!-- //main -->
@@ -373,14 +586,15 @@
         //     }
             
 
-        //     // 08. do while문
-        //     document.write("<br>");
+        // // 08. do while문
+        // document.write("<br>");
 
-        //     let numWhile1 = 0;
-        //     do{
-        //         document.write(numWhile1);
-        //         numWhile1++;
-        //     }while(numWhile1<=10);
+        // let numWhile1 = 10;
+        // do{
+        //     document.write("numWhile " +numWhile1 );
+        //     numWhile1++;
+        // }while(numWhile1<10);
+        // document.write("numWhile " +numWhile1 );
             
         //     // 09. for문
         //     document.write("<br>");
@@ -399,23 +613,23 @@
         //     document.write(`${sumTot}`);
 
 
-        //     // 10. 중첩 for문
-        //     document.write("<br>");
+            // 10. 중첩 for문
+            // document.write("<br>");
 
-        //     for(let i = 0 ; i <=10 ; i++){
-        //         document.write(`<br>${i}  : `)
-        //         for(let j = 0 ; j <=10 ; j++){
-        //             document.write(j);
-        //         }
-        //     };
+            // for(let i = 0 ; i <=10 ; i++){
+            //     document.write(`<br>${i}  : `)
+            //     for(let j = 0 ; j <=10 ; j++){
+            //         document.write(j);
+            //     }
+            // };
 
-            // 11. break문
-            document.write("<br>");
+            // // 11. break문
+            // document.write("<br>");
             
-            for(let i=1 ; i < 100 ; i++){
-                if(i ==10)break;
-                document.write(i);
-            }
+            // for(let i=1 ; i < 100 ; i++){
+            //     if(i ==10)break;
+            //     document.write(i);
+            // }
 
             // 12. continue문
             document.write("<br>");
@@ -456,10 +670,10 @@
 
             
             function chkNum(){
-                let inputNum = prompt();
+                let inputNum = parseInt(prompt("숫자를입력해주세요"));
                 if(inputNum == 0){
                     document.write("0입니다");
-                } else{
+                }else{
                     (inputNum>0)? document.write("양수") :document.write("음수");
                 }
             }
@@ -468,8 +682,6 @@
             function gcfNum(){
                 let inputGcfNum1 = prompt("작은수");
                 let inputGcfNum2 = prompt("큰수");
-                // let inputGcfNum1 = 10;
-                // let inputGcfNum2 = 170;
                 let gcfNum = 1;
                 for(let i =1 ; i <=inputGcfNum1; i++ ){
                     if(inputGcfNum1%i ==0 && inputGcfNum2%i==0){
