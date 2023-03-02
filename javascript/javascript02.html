@@ -60,12 +60,12 @@
                     <li><a href="#">05. 배열 : 데이터 불러오기 : 갯수 구하는 방법</a></li>
                     <li><a href="#">06. 배열 : 데이터 불러오기 : for()</a></li>
                     <li><a href="#">07. 배열 : 데이터 불러오기 : 중첩 for()</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : forEach()</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : for of</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : for in</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : map()</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : 펼침 연산자</a></li>
-                    <li><a href="#">03. 배열 : 데이터 불러오기 : 배열 구조분해할당</a></li>
+                    <li><a href="#">08. 배열 : 데이터 불러오기 : forEach()</a></li>
+                    <li><a href="#">09. 배열 : 데이터 불러오기 : for of</a></li>
+                    <li><a href="#">10. 배열 : 데이터 불러오기 : for in</a></li>
+                    <li><a href="#">11. 배열 : 데이터 불러오기 : map()</a></li>
+                    <li><a href="#">12. 배열 : 데이터 불러오기 : 펼침 연산자</a></li>
+                    <li><a href="#">13. 배열 : 데이터 불러오기 : 배열 구조분해할당</a></li>
 
                     <li><a href="#">04. 객체 : 데이터 불러오기 : 기본</a></li>
                     <li><a href="#">05. 객체 : 데이터 불러오기 : Object</a></li>
@@ -216,11 +216,17 @@
                 </div>
                 <!-- sample06 -->
 
-                <!-- <div id ="sample07" class="sample">
+                 <div id ="sample07" class="sample">
                     <h3>07. 배열 : 데이터 불러오기 : for()</h3>
                     <p>length()함수를 이용하여 길이 출력</p>
 <pre class="line-numbers"><code class="language-js">{
-    
+    for (let i = 1; i &gt= 10; i++) {
+        document.write("i = " + i ,"<br>");
+        for (let j = 1; j &gt= 10; j++) {
+            document.write(" j = " + j);
+        }
+        document.write("<br>");
+    }
 }
 </code></pre>
                 </div>
@@ -228,10 +234,20 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            
+                           <script>
+                            {
+                                for (let i = 1; i <= 10; i++) {
+                                    document.write("i = " + i , "<br>");
+                                    for (let j = 1; j <= 10; j++) {
+                                        document.write(" j = " + j);
+                                    }
+                                    document.write("<br>");
+                                }
+                            }
+                           </script> 
                         </div>
                     </details>
-                </div> -->
+                </div>
                 <!-- sample07 -->
 
             </div>
@@ -321,14 +337,135 @@
 
         }
         // 07. 배열 : 데이터 불러오기 : 중첩 for()
-        {
-            // for (let i = 1; i <= 10; i++) {
-            //     console.log("i = " + i);
-            //     for (let j = 1; j <= 10; j++) {
-            //         console.log("j = " + j);
-            //     }
-            // }
+        // {
+        //     for (let i = 1; i <= 10; i++) {
+        //         document.write("i = " + i);
+        //         for (let j = 1; j <= 10; j++) {
+        //             document.write("j = " + j);
+        //         }
+        //     }
+        // }
+
+        //08. 배열 : 데이터 불러오기 : forEach()
+        
+         //변수 상수 배열 객체
+         
+        //  let x =100, y="200", z ;
+        //  const func =function(){}
+        //  document.write(x);
+        //  document.write(typeof(x));
+        //  document.write("<br>");
+        //  y = Number(y);                      //notice 추가하기 ... 
+        //  document.write(y);
+        //  document.write(typeof(y));
+        //  document.write("<br>");
+        //  document.write(z);
+        //  document.write(typeof(z));
+        //  document.write("<br>");
+        //  document.write(func);
+        //  document.write(typeof(func));
+        
+
+        
+        // let arr10 = [11,22,33,44,55,66,77,88,99];
+
+        // for(let i =0 ; i <=arr10.length ; i++){
+        //     document.write(arr10[i] , " ");
+        // }
+        
+        //forEach
+        //(method) Array<number>.forEach
+        //   (callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void
+        //08.
+        // document.write("<br>");
+        // arr10.forEach(function(element) {
+        //     document.write(element);
+        // });
+        // document.write("<br>");
+        // arr10.forEach(el=> document.write(el)
+        // )
+        document.write("<br> 08 <br>");
+         const num08 = [100,200,300,400,500];
+        
+        //  num08.forEach(function(el, i, arr ){
+        //     document.write(el ," +++ " ,i , " +++" ,arr);
+        //     document.write("<br>")
+        //  })
+        num08.forEach(function(el){
+            document.write(el , " ");
+         })
+        document.write("<br> => ");
+        num08.forEach(el1=>document.write(el1));
+
+        // document.write(num08[0]);
+        // document.write(num08[1]);
+        // document.write(num08[2]);
+        // document.write(num08[3]);
+        // document.write("<br>");
+        // for(let i=0 ; i<num08.length ; i++ ){
+        //     document.write(num08[i], "<br>");
+        // }
+
+        // num08.forEach((el) =>{
+        //     document.write(el,"<br>");
+        // })
+
+        // num08.forEach(el =>{
+        //     document.write("<br> @",el);
+        // })
+
+        // document.write("<br>");
+        // num08.forEach(el => document.write(el," ! "));
+        // document.write("<br>");
+        // let el;
+        // num08.forEach(el => el);
+        // num08.forEach(function(el, index, array){
+        //     document.write("el " ,el ," index ", index , "array " , array);
+        //     document.write("<br>");
+        // })
+        
+        //09. 배열 for of
+        document.write("<br> 09 for of <br>");
+        const arr09 = [100,200,300,400,500];
+        for (let i of arr09) {
+            document.write(i);
         }
+        document.write("<br> 09 iterator of <br>");
+
+        // for (const iterator of arr09) {
+        //     //iterator는 ArrayList, HashSet과 같은 컬렉션을 반복하는 데 사용할 수 있는 객체
+        //     document.write(iterator);
+        // }
+
+        //10. 배열 for in
+        document.write("<br> 10 for in <br>");
+        const arr10 = [100,200,300,400,500];
+        for (let i in arr09) {
+            document.write(i);
+        }
+        // for (const key in object) {
+        //     if (Object.hasOwnProperty.call(object, key)) {
+        //         const element = object[key];
+        // }
+        // }
+        
+        //11. 배열 데이터 불러오기 : map()
+        const num11 =[100,200,300,400,500];
+        num11.forEach(function(el,i, a ){
+            // console.log(el , i , a);
+            // console.log(i);
+            // console.log(a);
+        });
+        console.log("__________");
+        num11.map(function(el, i , a ){
+            // console.log(el);
+            // console.log(i);
+            // console.log(a);
+        })
+        document.write("<br>");
+        num11.map((el, i , a )=>{
+            document.write(el, "___ " , i , "+++" , a , "<br>")
+        })
     </script>
 </body>
 

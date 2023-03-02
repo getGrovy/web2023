@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // funcBr =
+
+        //01 선언적
+        
+        {
+            function func(){
+                document.write("01. 선언적함수 실행");
+            }
+            func();
+        }
+        document.write("<br>");
+        //02 익명
+        {
+            const func = function(){
+                document.write("02. 익명함수 실행")
+            }
+            func();
+        }
+        document.write("<br>");
+        //03 함수 출력 10번
+        {
+            function func(){
+                for(let i = 1; i <=10 ; i++ ){
+                    document.write("<br> 03. "+i+"번째 함수가 실행되었습니다. ");
+                }
+            }
+            func();
+        }
+        document.write("<br>");
+        //리턴값이 있는 함수 
+        {
+            function func(){
+                let strName = "04. 리턴값이있는 함수가실행"
+                return strName;
+            }
+            document.write(func());
+        }
+        document.write("<br>");
+        //매개변수 있는 함수 실행
+        {
+            function func(str){
+                document.write("05. "+str+"를 매개변수로 받은 함수 실행");
+            }
+            func("abc");
+        }
+        document.write("<br>");
+        //선언적 함수 화살표
+        {
+            func = () => document.write("화살표선언적함수");
+            func();
+        }
+        document.write("<br>");
+
+        //10칸짜리 테이블
+        function func1(){
+            let table = "<table border =1 >";
+                for(let i = 0 ; i <= 9 ; i++){
+                    table+="<tr>";
+                        for(let j = 0 ; j <= 9 ; j++){
+                            table+=`<td>${j}</td>`;
+                        }
+                    table+="</tr>";
+                }
+            table+="</table>";
+            return table;
+        }
+        document.write(func1());
+
+        document.write("<br>");
+        userTable = ()=>{
+            let table = "<table border =1 >";
+                for(let i = 0 ; i <= 9 ; i++){
+                    table+="<tr>";
+                        for(let j = 0 ; j <= 9 ; j++){
+                            table+=`<td>${j}</td>`;
+                        }
+                    table+="</tr>";
+                }
+            table+="</table>";
+            return table;
+        }
+        // document.write(func1());
+        document.write(userTable());
+
+        //선언적 함수 익명
+        {
+            const func= () =>document.write("화살표 익명함수");
+            func();
+            document.write("<br>");
+            func1= () =>document.write("화살표 익명함수");
+            func1();
+        }
+    </script>
+</body>
+</html>

@@ -1,109 +1,90 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
-    <script>
-        for (let i = 1; i <= 8; i++) {
-            document.write(i)
-        }
-        document.write("<br>");
-        document.write("<br>");
-
-        for (let i = 2; i <= 100; i += 2) {
-            document.write(i + " ");
-        }
-        document.write("<br>");
-        document.write("<br>");
-
-
-        for (let i = 1; i <= 100; i++) {
-            if (i % 4 == 0) {
-                document.write(i + " ");
-            }
-        }
-        document.write("<br>");
-        document.write("<br>");
-
-        for (let i = 1; i <= 9; i++) {
-            document.write("8 x " + i + " = " + (i * 8));
-            document.write("<br>");
-        }
-
-        document.write("<br>");
-        let table = "<table border='1'>";
-        for (let i = 0; i <= 14; i++) {
-            table += "<tr>";
-            for (let j = 0; j <= 14; j++) {
-                table += "<td>" + j + "</td>";
-            }
-            table += "</tr>";
-        }
-        table += "</table>";
-        document.write(table);
-    </script>
+    
 </body>
-
 </html>
+<script>
+        // let numCount = 1;
+        // let table3 = "<table border='1'>";
+        // for(let k = 0 ; k<5 ; k++){
+        //     table3 += "<tr>";
+        //     for(let j = 0 ; j<5 ; j++){    
+        //         (numCount%2 == 0 )? table3 += `<td><span style='color:red'>${numCount}</span></td>`:table3+=`<td><span style='color:blue'>${numCount}</span></td>`;
+        //         numCount++;
+        //     }
+        //     table3 += "</tr>";
+        // }      
+        // table3 += "</table>";
+        // document.write(table3);
+        // console.log(table3);
 
-<table border='1'>
-    <tr>
-        <td><span style='color:blue'>1</span></td>
-        <td><span style='color:red'>2</span></td>
-        <td><span style='color:blue'>3</span></td>
-        <td><span style='color:red'>4</span></td>
-        <td><span style='color:blue'>5</span></td>
-    </tr>
-    <tr>
-        <td><span style='color:red'>6</span></td>
-        <td><span style='color:blue'>7</span></td>
-        <td><span style='color:red'>8</span></td>
-        <td><span style='color:blue'>9</span></td>
-        <td><span style='color:red'>10</span></td>
-    </tr>
-    <tr>
-        <td><span style='color:blue'>11</span></td>
-        <td><span style='color:red'>12</span></td>
-        <td><span style='color:blue'>13</span></td>
-        <td><span style='color:red'>14</span></td>
-        <td><span style='color:blue'>15</span></td>
-    </tr>
-    <tr>
-        <td><span style='color:red'>16</span></td>
-        <td><span style='color:blue'>17</span></td>
-        <td><span style='color:red'>18</span></td>
-        <td><span style='color:blue'>19</span></td>
-        <td><span style='color:red'>20</span></td>
-    </tr>
-    <tr>
-        <td><span style='color:blue'>21</span></td>
-        <td><span style='color:red'>22</span></td>
-        <td><span style='color:blue'>23</span></td>
-        <td><span style='color:red'>24</span></td>
-        <td><span style='color:blue'>25</span></td>
-    </tr>
+        // for(let i = 1 ; i <=100 ; i++){
+        //     (i%10)? document.write(i) : document.write(i , "<br>");
+        // }
 
+        // let arr = [1,2,3,4,5,6,7,8,9,10];
 
+        // for(let i = 0 ; i <arr.length ; i++) {
+        //     document.write(arr[i]);
+        // }
+        // document.write("<br>");
+        // arr.forEach(function (element) {
+        //     document.write(element)
+        // });
+        // document.write("<br>");
+        // arr.forEach(element => {
+        //     document.write(element)
+        // });
+        // document.write("<br>");
+        // arr.forEach(element =>
+        //     document.write(element)
+        // );
+        // document.write("<br>");
+        
+        // arr.forEach(el=>(el%2)?document.write("_") :document.write(`<span style='color:red'>${el}</span>`)
+        // )
+        // // (method) Array<number>.forEach(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void
+        // arr.forEach(function(el, idx){
+        //     document.write()
+        // })
 
-    <script>
-        let numCount = 1;
-        let table3 = "<table border='1'>";
-        for(let k = 0 ; k<5 ; k++){
-            table3 += "<tr>";
-            for(let j = 0 ; j<5 ; j++){    
-                (numCount%2 == 0 )? table3 += `<td><span style='color:red'>${numCount}</span></td>`:table3+=`<td><span style='color:blue'>${numCount}</span></td>`;
-                numCount++;
-            }
-            table3 += "</tr>";
-        }      
-        table3 += "</table>";
-        document.write(table3);
-        console.log(table3);
+        //선언적
+        function func0(){
+            document.write("func 선언적 실행");
+        }
+
+        let func1 = function(){
+            document.write("func 익명함수 실행");
+        }
+
+        function func2(str){
+            document.write(str,"문자열str을 넣은 매개변수함수 실행")
+        }
+
+        function func3(){
+            let str01 = "리턴값";
+            return str01
+        }
+
+        func0();
+        func1();
+        func2("매개변수함수실행 ");
+        document.write(func3(),"이 있는 함수 실행");
+        document.write("<br>");
+
+        func4 = () => document.write("약식 선언");
+        func4();
+        document.write("<br>");
+        const func5 = () =>document.write("약식 익명");
+        func5();
+        func6 =(str) => document.write("매개변수" + str + "을 받은 함수");
+        func6("abc");
+
     </script> 
