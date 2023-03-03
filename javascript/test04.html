@@ -1,0 +1,113 @@
+<!-- 01 1-50까지 for문으로 출력
+02 1-50까지 while문으로 출력
+03 1-100까지 짝수로 출력(if문 사용X)
+04 1-100까지 홀수로 출력(if문 사용)
+05 테이블 50칸 출력(1-50숫자 출력)
+06 1-10까지 합 출력
+07 구구단 출력
+08 함수 유형 4가지 작성
+09 화살표 함수유형 4가지 작성
+10 스크립트하면서 제일 어려운 부분과 이해 안되는 부분 서술 -->
+
+<script>
+    for(let i =1; i <=50 ; i ++){
+        document.write(i);
+    }
+    document.write("<br>");
+
+    let k = 1 ;
+    while(k <= 50){
+        document.write(k);
+        k++;
+    }
+    document.write("<br> ");
+
+    for(let j = 2 ; j <= 100 ; j+=2){
+        document.write(j);
+    }
+    document.write("<br> ");
+
+    for(let j = 1 ; j <= 100 ; j++){
+        if(j%2 ==1)document.write(j);
+    }
+    document.write("<br> ");
+
+    let table = "<table border ='1' >";
+    let totnum = 1;
+
+    for(let i = 1 ; i <= 5 ; i ++){
+        table += "<tr>";
+        for(let j = 1 ; j <= 10 ; j++){
+            table += "<td>"+totnum+"</td>";
+            totnum++;
+        }
+        table += "<tr>";
+    }
+    table += "</table>";
+    document.write(table);
+
+
+
+    let totNum1 = 0;
+    for(let i = 0 ; i <= 10 ; i++){
+        totNum1 +=i;
+    }
+    document.write(totNum1);
+
+    for(let i = 1 ; i <= 9 ; i++){
+        document.write("<br> ");
+        for(let j = 1 ; j <= 9 ; j++){
+            document.write(`${i} x ${j} = ${i*j}`);
+            document.write(i+" x" + j + "= " + (i*j));
+        }
+        
+    }
+    document.write("<br> ");
+
+    function func1(){
+        document.write("선언함수실행되었습니다.");
+    }
+    const func2 = function(){
+        document.write("익명함수실행되었습니다.")
+    }
+    function func3(str){
+        document.write(str+"가 실행되었습니다.");
+    }
+    function func4(){
+        let str="리턴값";
+        return str
+    }
+    func1();
+    document.write("<br> ");
+
+    func2();
+    document.write("<br> ");
+
+    func3("매개변수가 있는 함수");
+    document.write("<br> ");
+
+    document.write(func4(), "이있는 함수가 실행되었습니다");
+
+    func5 = () => {document.write("선언함수 실행!")};
+    document.write("<br> ");
+    func5();
+    document.write("<br> ");
+
+    const func6 = () =>{
+        document.write("익명함수실행되었습니다.")
+    }
+    func6();
+    document.write("<br> ");
+
+    func7 =(str) =>{
+        document.write(str+"가 실행되었습니다.");
+    }
+    func7("매개변수");
+    document.write("<br> ");
+
+    func8 =() =>{
+        let str="리턴값";
+        return str
+    }
+    document.write(func8(), "이있는 함수가 실행되었습니다");
+</script>
