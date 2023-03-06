@@ -596,115 +596,113 @@
         // }while(numWhile1<10);
         // document.write("numWhile " +numWhile1 );
             
-        //     // 09. for문
-        //     document.write("<br>");
+        // // 09. for문
+        // document.write("<br>");
 
-        //     for(let i = 1 ; i < 100 ; i++){
-        //         document.write(i);
+        // for(let i = 1 ; i < 100 ; i++){
+        //     document.write(i);
+        // }
+        // document.write("<br>");
+        // let numArr =[1,2,3,4,5,6,7,8,9];
+        // let sumTot = 0;
+        // for(let i = 0 ; i < numArr.length; i++){
+        //     // document.write(numArr[i] + " ");
+        //     document.write(`${numArr[i]}  `);
+        //     sumTot += numArr[i];
+        // }
+        // document.write(`${sumTot}`);
+
+
+        // //10. 중첩 for문
+        // document.write("<br>");
+
+        // for(let i = 0 ; i <=10 ; i++){
+        //     document.write(`<br>${i}  : `)
+        //     for(let j = 0 ; j <=10 ; j++){
+        //         document.write(j);
         //     }
-        //     document.write("<br>");
-        //     let numArr =[1,2,3,4,5,6,7,8,9];
-        //     let sumTot = 0;
-        //     for(let i = 0 ; i < numArr.length; i++){
-        //         // document.write(numArr[i] + " ");
-        //         document.write(`${numArr[i]}  `);
-        //         sumTot += numArr[i];
-        //     }
-        //     document.write(`${sumTot}`);
+        // };
 
-
-            // 10. 중첩 for문
-            // document.write("<br>");
-
-            // for(let i = 0 ; i <=10 ; i++){
-            //     document.write(`<br>${i}  : `)
-            //     for(let j = 0 ; j <=10 ; j++){
-            //         document.write(j);
-            //     }
-            // };
-
-            // // 11. break문
-            // document.write("<br>");
-            
-            // for(let i=1 ; i < 100 ; i++){
-            //     if(i ==10)break;
-            //     document.write(i);
-            // }
-
-            // 12. continue문
-            document.write("<br>");
-
-            for(let i=1 ; i < 20 ; i++){
-                if(i ==10)continue;
-                document.write(i);
-                //10을 pass
-            }
-
+        // // 11. break문
+        // document.write("<br>");
+        
+        // for(let i=1 ; i < 100 ; i++){
+        //     if(i ==10)break;
+        //     document.write(i);
         // }
 
-            document.write("<br>");
+        // 12. continue문
+        // document.write("<br>");
 
-            let table = "<table border='1'>";
-            let numCount =1;
-            let numMulti =3; 
-            //1부터 25 까지 3의배수 25 5의배수 빨간색
-                
-            for(let i = 0 ; i<5 ; i++){
-                table += "<tr>";
-                for(let j = 0 ; j<5 ; j++){    
-                    //
-                    ( (numCount*numMulti)%5 == 0 )? table += `<td><span style='color:red'>${numCount*numMulti}</span></td>`:table += `<td>${numCount*numMulti}</td>`;
-                    // table += `<td>${numCount}</td>`;
-                    // table += "<td>"+numCount+"</td>";
-                    numCount++;
-                }
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.write(table);
+        // for(let i=1 ; i < 20 ; i++){
+        //     if(i ==10)continue;
+        //     document.write(i);
+        //     //10을 pass
+    
+
+        // document.write("<br>");
+
+        // let table = "<table border='1'>";
+        // let numCount =1;
+        // let numMulti =3; 
+        // //1부터 25 까지 3의배수 25 5의배수 빨간색
+            
+        // for(let i = 0 ; i<5 ; i++){
+        //     table += "<tr>";
+        //     for(let j = 0 ; j<5 ; j++){    
+        //         //
+        //         ( (numCount*numMulti)%5 == 0 )? table += `<td><span style='color:red'>${numCount*numMulti}</span></td>`:table += `<td>${numCount*numMulti}</td>`;
+        //         // table += `<td>${numCount}</td>`;
+        //         // table += "<td>"+numCount+"</td>";
+        //         numCount++;
+        //     }
+        //     table += "</tr>";
+        // }
+        // table += "</table>";
+        // document.write(table);
 
 
-            document.write("<br>");
+        // document.write("<br>");
 
             
 
             
-            function chkNum(){
-                let inputNum = parseInt(prompt("숫자를입력해주세요"));
-                if(inputNum == 0){
-                    document.write("0입니다");
-                }else{
-                    (inputNum>0)? document.write("양수") :document.write("음수");
-                }
-            }
-            // chkNum();
+        // function chkNum(){
+        //     let inputNum = parseInt(prompt("숫자를입력해주세요"));
+        //     if(inputNum == 0){
+        //         document.write("0입니다");
+        //     }else{
+        //         (inputNum>0)? document.write("양수") :document.write("음수");
+        //     }
+        // }
+        // // chkNum();
 
-            function gcfNum(){
-                let inputGcfNum1 = prompt("작은수");
-                let inputGcfNum2 = prompt("큰수");
-                let gcfNum = 1;
-                for(let i =1 ; i <=inputGcfNum1; i++ ){
-                    if(inputGcfNum1%i ==0 && inputGcfNum2%i==0){
-                        gcfNum = i;
-                    }
-                }
-                document.write(`두수의 최대 공약수는 ${gcfNum} 입니다`);
-            }
-            // gcfNum();
+        // function gcfNum(){
+        //     let inputGcfNum1 = prompt("작은수");
+        //     let inputGcfNum2 = prompt("큰수");
+        //     let gcfNum = 1;
+        //     for(let i =1 ; i <=inputGcfNum1; i++ ){
+        //         if(inputGcfNum1%i ==0 && inputGcfNum2%i==0){
+        //             gcfNum = i;
+        //         }
+        //     }
+        //     document.write(`두수의 최대 공약수는 ${gcfNum} 입니다`);
+        // }
+        // gcfNum();
             
 
-// <h2>홀짝 구분 if문</h2>
-// <button id="my-button" class="custom-btn btn-3">
-//   <span>click me</span></button>
-// 
-            // document.getElementById("my-button").onclick = function () {
-            //     let userNumber = prompt("숫자를입력하세요")
-            //     if(inputNum == 0){
-            //         document.write("0입니다");
-            //     } else{
-            //         (inputNum>0)? document.write("양수") :document.write("음수");
-            //     }
-            // }  
+        // <h2>홀짝 구분 if문</h2>
+        // <button id="my-button" class="custom-btn btn-3">
+        //   <span>click me</span></button>
+        // 
+        // document.getElementById("my-button").onclick = function () {
+        //     let userNumber = prompt("숫자를입력하세요")
+        //     if(inputNum == 0){
+        //         document.write("0입니다");
+        //     } else{
+        //         (inputNum>0)? document.write("양수") :document.write("음수");
+        //     }
+        // }  
 
 
     </script>

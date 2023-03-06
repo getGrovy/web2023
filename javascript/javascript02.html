@@ -214,15 +214,20 @@
                 <!-- sample06 -->
 
                 <div id ="sample07" class="sample">
-                    <h3>07. 배열 : 데이터 불러오기 : for()</h3>
+                    <h3>07. 배열 : 데이터 불러오기 : 중첩 for()문</h3>
                     <p>length()함수를 이용하여 길이 출력</p>
 <pre class="line-numbers"><code class="language-js">{
-    for (let i = 1; i &lt;= 10; i++) {
-        document.write("i = " + i ,"<br>");
-        for (let j = 1; j &lt;= 10; j++) {
-            document.write(" j = " + j);
+    const arr = [0,1,[4,5,6],2,[8,9,10],3]
+    // 2차원 배열 생성 
+
+    for (let i = 0; i &lt; arr.length; i++) {
+        (arr[i].length &gt;0 && arr[i].length != undefined )? console.log(`2차배열 arr[${i}][...]`) :   console.log(`1차배열 arr[${i}]`)
+        //1차 배열의 길이가 undefined거나 length가 0보다 클경우엔 2차 배열이 있따 ! 
+
+        for(let j = 0 ; j &lt;=arr[i].length ; j++ ){
+            if( arr[i][j] != undefined )console.log(arr[i][j]);
+            //해당값이 undefined가 아닐때 출력 
         }
-        document.write("<br>");
     }
 }
 </code></pre>
@@ -230,19 +235,18 @@
                 <div class="resultDark">
                     <details>
                         <summary>결과 확인하기</summary>
-                        <div>
-                           <script>
-                            {
-                                for (let i = 1; i <= 10; i++) {
-                                    document.write("i = " + i , "<br>");
-                                    for (let j = 1; j <= 10; j++) {
-                                        document.write(" j = " + j);
-                                    }
-                                    document.write("<br>");
-                                }
-                            }
-                           </script> 
-                        </div>
+                        1차배열 arr[0]<br>
+                        1차배열 arr[1]<br>
+                        2차배열 arr[2][...]<br>
+                        a<br>
+                        b<br>
+                        c<br>
+                        1차배열 arr[3]<br>
+                        2차배열 arr[4][...]<br>
+                        d<br>
+                        e<br>
+                        f<br>
+                        1차배열 arr[5]
                     </details>
                 </div>
                 <!-- sample07 -->
@@ -541,7 +545,7 @@
     const obj = [
         {a:100, b:200, c:"javascript"}
     ]
-    //[]으로 묶지않았을경우 아래와 같은 에러가 발생 !
+    //[ ]으로 묶지않았을경우 아래와 같은 에러가 발생 !
     //Uncaught TypeError: obj.map is not a function  
     //객체타입은 map을 못쓰기에 배열안에 객체가 있을때 map()사용 가능
 
@@ -643,6 +647,7 @@
     console.log(name2);
     console.log(name3);
     console.log(a);
+    //obj.a로 출력해야 맞다
 }
 </code></pre>
                 </div>
@@ -653,7 +658,9 @@
                            100<br>
                            200<br>
                            javascript<br>
-                           Uncaught ReferenceError: a is not defined at javascript02.html:654:25
+                           Uncaught ReferenceError: a is not defined at javascript02.html:654:25<br>
+                           //obj.a로 출력해야 맞다
+
                         </div>
                     </details>
                 </div>
@@ -731,10 +738,15 @@
             // console.log(arr1[1].length);
         }
         {
-            // const A = [1,2,3,4,5,6,7,8,9,10];
-            // console.log(A.length);
-            // for (let i = 0; i < A.length; i++) {
-            //     console.log(A[i]);
+            // const arr = [0,1,["a","b","c"],2,["d","e","f"],3]
+            
+            // // console.log(arr.length);
+            // for (let i = 0; i < arr.length; i++) {
+            //     (arr[i].length>0 && arr[i].length!=undefined )? console.log(`2차배열 arr[${i}][...]`) :   console.log(`1차배열 arr[${i}]`)
+            //     for(let j = 0 ; j <=arr[i].length;j++ ){
+            //         if(arr[i][j] !=undefined)console.log(arr[i][j]);
+            //     }
+            // }
             //  i = 0 ; 0 < 10 ; console.log(A[0]); i ++ // 1
             //  i = 1 ; 2 < 10 ; console.log(A[1]); i ++ // 2
             //  i = 2 ; 1 < 10 ; console.log(A[2]); i ++ // 2
@@ -742,7 +754,6 @@
             //  i = 9 ; 9 < 10 ; console.log(A[9]); i ++ // 10
             //  i = 10 ; 10 < 10 ; console.log(A[1]); i ++ // X
 
-            // }
 
         }
         // 07. 배열 : 데이터 불러오기 : 중첩 for()
@@ -835,10 +846,10 @@
         
         //09. 배열 for of
         // document.write("<br> 09 for of <br>");
-        const arr09 = [100,200,300,400,500];
-        for (let i of arr09) {
-            document.write(i);
-        }
+        // const arr09 = [100,200,300,400,500];
+        // for (let i of arr09) {
+        //     document.write(i);
+        // }
         // document.write("<br> 09 iterator of <br>");
 
         // for (const iterator of arr09) {
@@ -908,73 +919,60 @@
                 
         // 12. 배열 : 데이터 불러오기 : 배열 펼침연산자
         // 자바스크립트에서 배열 객체 문자열등 펼쳐서 개발 요소로 분리하는 연산자 
-        {
-            // let arr12_0 = [100,200,300,400,500];
-            // let arr12_1 = [600,700];
-            // console.log(arr12_0);
+        // let arr12_0 = [100,200,300,400,500];
+        // let arr12_1 = [600,700];
+        // console.log(arr12_0);
 
-            // console.log(...arr12_0 , ...arr12_1); //값만 가져옴
+        // console.log(...arr12_0 , ...arr12_1); //값만 가져옴
 
-            // let arr12_2 = [...arr12_0, ...arr12_1];
+        // let arr12_2 = [...arr12_0, ...arr12_1];
 
-            // console.log(...arr12_2);
+        // console.log(...arr12_2);
 
-        }
         // 13. 배열 : 데이터 불러오기 : 배열 구조분해할당
         // 배열의 요소를 개별변수에 할당하는 방법중 하나 이를통해 배열의 요소를 개별 변수로 분리하여사용할수 있습니다.
-        {
-            // let a , b , c ;
-            // [a,b,c,]=[100,200,"javascript"];
-            // console.log(`${a}  ${b} ${c}`);
-        }
+        // let a , b , c ;
+        // [a,b,c,]=[100,200,"javascript"];
+        // console.log(`${a}  ${b} ${c}`);
 
         // 14. 객체 : 데이터 불러오기 : 기본
-        {
-            // const obj = {
-            //     a:100,
-            //     b:200,
-            //     c:"javascript"
-            // }
+        // const obj = {
+        //     a:100,
+        //     b:200,
+        //     c:"javascript"
+        // }
 
-            // console.log(`${obj.a} ${obj.b} ${obj.c}`);
-        }
+        // console.log(`${obj.a} ${obj.b} ${obj.c}`);
 
         // 15. 객체 : 데이터 불러오기 : Object
-        {
-            const obj = {
-                a:100,
-                b:200,
-                c:"javascript"
-            }
-            // console.log(`${Object.keys(obj)}`);
-            // console.log(`${Object.values(obj)}`);
-            // console.log(`${Object.entries(obj)}`);
-        }
+        // const obj = {
+        //     a:100,
+        //     b:200,
+        //     c:"javascript"
+        // }
+        // console.log(`${Object.keys(obj)}`);
+        // console.log(`${Object.values(obj)}`);
+        // console.log(`${Object.entries(obj)}`);
         // 16. 객체 : 데이터 불러오기 : 변수
-        {
-            // const obj = {
-            //     a:100,
-            //     b:200,
-            //     c:"javascript"
-            // }
-            // const name1 = obj.a;
-            // const name2 = obj.b;
-            // const name3 = obj.c;
+        // const obj = {
+        //     a:100,
+        //     b:200,
+        //     c:"javascript"
+        // }
+        // const name1 = obj.a;
+        // const name2 = obj.b;
+        // const name3 = obj.c;
 
-            // console.log(`${name1} ${name2} ${name3}`);
-
-        }
+        // console.log(`${name1} ${name2} ${name3}`);
         // 17. 객체 : 데이터 불러오기 : for in
-        {
-            // const obj = {
-            //     a:100,
-            //     b:200,
-            //     c:"javascript"
-            // }
-            // for(let key in obj){
-            //     console.log(`obj[key] : ${obj[key]} ,  key : ${key}`);
-            // }
-        }    
+        // const obj = {
+        //     a:100,
+        //     b:200,
+        //     c:"javascript"
+        // }
+        // for(let key in obj){
+        //     console.log(`obj[key] : ${obj[key]} ,  key : ${key}`);
+        // }
         // 18. 객체 : 데이터 불러오기 : map()
         // {
         //     const obj = [
