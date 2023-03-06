@@ -259,7 +259,7 @@
     arr8.forEach(function(element) {
         document.write(element);
     });
-    arr10.forEach(el=&gt; document.write(el))
+    arr8.forEach(el=&gt; document.write(el))
 }
 </code></pre>
                 </div>
@@ -305,12 +305,10 @@
                     <h3>10. 배열 : 데이터 불러오기 : for in</h3>
                     <p>length()함수를 이용하여 길이 출력</p>
 <pre class="line-numbers"><code class="language-js">{
-    for (let i = 1; i &gt= 10; i++) {
-        document.write("i = " + i ,"<br>");
-        for (let j = 1; j &gt= 10; j++) {
-            document.write(" j = " + j);
-        }
-        document.write("<br>");
+
+    const arr10 = [100,200,300,400,500];
+    for (let i in arr10) {
+    document.write(i);
     }
 }
 </code></pre>
@@ -320,15 +318,7 @@
                         <summary>결과 확인하기</summary>
                         <div>
                            <script>
-                            {
-                                for (let i = 1; i <= 10; i++) {
-                                    document.write("i = " + i , "<br>");
-                                    for (let j = 1; j <= 10; j++) {
-                                        document.write(" j = " + j);
-                                    }
-                                    document.write("<br>");
-                                }
-                            }
+                            0,1,2,3,4
                            </script> 
                         </div>
                     </details>
@@ -339,12 +329,10 @@
                     <h3>11. 배열 : 데이터 불러오기 : map()</h3>
                     <p>length()함수를 이용하여 길이 출력</p>
 <pre class="line-numbers"><code class="language-js">{
-    for (let i = 1; i &gt= 10; i++) {
-        document.write("i = " + i ,"<br>");
-        for (let j = 1; j &gt= 10; j++) {
-            document.write(" j = " + j);
-        }
-        document.write("<br>");
+    const num11 =[100,200,300,400,500];
+    num11.map(function(el, i  ){
+        console.log(el);
+        console.log(i);
     }
 }
 </code></pre>
@@ -353,17 +341,11 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                           <script>
-                            {
-                                for (let i = 1; i <= 10; i++) {
-                                    document.write("i = " + i , "<br>");
-                                    for (let j = 1; j <= 10; j++) {
-                                        document.write(" j = " + j);
-                                    }
-                                    document.write("<br>");
-                                }
-                            }
-                           </script> 
+                            100 , 0<br>
+                            200 , 1<br>
+                            300 , 2<br>
+                            400 , 3<br>
+                            500 , 4
                         </div>
                     </details>
                 </div>
@@ -664,7 +646,7 @@
                         </div>
                     </details>
                 </div>
-                <!-- sample20 -->
+                <!-- sample21 -->
 
             </div>
         </div>
@@ -857,10 +839,10 @@
         //     document.write(iterator);
         // }
 
-        //10. 배열 for in
+        // 10. 배열 for in
         // document.write("<br> 10 for in <br>");
         // const arr10 = [100,200,300,400,500];
-        // for (let i in arr09) {
+        // for (let i in arr10) {
         //     document.write(i);
         // }
         // for (const key in object) {
@@ -870,18 +852,18 @@
         // }
         
         //11. 배열 데이터 불러오기 : map()
-        // const num11 =[100,200,300,400,500];
         // num11.forEach(function(el,i, a ){
-        //     // console.log(el , i , a);
+            //     // console.log(el , i , a);
             // console.log(i);
             // console.log(a);
-        // });
-        // console.log("__________");
-        // num11.map(function(el, i , a ){
-            // console.log(el);
-            // console.log(i);
+            // });
+            // console.log("__________");
+        const num11 =[100,200,300,400,500];
+        num11.map(function(el, i  ){
+            console.log(el);
+            console.log(i);
             // console.log(a);
-        // })
+        })
         // document.write("<br>");
         // num11.map((el, i , a )=>{
         //     document.write(el, "___ " , i , "+++" , a , "<br>")
