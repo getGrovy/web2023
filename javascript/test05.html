@@ -1,30 +1,31 @@
 <script>
 
+    function solution(sizes) {
+    let answer = 1
 
-        //09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값
-        document.write("<br>");
-        const func09 = (str) => {
-            return str;
+    // 가로의 길이를 제일 긴 변으로 설정 후 회전
+    document.write(sizes.length,"<br>");
+
+
+
+
+    for (let i = 0; i < sizes.length; i++) {
+        if (sizes[i][0] < sizes[i][1]) {
+        [sizes[i][0], sizes[i][1]] = [sizes[i][1], sizes[i][0]];
         }
-        document.write(func09("09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값"));
+    }
 
-        //10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략
-        document.write("<br>");
-        const func10 = str =>{
-            return str;
-        }
-        document.write(func10("10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값"));
+    // 가로의 최대값 * 세로의 최대값 = 최소 지갑
+    let x = sizes.sort((a, b) => b[0] - a[0])[0][0];
+    let y = sizes.sort((a, b) => b[1] - a[1])[0][1];
+        
+    document.write("x "+x,"<br>" );
 
+    document.write("y "+y ,"<br>");
+    
+    return (x+"___"+y);
+    }
 
-        // 11.화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-        document.write("<br>");
-        const func11 = str => str;
-        
-        document.write(func11("11. 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략"));
-        //12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-        
-        
-        func12 = str => str;
-        document.write("<br>");
-        document.write(func12("12. 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략"));
-    </script>
+    const a =solution([[12,7],[15,1],[10,20],[101,20]]);
+    document.write(a);
+</script>
