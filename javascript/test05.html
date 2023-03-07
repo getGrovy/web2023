@@ -1,31 +1,38 @@
 <script>
-
-    function solution(sizes) {
-    let answer = 1
-
-    // 가로의 길이를 제일 긴 변으로 설정 후 회전
-    document.write(sizes.length,"<br>");
-
-
-
-
-    for (let i = 0; i < sizes.length; i++) {
-        if (sizes[i][0] < sizes[i][1]) {
-        [sizes[i][0], sizes[i][1]] = [sizes[i][1], sizes[i][0]];
+    function solution(size) {
+    for (let i = 0 ; i < size.length ; i++ ) {
+        if(size[i][0] < size[i][1]) {
+        [size[i][0], size[i][1]] = [size[i][1], size[i][0]];
         }
     }
+    // 가로 세로의 길이중 가로를 첫번째 배열에 설정 후 회전
+    // 가로값이 크면 배열의 순서를 바꿔서 지정함 
 
-    // 가로의 최대값 * 세로의 최대값 = 최소 지갑
-    let x = sizes.sort((a, b) => b[0] - a[0])[0][0];
-    let y = sizes.sort((a, b) => b[1] - a[1])[0][1];
-        
-    document.write("x "+x,"<br>" );
+    let x = size.sort((a, b) => b[0] - a[0])[0][0];
+    document.write("x "+ x,"<br>" );
+    let y = size.sort((a, b) => b[1] - a[1])[0][1];
+    document.write("y "+ y ,"<br>");
 
-    document.write("y "+y ,"<br>");
+    //가로값&세로값이 큰것 저장!
+
+    // arr.sort(function(a,b){
+    //  return a-b ; 오름차순 ( 작은수먼저 )
+    //  return b-a ; 내림차순 ( 큰수먼저 )
+    // })
+
     
-    return (x+"___"+y);
+    return (`가로 ${x} 세로 ${y}곱한 면적 ${x*y} 명함지갑 `);
     }
 
-    const a =solution([[12,7],[15,1],[10,20],[101,20]]);
-    document.write(a);
+    const a =solution([[30, 90], [30, 70], [60, 30], [80, 40]]);
+    //result 4000
+    const b =solution([[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]);
+    //result 120
+    const c =solution([[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]);
+    //result 133
+
+    //명함 크기 
+    document.write(a,"<br>");
+    document.write(b,"<br>");
+    document.write(c);
 </script>
