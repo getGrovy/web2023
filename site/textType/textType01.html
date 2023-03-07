@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <title>텍스트 유형01</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            text-decoration: none;
+            /* color: #000; */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        .mb0  {margin-top: 0px !important;}
+        .mt10 {margin-top: 10px !important;}
+        .mt70 {margin-top: 70px !important;}
+        
+        .mtb70 {margin-bottom: 70px !important;}
+
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto; 
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+            /* text-align: center; */
+        }
+        
+        .section.center{
+            text-align: center;
+        }
+        .section__small{
+            font-size: 14px;
+            border-radius: 50px;
+            color:#fff;
+            padding: 1px 20px;
+            background-color: #fb0000;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            color: #666;
+            font-size: 22px;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        /* text__wrap */
+        .text__wrap {
+            
+        }
+        .text__inner {
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__inner .text {
+            width: 32.3333%;
+            border: 1px solid #f5f5f5;
+            padding: 90px 20px 20px 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+
+        }
+        .text__inner .text:hover {
+            background-color: #f5f5f5;
+        }
+        .text__inner .text::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #ff0000;
+            /* background-image: url(../asset/img/textType01_01.svg); */
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left : 20px;
+            top:20px;
+            border-radius: 50%;
+
+        }
+        .text__inner .text.t1::before {
+            background-color: #1FC8A9;
+            background-image: url(../asset/img/textType01_01.svg);
+        }
+        .text__inner .text.t2::before {
+            background-color: #1833C0;
+            background-image: url(../asset/img/textType01_02.svg);
+        }
+        .text__inner .text.t3::before {
+            background-color: #37C81F;
+            background-image: url(../asset/img/textType01_03.svg);
+        }
+        .text__inner .text.t4::before {
+            background-color: #C81FA3;
+            background-image: url(../asset/img/textType01_04.svg);
+        }
+        .text__inner .text.t5::before {
+            background-color: #C81F1F;
+            background-image: url(../asset/img/textType01_05.svg);
+        }
+        .text__inner .text.t6::before {
+            background-color: #1F63C8;
+            background-image: url(../asset/img/textType01_06.svg);
+        }
+        .text__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .text__desc {
+            font-style: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .text__btn {
+            float: right;
+            position: relative;
+            padding-right: 20px;
+        }
+        .text__btn::before {
+            content: '';
+            position: absolute;
+            background-image: url(../asset/img/icon__plus.svg);
+            right: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            transition: all 0.3s;
+        }
+        .text__btn:hover::before {
+            transform: rotate(360deg);
+        }
+
+        </style>
+</head>
+<body>
+    <section class="text__wrap section center nexon">
+        <div class="container">
+            <span class="section__small">notice</span>
+            <h2 class="section__h2 mtb70">Counting star lv03</h2>
+            <div class="text__inner">
+                <div class="text t1">
+                    <h3 class="text__title">내일 밤이 남은 까닭이요,</h3>
+                    <p class="text__desc">아직 나의 청춘이 다하지 않은 까닭입니다. 아직 나의 청춘이 다하지 않은 까닭입니다. 아직 나의 청춘이 다하지 않은 까닭입니다. 아직 나의 청춘이 다하지 않은 까닭입니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">별 하나에 추억과</h3>
+                    <p class="text__desc">별 하나에 추억과별 하나에 사랑과별 하나에 쓸쓸함과별 하나에 동경과별 하나에 시와별 하나에 어머니, 어머님, 나는 별 하나에 아름다운 말 한 마디씩 불러 봅니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">학교 때 책상을 같이했던</h3>
+                    <p class="text__desc">아기 어머니 된 애들의 이름과, 가난한 이웃 사람들의 이름과, 비둘기, 강아지, 토끼, 노새, 노루, '프랑시스 잠', '라이너 마리아 릴케', 이런 시인의 이름을 불러 봅니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">별이 아스라이 멀 듯이,</h3>
+                    <p class="text__desc">어머님,그리고 당신은 멀리 북간도에 계십니다
+                        나는 무엇인지 그리워이 많은 별빛이 내린 언덕 위에 내 이름자를 써 보고,
+                        흙으로 덮어 버리었읍니다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">밤을 새워 우는 벌레는</h3>
+                    <p class="text__desc">부끄러운 이름을 슬퍼하는 까닭입니다. 그러나 겨울이 지나고 나의 별에도 봄이 오면무덤 위에 파란 잔디가 피어나듯이내 이름자 묻힌 언덕 위에도자랑처럼 풀이 무성할 게외다.</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">하늘과 바람과 별과 시</h3>
+                    <p class="text__desc">하늘과 바람과 별과 시(詩)라... 
+                        윤동주 시인이 25세였던 1941년, 자선시집으로 77부 한정판으로 출간하려 하였으나, 출판하지 못하였던 비운의 시집</p>
+                    <a class="text__btn" href="#">더보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
