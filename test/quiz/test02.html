@@ -1,0 +1,49 @@
+<script>
+// https://school.programmers.co.kr/learn/courses/30/lessons/42840
+// function solution(answers) {
+//     var answer = [];
+//     return answer;
+// }
+
+let answers =  [1, 2, 3, 5, 3, 3, 2, 1, 4, 5]
+let student1 = [1, 2, 3, 4, 5];
+// let student2 = [1, 2, 3, 4, 5];
+let student2 = [2, 1, 2, 3, 2, 4, 2, 5];
+let student3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+
+let studentAnswer1 = 0;
+let studentAnswer2 = 0;
+let studentAnswer3 = 0;
+
+
+for (let i = 0; i < answers.length; i++) {
+    if (answers[i] == student1[i % student1.length]) {
+        studentAnswer1++;
+    }
+    if (answers[i] == student2[i % student2.length]) {
+        studentAnswer2++;
+    }
+    if (answers[i] == student3[i % student3.length]) {
+        studentAnswer3++;
+    }
+}
+// document.write(`${studentAnswer1}   ${studentAnswer2}   ${studentAnswer3}`)
+let topScore = Math.max(studentAnswer1, studentAnswer2, studentAnswer3);
+document.write(topScore);
+let result = new Array();
+if (topScore == studentAnswer1) {
+    result.push("1번학생");
+}
+if (topScore == studentAnswer2) {
+    result.push("2번학생");
+}
+if (topScore == studentAnswer3) {
+    result.push("3번학생");
+}
+// result.sort(function(a,b){
+//      return a-b ;
+// })
+result.sort((a,b)=>a-b);
+document.write("<br> 최고점 : ",result);
+
+</script>
