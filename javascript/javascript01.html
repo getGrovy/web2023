@@ -11,6 +11,21 @@
     <link rel="shortcut icon" href="/assets/ico/javascript.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/javascript192x192.png">
     <link rel="icon" type="image/png" sizes="192x192"  href="/assets/ico/javascript192x192.png">
+    <style>
+        table, th, td {
+            border: 1px solid #bcbcbc;
+        }
+        table {
+            width: 1000px;
+            height: 200px;
+        }
+        th {
+            vertical-align: top;
+        }
+        td {
+            vertical-align: bottom;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,6 +90,7 @@
                     <li><a href="#">😫연산자 (전치, 후치)</a></li>
                     <li><a href="#">😫형변환, typeof</a></li>
                     <li><a href="#">😫식별자, 예약자</a></li>
+                    <li><a href="#">😫비트 연산자</a></li>
 
                     <br>
                 </ul>
@@ -790,6 +806,53 @@
                    
                 </div>
                 <!-- sample20 -->
+
+                <div id="sample21" class="sample" >
+                    <h3>😫연산자? no bit연산자</h3>
+                    <p>변수를 2진법으로 연산하는 부호를 알아보자 ! </p>
+                </div>
+                <div class="notice">
+
+                    <table>
+                        <thead >
+                            <tr>
+                                <th>비트 연산자</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr>
+                                <td>&amp;</td>
+                                <td>대응되는 비트가 모두 1이면 1을 반환함. (비트 AND 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>|</td>
+                                <td>대응되는 비트 중에서 하나라도 1이면 1을 반환함. (비트 OR 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>^</td>
+                                <td>대응되는 비트가 서로 다르면 1을 반환함. (비트 XOR 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>~</td>
+                                <td>비트를 1이면 0으로, 0이면 1로 반전시킴. (비트 NOT 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;&lt;</td>
+                                <td>지정한 수만큼 비트를 전부 왼쪽으로 이동시킴. (left shift 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;&gt;</td>
+                                <td>부호를 유지하면서 지정한 수만큼 비트를 전부 오른쪽으로 이동시킴. (right shift 연산)</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;&gt;&gt;</td>
+                                <td>지정한 수만큼 비트를 전부 오른쪽으로 이동시키며, 새로운 비트는 전부 0이 됨.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- sample21 -->
 
             </div>           
         </div>

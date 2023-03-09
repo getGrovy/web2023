@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(#fff, #000);
+  /* 백그라운드를 그라데이션효과 */
+  overflow: hidden;
+  /* 빠져나오는 속성을 숨겨주기 */
+  perspective: 500;
+  /* 원근법 숫자가 커질수록 멀리 보이는 효과 */
+}
+
+.cube {
+  animation: rotate 7000ms linear infinite;
+  /* animation-name: rotate ; */
+
+  /* animation: rotate효과를 부여하여 
+  움직이는 효과  줄수있다  
+  infinite
+  linear :   일정한 속도로 진행
+  rotateX가로축이동 rotateY세로축이동 
+  */
+  bottom: 0;
+  height: 100px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  /* transform-style: flat; */
+  transform-style: preserve-3d;
+  /*
+  보여지는것을3d로 표현  
+  body의 perspective: 500;를
+  perspective를 부모로부터 받아 스윽 자신을 통과해 자식까지 전달되도록 
+
+  translateX 좌우방향 수평
+  translateY 위아래방향 수직
+  translateZ z방향의 거리 로 이동 
+  */
+  right: 0;
+  top: 0;
+  width: 100px;
+}
+
+@keyframes rotate {
+    /* 0% {
+         @keyframes 룰을 애니메이션과 키프레임 리스트를 매칭시킬 
+         animation-name (en-US) 속성에서 사용할 이름과 함께 생성합니다.
+         각 @keyframes 
+        transform: rotateY(360deg)  ;
+    } */
+    100% {
+    /* transform: rotateX(360deg) ; */
+    /* transform: rotateY(360deg) ; */
+    transform: rotateY(360deg) rotateX(720deg) ;
+    /* transform: rotateY(360deg) rotateX(720deg) rotateZ(1080deg); */
+    }
+}
+/* rotateX가로축이동 rotateY세로축이동 */
+
+.face {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.front {
+  background: #333;
+  transform: translateZ(50px);
+}
+
+.back {
+  background: #444;
+  transform: translateZ(-50px);
+}
+
+.left {
+  background: #555;
+  transform: translateX(-50px) rotateY(90deg);
+}
+
+.right {
+  background: #666;
+  transform: translateX(50px) rotateY(90deg);
+}
+
+.top {
+  background: #777;
+  transform: translateY(-50px) rotateX(90deg);
+}
+
+.bottom {
+  background: #888;
+  transform: translateY(50px) rotateX(90deg);
+}
+</style>
+<body>
+    <div class="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+</body>
+</html>

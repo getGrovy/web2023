@@ -21,6 +21,8 @@ body {
     padding: 10px;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
 }
 #header::before {
     content: '';
@@ -33,7 +35,7 @@ body {
 }
 #header h1 {
     font-size: 28px;
-    padding: 0px 5px 5px 10px;
+    padding: 5px 5px 5px 10px;
     font-family: 'NeoDunggeunmo';
     z-index: 10;
     position: relative;
@@ -43,6 +45,26 @@ body {
 }
 #header h1 em {
     font-size: 0.5em;
+}
+#header ul {
+    padding: 10px;
+}
+#header li {
+    display: inline;
+    z-index: 10;
+    position: relative;
+}
+#header li a {
+    color: #fff;
+    font-family: "NeoDunggeunmo";
+    border: 1px dashed #fff;
+    display: inline-block;
+    padding: 7px 5px 5px 5px;
+}
+#header li.active a,
+#header li a:hover {
+    background-color: #fff;
+    color: #000;
 }
 /* header */
 
@@ -88,7 +110,7 @@ body {
 }
 
 .quiz__wrap .quiz {
-    max-width: 500px;
+    width: 500px;
     border: 8px ridge #cacaca;
     background-color: #fff;
 }
@@ -128,6 +150,7 @@ body {
     padding: 10px 20px;
     font-size: 22px;
     transition: 0.3s;
+    /* margin-bottom: 10px; */
     /* cursor: pointer; */
     /* text-shadow: 2px 2px 0px #747499; */
     /* font-weight: bold; */
@@ -142,11 +165,31 @@ body {
     font-family: 'EF_Diary';
     padding: 10px 20px;
     font-size: 22px;
+    margin-bottom: 10px;
     /* display: none; */
+}
+.quiz__answer .input {
+    background-color: #fff;
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-family: 'EF_Diary';
+    padding: 10px 20px;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 .quiz__view {
     border-bottom: 6px ridge #cacaca;
     overflow: hidden;
+}
+.quiz__footer {
+    border-top: 6px ridge #cacaca;
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-family: 'EF_Diary';
+}
+.quiz__footer::before {
+    content: "👉Tip";
+    color:red;
 }
 /* quiz__wrap */
 
@@ -430,7 +473,7 @@ body {
   }
 }
 .like {
-    /* background: #F0754A; */
+    background: #F0754A;
 }
 .like .face::before {
     margin-top: 10px;

@@ -13,10 +13,10 @@
 </head>
 <body>
     <header id="header">
-        <h1><a href="../javascript14.html"> Quiz </a><em>정답 확인하기 유형</em>🤫</h1>
+        <h1><a href="../javascript14.html"> Quiz </a><em>주관식 확인하기 유형</em>🙂</h1>
         <ul>
-            <li class = "active"><a href="quizEffect01.html">1</a></li>
-            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li class = "active"><a href="quizEffect02.html">2</a></li>
         </ul>
     </header> 
     <!-- header -->
@@ -26,6 +26,7 @@
             <div class="quiz">
                 <div class="quiz__header">
                     <h2 class="quiz__title"><span> </span> <em></em></h2>
+
                 </div>
                 <div class="quiz__main">
                     <div class="quiz__question">
@@ -58,11 +59,14 @@
                         </div>
                     </div>
                     <div class="quiz__answer">
+                        <input class="input" type="text" placeholder="정답을 적어주세요 !">
                         <button class="confirm">정답 확인하기</button>
                         <div class="result">연변대비</div>
                     </div>
                 </div>
-                <div class="quiz__footer"></div>
+                <div class="quiz__footer">
+                    <div class="quiz__desc">설명</div>
+                </div>
             </div>
         </div>
     </main>
@@ -73,40 +77,61 @@
     </footer>
     <!-- footer -->
     <script>
-        //선택자 
+        //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
         const quizTitle = quizWrap.querySelector(".quiz__title span");
         const quizTime = quizWrap.querySelector(".quiz__title em");
-        const quizQuestion = quizWrap.querySelector(".quiz__question span");
         const quizQuestionNum = quizWrap.querySelector(".quiz__question em");
+        const quizQuestion = quizWrap.querySelector(".quiz__question span");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
         const quizAnswerResult = quizWrap.querySelector(".quiz__answer .result");
         const quizAnswerConfirm = quizWrap.querySelector(".quiz__answer .confirm");
+        const quizAnswerInput =  quizWrap.querySelector(".quiz__answer .input");
         const dogWrap =quizWrap.querySelector(".dog__wrap");
+        const quizFooter = quizWrap.querySelector(".quiz__footer");
         
-        //문제 정보
-        const infoType ="웹디자인 기능사";
-        const infoTime="2012년 1회 기출";
-        const infoNumber = "1";
-        const infoQuestion = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 일어나는 현상을 무엇이라고하는가?";
-        const infoAnswer = "연변대비";
 
-        
+        //문제정보
+        const infoType ="정보처리 기능사";
+        const infoTime="2011년 5회";
+        const infoNumber = "2";
+        const infoQuestion = "프레젠테이션에서 화면전체를 진행하는 단위를 의미하는것은?";
+        const infoAnswer = "슬라이드";
+        const infoDesc = "슬라이드는 화면 전체의 전체를 말하고 개체는 화면을 구성하는 개개의 요소를 말함 ! ";
+
         //문제 출력
-        quizTitle.innerText= infoType;
-        quizTime.innerText= infoTime;
-        quizQuestion.innerText = infoQuestion;
-        quizQuestionNum.innerText = infoNumber;
-        
-        //정답 숨기기
-        quizAnswerResult.style.display = "none";
-        
-        quizAnswerConfirm.addEventListener("click", function(){
-            quizAnswerResult.style.display = "block";
-            quizAnswerConfirm.style.display = "none";
-            dogWrap.classList.add("like");
-        });
+        quizTitle.textContent= infoType;
+        quizTime.textContent= infoTime;
+        quizQuestionNum.textContent= infoNumber;
+        quizQuestion.textContent= infoQuestion;
+        quizDesc.textContent= infoDesc;
+        quizAnswerResult.textContent = infoAnswer;
 
-        
+        // 정답& 숨기기
+        quizAnswerResult.style.display ="none";
+        quizFooter.style.display ="none";
+
+        //사용자 전달
+        quizAnswerConfirm.addEventListener("click", function(){
+            const useAnswer = quizAnswerInput.value.trim();
+            // 값 가져오기
+            quizAnswerConfirm.style.display ="none";
+            // 정답버튼 x 
+            quizAnswerInput.style.display ="none";
+            // 인풋박스 x 
+            quizAnswerResult.style.display="block";
+            //정답 보이기
+            quizFooter.style.display ="block";
+            //해설 보이기
+            if(infoAnswer == useAnswer){
+                dogWrap.classList.remove("dislike");
+                dogWrap.classList.add("like");
+            }else{
+                // quizFooter.style.display ="";
+                dogWrap.classList.add("dislike");
+                
+            }
+        });
 
     </script>
 </body>
