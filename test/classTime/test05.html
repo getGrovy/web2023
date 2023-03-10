@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello !</title>
+</head>
+<body>
+    <span style="color: red;"></span>
+</body>
+<script>
+//0부터 100까지 
+for(let i = 0 ; i <= 100 ; i++ ){
+    document.write(i);
+}
+
+//100칸테이블
+let table = "<table border='1'>";
+let num = 1;
+for(let i = 0 ; i <= 9 ; i++ ){
+    table += "<tr>";
+    for(let i = 0 ; i <= 9 ; i++ ){
+        table += `<td>${num}</td>`;
+        num++;
+    }
+    table += "/<tr>";
+}
+table += "</table>";
+document.write(table);
+
+//20단만 출력
+for(let i =1 ; i <= 20 ; i++ ){
+    document.write(`20 x ${i} = ${20*i} <br>`);
+}
+
+//1-100 짝수 합
+let numTot = 0;
+for(let i = 1 ; i <= 100 ; i++ ){
+    if(i%2 == 0)numTot+=i;
+}
+document.write(`<br>짝수합 : ${numTot} <br>`);
+
+//1-100까지 출력(짝수는 파란색 홀수는 빨간색)
+for(let i = 1 ; i <= 100 ; i++ ){
+    (i%2 ==1)?document.write(`<span style="color: blue;">${i}</span>`) : document.write(`<span style="color: red;">${i}</span>`)
+}
+document.write(`<br><br>`);
+//배열안에 1-10까지 데이터가 있음 (forEach문을 통해 출력하시오)
+
+let arrTest= [1,2,3,4,5,6,7,8,9,10];
+// arrTest.forEach(arrTest =>document.write(arrTest));
+// arrTest.forEach(t => {
+//     document.write(element);
+// });
+arrTest.forEach(function(el){
+    document.write(el);
+});
+document.write(`<br><br>`);
+
+//함수의 유형 4가지
+function func01(){
+    document.write("선언적함수","<br>");
+}
+const func02 = function (){
+    document.write("익명함수","<br>");
+}
+function func03(str){
+    document.write(str,"<br>");
+}
+function func04(){
+    return document.write("리턴함수","<br>");
+}
+func01();
+func02();
+func03("매개변수함수");
+func04();
+
+//7번을 화살표 함수로
+func05 = () => document.write("선언적함수","<br>");
+const func06 = () =>document.write("익명함수","<br>");
+func07 = (str)=>document.write(str,"<br>");
+func08=()=>{return document.write("리턴함수","<br>");
+}
+
+func05();
+func06();
+func07("매개변수함수");
+func08();
+
+</script>
+</html>
