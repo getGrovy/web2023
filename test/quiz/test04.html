@@ -1,0 +1,54 @@
+<!-- https://school.programmers.co.kr/learn/courses/30/lessons/1845 -->
+
+<script>
+
+let nums = [10,20,30,40,50,10,20,30,40,50,60,70];
+function solution(nums) {
+    let answer = 0;
+    let cnt = nums.length / 2;
+
+    // 중복 제거
+    let arr = nums.filter((element, index) => {
+        // console.log(nums.indexOf(element));
+        // console.log(index);
+        document.write(element,'____',nums.indexOf(element) , '____' , index, "<br>");
+        // return nums.indexOf(element) == index;
+        if(nums.indexOf(element)==index)return element;
+
+    });
+    
+
+    document.write("<br>","arr ",arr);
+
+    (arr.length >= cnt)? answer = cnt: answer = arr.length;
+    
+    document.write("<br>",answer);
+
+    return answer;
+}
+solution(nums);
+
+// (function test(){
+// const testArray = [200,200,300,300];
+// const newArray = testArray.filter(function(element, index, array){
+//     console.log(element);
+//     console.log(index);
+//     console.log(array);
+//     });
+// })(); 
+
+</script>
+<!-- 
+const newArray = arr.filter(callbackFunction(element, index, array), thisArg); 
+filter 함수의 매개변수는 callbackFunction 과 thisArg 입니다.
+callbackFunction에는 3개의 매개변수를 사용할 수 있습니다.
+element : 요소값
+index : 요소의 인덱스
+array : 사용되는 배열 객체
+배열의 형태로 callback 시켜줌  
+-->
+
+<!--https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+indexOf() 메서드는 배열에서 지정된 요소를 찾을 수 있는 ★첫 번째 인덱스를 반환★하고 존재하지 않으면 -1을 반환합니다.
+
+-->
