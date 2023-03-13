@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트01</title>
+    <title>퀴즈 이펙트02</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/quiz.css">
     <style>
@@ -17,6 +17,7 @@
         <ul>
             <li><a href="quizEffect01.html">1</a></li>
             <li class = "active"><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
         </ul>
     </header> 
     <!-- header -->
@@ -63,10 +64,9 @@
                         <button class="confirm">정답 확인하기</button>
                         <div class="result">연변대비</div>
                     </div>
-                </div>
-                <div class="quiz__footer">
                     <div class="quiz__desc">설명</div>
                 </div>
+                
             </div>
         </div>
     </main>
@@ -88,7 +88,6 @@
         const quizAnswerConfirm = quizWrap.querySelector(".quiz__answer .confirm");
         const quizAnswerInput =  quizWrap.querySelector(".quiz__answer .input");
         const dogWrap =quizWrap.querySelector(".dog__wrap");
-        const quizFooter = quizWrap.querySelector(".quiz__footer");
         
 
         //문제정보
@@ -109,7 +108,7 @@
 
         // 정답& 숨기기
         quizAnswerResult.style.display ="none";
-        quizFooter.style.display ="none";
+        quizDesc.style.display ="none";
 
         //사용자 전달
         quizAnswerConfirm.addEventListener("click", function(){
@@ -121,13 +120,13 @@
             // 인풋박스 x 
             quizAnswerResult.style.display="block";
             //정답 보이기
-            quizFooter.style.display ="block";
+            quizDesc.style.display ="block";
             //해설 보이기
             if(infoAnswer == useAnswer){
                 dogWrap.classList.remove("dislike");
                 dogWrap.classList.add("like");
             }else{
-                // quizFooter.style.display ="";
+                // quizDesc.style.display ="";
                 dogWrap.classList.add("dislike");
             }
         });
