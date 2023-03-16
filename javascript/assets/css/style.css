@@ -144,7 +144,7 @@ body {
 .main__sample .resultDark {
     margin-top: 10px;
     /* background-color: #2d2d2d; */
-    background: linear-gradient(to right, rgb(48, 67, 82), rgb(215, 210, 204));
+    background: linear-gradient(to right, rgb(48, 67, 82),85%, rgb(215, 210, 204));
     padding: 1em;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -162,7 +162,7 @@ body {
     border-left: 5px solid #19242e;
     padding: 13px 10px 10px 15px;
     border-radius: 5px;
-    background: linear-gradient(to right, rgb(48, 67, 82), rgb(215, 210, 204));
+    background: linear-gradient(to right, rgb(48, 67, 82),80%, rgb(215, 210, 204));
     color: #cccccc;
     border-radius: 0 5px 5px 0;
 }

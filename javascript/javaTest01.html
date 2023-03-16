@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <script>
+        //선언적함수
+        {
+            function func(){
+                document.write("함수가 실행되었습니다1<br>");
+            }
+            func();
+        }
+        //익명함수
+        {
+            const func = function func(){
+                document.write("함수가 실행되었습니다2<br>");
+            }
+            func();
+        }
+        //매개변수함수
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("함수가 실행되었습니다3<br>");
+        }
+        //리턴값함수
+        {
+            function func(){
+                const str =  "함수가 실행되었습니다4<br>";
+                return str;
+            }
+            document.write(func());
+        }
+        //선언적함수(화살표함수)
+        {
+            func = () =>{
+                document.write("함수가 실행되었습니다5<br>");
+            }
+            func();
+        }
+        //익명함수(화살표함수)
+        {
+            const func = () =>{
+                document.write("함수가 실행되었습니다6<br>");
+            }
+            func();
+        }
+        //매개변수함수 (화살표함수)
+        {
+            func = (str) =>{
+                document.write(str);
+            }
+            func("함수가 실행되었습니다7<br>");
+        }
+        //리턴값함수 (화살표함수)
+        {
+            func = () => {
+                const str1 = "함수가 실행되었습니다8<br>";
+                return str1;
+            }
+            document.write(func());
+        }
+        //익명함수 + 매개변수 + 리턴값(화살표함수)
+        {
+            func = (str) =>{
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다9<br>"));
+        }
+        //익명함수 + 매개변수 + 리턴값 + 괄호생략(화살표함수)
+        {
+            func = str =>{
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다10<br>"));
+        }
+        //익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략 (화살표함수)
+        {
+            func = str =>{
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다11<br>"));
+        }
+        
+        //선언적함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴생략 (화살표함수)
+        {
+            func = str =>str;
+            document.write(func("함수가 실행되었습니다12<br>"));
+        }
+        {
+            function func(num, str1, str2){
+                document.write(`${num}. ${str1}. ${str2}`)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -31,7 +31,7 @@ pre[class*=language-] {
 :not(pre)>code[class*=language-],
 pre[class*=language-] {
     /* background: #2d2d2d */
-    background: linear-gradient(to right, rgb(48, 67, 82), rgb(215, 210, 204));
+    background: linear-gradient(to right, rgb(48, 67, 82),90%, rgb(215, 210, 204));
 }
 
 :not(pre)>code[class*=language-] {
