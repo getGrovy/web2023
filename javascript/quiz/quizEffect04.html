@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트04</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html"> Quiz </a><em>객관식 확인하기 유형</em>🙂</h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li class = "active"><a href="quizEffect04.html">4</a></li>
+            <li ><a href="quizEffect05.html">5</a></li>
+        </ul>
+    </header> 
+    <!-- header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question">
+                    </div>
+                    <div class="quiz__view">
+                        <div class="wrapper">
+                            <div class="dog__wrap ">
+                                <div class="true">정답입니다!</div>
+                                <div class="false">오답입니다!</div>
+                                <div class="card-container">
+                                    <div class="dog">
+                                        <div class="head">
+                                            <div class="ears"></div>
+                                            <div class="face"></div>
+                                            <div class="eyes">
+                                                <div class="teardrop"></div>
+                                            </div>
+                                            <div class="nose"></div>
+                                            <div class="mouth">
+                                                <div class="tongue"></div>
+                                            </div>
+                                            <div class="chin"></div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="tail"></div>
+                                            <div class="legs"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span class="choice"></span>
+                        </label>
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                    <div class="quiz__desc">
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- footer -->
+    <script>
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizTitle = quizWrap.querySelector(".quiz__title");                //시험종목
+        const quizQuestion = quizWrap.querySelector(".quiz__question");
+        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");    //보기
+        const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");    //보기
+        const quizDesc = quizWrap.querySelector(".quiz__desc");                  //설명
+        const quizConfirm = quizWrap.querySelector(".quiz__answer .confirm"); //정답버튼
+        const quizConfirmArea = quizWrap.querySelector(".quiz__answer");          //정답Area
+        const dogWrap =quizWrap.querySelector(".dog__wrap");                        //강아지표정
+
+        // const quizAnswerResult = quizWrap.querySelector(".quiz__answer .result");//정답 삭제시킴
+
+       //문제 정보
+       const quizInfo =[
+            {
+                infoType:"웹디자인 기능사",
+                infoTime:"2016년 4회",
+                infoNumber:"1",
+                infoQuestion: "다음 중 디자인의 기본요소들로 옳은것은?",
+                infoChoice: ["선, 색채, 공간, 수량" , "점, 선, 면, 질감", "시간, 수량, 공간, 구조","면, 구조, 공간, 수량"],
+                infoAnswer: "2",
+                infoDesc: "디자인의 기본 요소는 점, 선, 면, 질감이 있습니다."
+            }
+        ]
+        //화면 출력
+        // quizTitle.textContent = quizInfo[0].infoType + " " + quizInfo[0].infoTime;
+        function updateQuiz(){
+            quizTitle.innerHTML =quizInfo[0].infoType + " " + quizInfo[0].infoTime;
+            // quizQuestion.innerHTML= "<em>"+quizInfo[0].infoNumber+"</em>. "+quizInfo[0].infoQuestion;
+            quizQuestion.innerHTML= `<em> ${quizInfo[0].infoNumber}</em>. ${quizInfo[0].infoQuestion}`;
+
+            for(let i = 0 ; i < quizInfo[0].infoChoice.length;i++ ){
+                quizChoice[i].textContent= quizInfo[0].infoChoice[i];
+            }    
+            //
+            // quizChoice.forEach(function(el, i) {
+            //     quizChoice[i].textContent= quizInfo[0].infoChoice[i];   //for문으로 할때 쓰는법
+            //     el.textContent= quizInfo[0].infoChoice[i];              //forEach문의 반환값을 이용해서 쓰는법
+            // });
+
+            quizDesc.textContent= quizInfo[0].infoDesc; //설명
+            quizDesc.style.display = "none";
+        }
+
+        function answerQuiz(){
+            //사용자가 선택한 인풋박스(checked)==정답확인 (quizInfo[0]infoAnswer)
+            for(let i=0 ; i <quizInfo[0].infoChoice.length ; i++){
+                if(quizSelect[i].checked == true){ //사용자가 보기를 체크한 상태
+                    if(quizSelect[i].value == quizInfo[0].infoAnswer){
+                        dogWrap.classList.remove("dislike");
+                        dogWrap.classList.add("like");
+                    }else{
+                        dogWrap.classList.add("dislike");
+                    }
+                }
+            }
+            quizConfirmArea.style.display = "none";
+            quizDesc.style.display = "block";
+        }
+        updateQuiz();
+        // answerQuiz();
+        //정답클릭
+        quizConfirm.addEventListener("click",answerQuiz);
+    </script>
+</body>
+</html>

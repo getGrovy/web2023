@@ -7,6 +7,8 @@
     <title>Javascript : 배열 객체</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
     <link rel="shortcut icon" href="assets/ico/javascript.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
     <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
@@ -46,11 +48,116 @@
         <div class="container">
             <div class="main__menu">
                 <ul>
-                    <li><a href="#">01. 변수 : 데이터 저장</a></li>
-                    <li><a href="#">01. 상수 : 데이터 저장</a></li>
-                    <li><a href="#">01. 배열 : 데이터 저장</a></li>
-                    <li><a href="#">01. 객체 : 데이터 저장</a></li>
+                    <li><a href="#">배열 메서드 : join() : 배열 요소 문자열 결합</a></li>
+                    <li><a href="#">배열 메서드 : push() 😃 </a>배열 마지막 요소를 추가</li>
+                    <li><a href="#">배열 메서드 : pop()</a>배열 마지막 요소를 삭제</li>
+                    <li><a href="#">배열 메서드 : unshift()</a>배열 처음 요소를 추가</li>
+                    <li><a href="#">배열 메서드 : shift()</a>배열 처음 요소를 추가</li>
+                    <li><a href="#">배열 메서드 : reverse()</a></li>
+                    <li><a href="#">배열 메서드 : sort()</a>😃</li>
+                    <li><a href="#">배열 메서드 : concat()</a></li>
+                    <li><a href="#">배열 메서드 : reduce()</a></li>
+                    <li><a href="#">배열 메서드 : reduceRight()</a></li>
+                    <li><a href="#">배열 메서드 : slice()</a>😇🙄</li>
+                    <li><a href="#">배열 메서드 : splice()</a>😮‍💨</li>
+                    <li><a href="#">배열 메서드 : indexOf()</a>😊</li>
+                    <li><a href="#">배열 메서드 : lastindexOf()</a></li>
+                    <li><a href="#">배열 메서드 : includes()</a></li>
+                    <li><a href="#">배열 메서드 : find()</a></li>
+                    <li><a href="#">배열 메서드 : filter()</a></li>
+                    <li><a href="#">배열 메서드 : map()</a></li>
                 </ul>
+            </div>
+            <div class="main__sample">
+                <div id="sample00" class="sample">
+                    <h3>배열 메서드 : join()</h3>
+                    <p>join() 메서드는 배열 요소를 문자열로 결합합니다. 반환은 문자열입니다.</p>
+<pre><code class="language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    let text1 = arrNum1.join('');
+    let text2 = arrNum1.join(' ');
+    let text3 = arrNum1.join('*');
+    console.log(arrNum1);
+    console.log(text1);
+    console.log(text2);
+    console.log(text3);
+} 
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                (5) [100, 200, 300, 400, 500]<br>
+                                100200300400500<br>
+                                100 200 300 400 500<br>
+                                100*200*300*400*500
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
+                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
+                    </div>
+                </div>
+                <!-- sample00 -->
+                <div id="sample01" class="sample">
+                    <h3>배열 메서드 : push() 반환(숫자)</h3>
+                    <p>push() 메서드는 배열 마지막 요소에 요소를 추가하고, pop() 메서드는 배열 마지막 요소를 삭제합니다. </p>
+<pre><code class="language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const arrPush1 = arrNum1.push(600);
+    console.log(arrNum1);
+
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const arrPush2 = arrNum2.pop();
+    console.log(arrNum2);
+} 
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                (6) [100, 200, 300, 400, 500, 600]</br>
+                                (4) [100, 200, 300, 400]</br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
+                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
+                    </div>
+                </div>
+                <!-- sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>배열 메서드 : unshift() / shift()</h3>
+                    <p>unshift() 메서드는 배열 처음 요소에 요소를 추가하고,shift() 메서드는 배열 처음 요소를 삭제합니다. </p>
+<pre><code class="language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const arrPush1 = arrNum1.unshift(600);
+    console.log(arrNum1);
+
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const arrPush2 = arrNum2.shift();
+    console.log(arrNum2);
+} 
+</pre></code>                   
+                    <div class="resultDark">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                (6) [600, 100, 200, 300, 400, 500]</br>
+                                (4) [200, 300, 400, 500]</br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="noticeDark">
+                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
+                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
+                    </div>
+                </div>
+                <!-- sample02 -->
+                </div>
             </div>
         </div>            
     </main>
@@ -59,5 +166,17 @@
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- footer -->
+    <script src="assets/js/prism.js"></script>
+    <script>
+        const arrNum1 = [100, 200, 300, 400, 500];
+        let text1 = arrNum1.join('');
+        let text2 = arrNum1.join(' ');
+        let text3 = arrNum1.join('*');
+        console.log(arrNum1);
+        console.log(text1);
+        console.log(text2);
+        console.log(text3);
+        
+    </script>
 </body>
 </html>

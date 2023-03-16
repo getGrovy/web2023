@@ -115,7 +115,11 @@ body {
     border: 8px ridge #cacaca;
     background-color: #fff;
     margin: 10px;
+    /* max-width: 30%; */
 }
+/* .quiz__wrap .quiz *{
+    font-size: 10px;
+} */
 .quiz__title {
     background-color: #cacaca;
     border: 3px ridge #cacaca;
@@ -198,6 +202,86 @@ body {
     color:red;
 }
 
+.quiz__choice {
+    border-bottom: 6px ridge #cacaca;
+    padding: 20px;
+    font-family: 'Cafe24SsurroundAir';
+}
+.quiz__choice label {
+    display: flex;
+}
+.quiz__choice label input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: 1px;
+    overflow: hidden;
+}
+.quiz__choice label span {
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 6px;
+    display: flex;
+    cursor: pointer;
+    margin: 2px 0;
+}
+.quiz__choice label span::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    box-shadow: inset 0 0 0 4px #9f99c2;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.quiz__choice label input:checked + span {
+    background-color: #9f99c2;
+}
+.quiz__choice label input:checked + span::before {
+    box-shadow: inset 0 0 0 8px #747499;
+}
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    z-index: 1000;
+    text-align: center;
+    font-family: 'Cafe24SsurroundAir';
+    background-color: #747499;
+    color: #fff;
+    cursor: pointer;
+
+}
+.quiz__info {
+    position: fixed;
+    right: 20px;
+    bottom: 150px;
+    background-color: #747499;
+    text-align: center;
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-family: 'Cafe24SsurroundAir';
+    color: #fff;
+}
+.quiz__info::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -10px;
+    border-top: 10px solid #747499;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+}
 /* quiz__wrap */
 
 /* dog__wrap */
