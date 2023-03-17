@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html"> Quiz </a><em>객관식 확인하기 유형(여러문제)</em>🙂</h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li class = "active"><a href="quizEffect05.html">5</a></li>
+        </ul>
+    </header> 
+    <!-- header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+        
+        <!--   <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question">
+                    </div>
+                    <div class="quiz__view">
+                        <div class="wrapper">
+                            <div class="dog__wrap ">
+                                <div class="true">정답입니다!</div>
+                                <div class="false">오답입니다!</div>
+                                <div class="card-container">
+                                    <div class="dog">
+                                        <div class="head">
+                                            <div class="ears"></div>
+                                            <div class="face"></div>
+                                            <div class="eyes">
+                                                <div class="teardrop"></div>
+                                            </div>
+                                            <div class="nose"></div>
+                                            <div class="mouth">
+                                                <div class="tongue"></div>
+                                            </div>
+                                            <div class="chin"></div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="tail"></div>
+                                            <div class="legs"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span class="choice"></span>
+                        </label>
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                    <div class="quiz__desc">
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </div> -->
+        <!-- <div class="quiz__check">정답 확인하기</div> -->
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- footer -->
+    <script>
+        //문제정보
+        const quizInfo = [
+            {  
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120201",
+                infoQuestion: "입체에 대한 설명으로 옳지 않은 것은?",
+                infoChoice: {
+                     1: "소극적 입체는 현실적 형, 확실히 지각되는 형을 말한다." ,
+                     2: "입체는 면이 이동한 자취이다.",
+                     3: "두 면과 각도를 가진 방향으로 이동하거나 면의 회전에 의해 생긴다.",
+                     4: "순수한 입체는 구, 원통, 육면체 등과 같은 형이다"
+                },
+                infoAnswer: "1",
+                infoDesc: "3차원적인 요소로 면이 이동한 자취 또는 면의 집합, 형태와 깊이를 가짐구, 육면체, 원뿔, 원기둥"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120202",
+                infoQuestion: "다음 중 각 부분 사이에 시각적인 강한 힘과 약한 힘이 규칙적으로 연속될 때에 생기는 디자인의 원리는?",
+                infoChoice: {
+                     1: "조화" ,
+                     2: "율동",
+                     3: "균형",
+                     4: "강조"
+                },
+                infoAnswer: "2",
+                infoDesc: "디자인이 ... 연속될 >> 율동,, 규칙적인 반복(연속)은 율동(Rhythm)과 연관성이 있음"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120203",
+                infoQuestion: "다음 중 제품 디자인(Product Design) 분야로 거리가 먼 것은?",
+                infoChoice: { 
+                     1: "영상 디자인" ,
+                     2: "완구 디자인",
+                     3: "가전 디자인",
+                     4: "가구 디자인"
+                },
+                infoAnswer: "1",
+                infoDesc: "영상은 시각디자인에 포함"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회)",
+                infoNumber:"20120204",
+                infoQuestion: "다음과 관계있는 디자인의 개념은?<br> '우리는 디자인 속에서 살고 있다'",
+                infoChoice: {
+                     1: "디자인은 고도로 복잡하고 세련된 숙련이다." ,
+                     2: "디자인은 항상 어떤 가능성을 전제로 시작된다.",
+                     3: "디자인은 모든 사람의 일상이다.",
+                     4: "디자인은 예술이다."
+                },
+                infoAnswer: "3",
+                infoDesc: "알잘딱ㅋ 느낌으로,, 정답율 90% ! "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120205",
+                infoQuestion: "형태에 관한 시각의 기본 법칙을 내포한 게슈탈트(Gustalt)심리적 원리가 옳은 것은?",
+                // infoQuestion: "형태에 관한 시각의 기본 법칙을 내포한 게슈탈트(Gustalt)심리적 원리가 옳은 것은?<br><img style='width:300px' src='깃헙주소'",
+                infoChoice: {
+                     1: "연속성, 근접성, 유사성, 폐쇄성" ,
+                     2: "유사성, 연속성, 개방성, 폐쇄성",
+                     3: "근접성, 개방성, 전경과 배경의 법칙",
+                     4: "유사성, 이성적, 개방성, 접근성(근접성)"
+                },
+                infoAnswer: "1",
+                infoDesc: "게슈탈트법칙( 군화의 법칙 ) 게슈탈트 gestalt란 형태 형상을 의미하는 독일어1923년 막스 베르트하이머가 처음으로 제기연속성, 근접성, 유사성, 폐쇄성이 대표적.대칭의 법칙, 공동운명의 법칙등이 있다.<br>근접의 법칙 : 가까이 있는 것끼리는 한데 무리 지어 보이는 원리<br>유사의 법칙 : 비슷한 형태, 색채, 질감을 가진 것끼리 무리 지어 보이는 원리<br>연속의 법칙 : 비슷한 것이 연속되어 있을 때 무리 지어 보이는 원리<br>폐쇄의 법칙 : 폐합의 법칙이라고도 한다, 기존의 지식을 토대로 불완전한 대상을 완전한 대상으로 인지 하는 원리"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120206",
+                infoQuestion: "색채를 과학적으로 정리하여 스펙트럼을 7색으로 분리한 사람은?",
+                infoChoice: { 
+                     1: "뉴턴" ,
+                     2: "먼셀",
+                     3: "오스트발트",
+                     4: "돈더스"
+                },
+                infoAnswer: "1",
+                infoDesc: "색7뉴턴 뉴턴새ㄱ71로 외웠어요 ^^ <br><br> 뉴턴: 프리즘 실험을 통한 스펙트럼 발견<br>먼셀: 색을 색상, 명도, 채도에 따라 계통적으로 배치오스트발트: 백색량과 흑색량을 순색을 기준으로 한 오스트발트 표색계를 발표(헤링의 4원색설을 기본으로 함)"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120207",
+                infoQuestion: "신인상파 화가인 쇠라(Georges Seurat)의 작품인 “그랑자트섬의 일요일 오후”에서 사용된 색의 혼합은?",
+                infoChoice: { 
+                     1: "회전 혼합" ,
+                     2: "가산 혼합",
+                     3: "색료 혼합",
+                     4: "병치 혼합"
+                },
+                infoAnswer: "4",
+                infoDesc: "이 작품은 ((순색의 작은 반점의 병치))로 더욱 완벽한 분할 묘법을 보여주어 정감적인 인상파를 극복하고 그 고유의 과학적 인상파의 새로운 장을 열었다는 의미에서 1886년 제 8회 인상파전에서 큰 반향을 일으켰다. 제8회 인상파전은 마지막 인상파 전시회로서 상징주의와 신인상주의 같은 새로운 경향의 문을 열어주었다. 그러나 당시에 쇠라의 이 작품은 인상파 화가들로부터는 많은 비판을 받았지만 이 그림으로 원래의 인상주의를 능가해 버렸다고 하여 ((‘신인상주의’))라는 명칭을 듣게 되었다. 쇠라가 보여주는 엄격하고 질서정연한 구도에 의해서 완성되는 조형적 구성은 견고한 현대 회화의 미래를 예고했다. 쇠라의 점묘가 장식적인 경향이 강해짐에 따라 작품에는 윤곽의 선이 살아나게 되었다. 곡선으로 이루어진 화면의 패턴은 미끄러지듯 리드미컬한 구도를 이루며 움직이는 인물들의 이미지를 정적으로 표현한 것은 쇠라 회화의 대표적인 특징이다 <br> 쇠라병치 쇠라병 소라병으로 외울게요 "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120208",
+                infoQuestion: "색의 감정에서 저채도의 배색이 주는 느낌은?",
+                infoChoice: { 
+                     1: "부드러운 느낌" ,
+                     2: "명쾌한 느낌",
+                     3: "화려한 느낌",
+                     4: "활기찬 느낌"
+                },
+                infoAnswer: "1",
+                infoDesc: "저는 저채도라고 하면 파스텔 톤이 생각나는데 파스텔톤 하면 부드러운 느낌을 줘요"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120209",
+                infoQuestion: " 디자인에 통일성을 부여하는 방법으로 거리가 먼 것은?",
+                infoChoice: { 
+                     1: "각 요소들을 근접시킨다." ,
+                     2: "각 요소들을 반복시킨다.",
+                     3: "각 요소들을 연속시킨다.",
+                     4: "각 요소들을 분리시킨다."
+                },
+                infoAnswer: "4",
+                infoDesc: "정답율 90 % 한글알면 할수있을거 같아요 ! "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120210",
+                infoQuestion: "다음은 민들레꽃의 홀씨에 대한 그림이다. 이 그림에서 느낄 수 있는 디자인 원리는? <img src='//img.comcbt.com/cbt/data/j9/j920120408/j920120408m10.gif?1345725598'style='width:100px' >",
+                infoChoice: { 
+                     1: "율동" ,
+                     2: "착시",
+                     3: "조화",
+                     4: "균형"
+                },
+                infoAnswer: "1",
+                infoDesc: "정답율 90 % 그림을 보고 생각해봐요 민들레꽃 홀씨가 날라가는 장면을 ! "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120211",
+                infoQuestion: "먼셀 색입체에 대한 설명으로 틀린 것은?",
+                infoChoice: { 
+                     1: "색상, 명도 채도의 3속성 3차원 좌표에서 색 감각으로 보는데 용이하다." ,
+                     2: "CIE의 색표와 연관성이 용이하다.",
+                     3: "실제로 사용하고 있는 모든 물체색이 색입체에 포함되어 있지 않다.",
+                     4: "모든 색상의 채도 위치가 달라 배색체계를 응용하기 어렵다."
+                },
+                infoAnswer: "3",
+                infoDesc: "정답률 : 51% <br> 먼셀먼셀먼셀>> 먼셀몬! <br> 먼셀몬은 3글자 <BR>&색상 명도 채도 3가지 <BR>&3차원 구성 cie색표연관성과 용의 3차원이라 색선택어려움   <details><summary>상세설명</summary><div><BR><BR>먼셀 색입체<br>색상, 명도 채도를 알아보기 쉽도록 3차원 형태로 구성한 입체모형<br>CIE(국제조명위원회)의 색표와 연관성 용이<br>모든 물체색이 포함되어있음!!<br>색상이 색입체를 둘러싸고 있으며 색입체의 가장 바깥쪽에 순색이 위치<br>수직단면은 보색이 되는 두가지의 색을 채도별로 한눈에 볼 수 있음<br>수평 단면은 명도가 같은 여러 색들을 한 눈에 볼 수 있음<br>중심축은 명도를 나타냄<br>명도의 단계는 11단계로 구분되며, 명도의 단계의 따라 고,중,저명도로 구분<br>위로 갈수록 명도가 높아지고 아래로 갈수록 낮아짐<br>채도는 /0,/2 .. /14와 같이 보통 2단계씩 구분되며 바깥쪽 으로 갈수록 채도가 높아짐<br>모든색상의 채도 위치가 달라 배색 체계의 어려움이 있음<br>주요색상 : 빨강, 노랑, 녹색, 파랑, 보라 </div></details>"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120212",
+                infoQuestion: "먼셀 색입체에 대한 설명으로 틀린 것은?",
+                infoChoice: { 
+                     1: "후퇴색" ,
+                     2: "팽창색",
+                     3: "진출색",
+                     4: "수축색"
+                },
+                infoAnswer: "1",
+                infoDesc: "정답률 : 85%  <문제 해설>노란색은 진출색, 파란색은 후퇴색입니다."
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120213",
+                infoQuestion: "다음이 설명하고 있는 것은? <BR>-주어진 길이를 가장 이상적으로 나누는비<br>-근사값이 약 1.618인 무리수다",
+                infoChoice: { 
+                     1: "비례" ,
+                     2: "황금비율",
+                     3: "루트사각형",
+                     4: "프로포션"
+                },
+                infoAnswer: "2",
+                infoDesc: "정답률 : 95% 상식문제에요 ! "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120214",
+                infoQuestion: "고층 빌딩의 창문크기, 고가 도로의 난간 및 도로, 가로등을 원근법을 적용하여 표현하고자 할 때 가장 유의해야 할 디자인 원리는?",
+                infoChoice: { 
+                     1: "점증" ,
+                     2: "조화",
+                     3: "대칭",
+                     4: "균형"
+                },
+                infoAnswer: "1",
+                infoDesc: "정답률 : 73% 원근법이라는 단어를 듣고 점증되는걸 생각할수있었어요"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120215",
+                infoQuestion: "다음 그림에서 왼쪽 원을 보다가 오른쪽 원을 볼 때 나타나는 현상은?<img src='//img.comcbt.com/cbt/data/j9/j920120408/j920120408m15.gif?1345725598'style='width:75px'>",
+                infoChoice: { 
+                     1: "대비" ,
+                     2: "잔상",
+                     3: "배색",
+                     4: "혼합"
+                },
+                infoAnswer: "2",
+                infoDesc: "정답률 : 81% 잔상효과 <br>망막이 느낀 자극이 계속 남아 있어서 지속적으로 형상이 남는 것 <br>긍적적(양성, 정의)잔상 : 명도와 색상에 대한 자극이 그대로 지속됨 <br>소극적(음성, 부의)잔상 : 색상, 명도, 채도가 반대로 느껴짐"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120216",
+                infoQuestion: "빅터 파파넥(Victor Papanek)’ 이 주장한 디자인의 복합 기능에 포함되지 않는 것은",
+                infoChoice: { 
+                     1: "방법" ,
+                     2: "연상",
+                     3: "효과",
+                     4: "미학"
+                },
+                infoAnswer: "3",
+                infoDesc: "정답률 : 45 % 6가지 디자인의 목적- 용도, 필요성, 연상, 미학, 목적지향성, 방법"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120217",
+                infoQuestion: "다음 중 빨간색이 가장 선명하고 뚜렷해 보일 수 있는 배경색으로 적합한 것은",
+                infoChoice: { 
+                     1: "주황" ,
+                     2: "노랑",
+                     3: "흰색",
+                     4: "보라"
+                },
+                infoAnswer: "3",
+                infoDesc: "<문제 해설><br>보색 대비<br>색상이 서로 정반대되는 두 색을 주위에 놓으면, 서로의 영향으로 각각의 색은 자체색의 색상이 더욱 뚜렷해지는 현상이다.<br>즉, 어떤 무채색 옆에 유채색을 놓으면 그 무채색은 옆에 있는 유채색의 보색인 유채색을 더욱 강화시키는 현상이다.<br>- 색상환에서 서로 마주보는 위치에 있는 색이 보색.<br>- 나란히 놓여질 때 서로의 채도를 높여주어 강렬하고 선명하게 보이는 현상으로 주목성이 강해 주제를 살리는 데 효과적이다"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120218",
+                infoQuestion: "	디자인의 독창성에 대한 설명으로 가장 옳은 것은?",
+                infoChoice: { 
+                     1: "정해진 비용으로 최상의 디자인을 창출하는 것을 말한다." ,
+                     2: "디자인을 할 때 목적에 맞는 수단을 사용하였는지를 말한다.",
+                     3: "보다 실용적이고 심미적으로 대선, 발전시키는 것을 말한다.",
+                     4: "개성적인 미의식을 창출해내는 것을 말한다."
+                },
+                infoAnswer: "4",
+                infoDesc: "독창성 : 다른 제품과 차별화된 창조적이고 주목할 만한 디자인, 독창성이 더해져야 디자인으로서의 생명력이 있음.<br>1.정해진 비용으로 최상의 디자인을 창출하는 것을 말한다.  ( 경제성 )<br>2. 디자인을 할 때 목적에 맞는 수단을 사용하였는지를 말한다. (합목적성)<br>3. 보다 실용적이고 심미적으로 대선, 발전시키는 것을 말한다.(심미성)<br>4. 개성적인 미의식을 창출해내는 것을 말한다.(독창성)"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120219",
+                infoQuestion: "	디자인 원리 중 서로 다른 부분의 조합에 의해 생기며 시각적 힘의 강약에 의한 형의 감정 효과를 주는 것은?",
+                infoChoice: { 
+                     1: "대비" ,
+                     2: "변칙",
+                     3: "통일",
+                     4: "반복"
+                },
+                infoAnswer: "1",
+                infoDesc: "율동 : 율동은 규칙적인 특징을 반복하거나 교차시키는 데서 비롯되는 움직임의 느낌 강조,반복,변칙"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120220",
+                infoQuestion: "다음 중 웹디자인이 속하는 디자인 분야는?",
+                infoChoice: { 
+                     1: "제품 디자인",
+                     2: "환경 디자인",
+                     3: "시각 디자인",
+                     4: "건축 디자인"
+                },
+                infoAnswer: "3",
+                infoDesc: "정답율 : 90% 상식문제 입니다 ^^ 웹디자인은 2차원 평면 디자인에 속하는 시각 디자인 입니다."
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120221",
+                infoQuestion: "검색엔진 구글(google)에 대한 설명으로 틀린 것은?",
+                infoChoice: { 
+                     1: "레리 페이지와 데이비드 필로의 의해 만들어졌다." ,
+                     2: "키워드 검색 방식을 사용하고 있다.",
+                     3: "스톱워드 사용으로 검색 속도가 빠르다.",
+                     4: "저장된 페이지를 이용한 미리보기 기능을 제공한다."
+                },
+                infoAnswer: "1",
+                infoDesc: "래리페이지와 세르게이브린에 의해 만들어짐. 데이비드필로는 영화배우이자 감독임..;; "
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120222",
+                infoQuestion: "HTML 문서에 대한 정보를 제공하는 자바스크립트 객체는?",
+                infoChoice: { 
+                     1: "frame" ,
+                     2: "history",
+                     3: "location",
+                     4: "document"
+                },
+                infoAnswer: "4",
+                infoDesc: "	<문제 해설><br>1.frame : HTML 문서의 프레임 정보를 제공<br>2. history : 웹 브라우저의 히스토리 정보를 이용하여 이동<br>3. location : 웹 브라우저 주소표시줄의 현재 윈도우에 URL 주소 정보를 제공<br>4. document : 웹 브라우저에서 실행되는 HTML 문서의 본문(BODY) 정보를 재공 **<br>5. Window :  웹 브라우저 창을 위한 속성과 메소드를 제공"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120223",
+                infoQuestion: "HTML 문서에서 하이퍼링크 설정 시 새로운 창을 열어 문서를 연결하는 속성을 지정하고자 한다. ①에 들어갈 옵션으로 옳은 것은?<br> &lt;href:'hrdkorea.co.kr' target='①'&gt;",
+                infoChoice: { 
+                     1: "_self" ,
+                     2: "_parent",
+                     3: "_top",
+                     4: "_blank"
+                },
+                infoAnswer: "4",
+                infoDesc: "_blank : 새 윈도우 창을 열어서, 웹페이지를 엽니다. 기존의 창은 그대로 남겨져 있습니다<br>_self : 현재 윈도우창에 그대로, 링크된 웹페이지를 엽니다. ( 현재의 프레임 )<br>_parent : 현재 프레임의 부모 프레임에서 새웹페이지가 열립니다.<br>_top : 최상위 프레임에서 열립니다"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120224",
+                infoQuestion: "다음 중 데이터 종신의 교환 기술에 있어 전송 대역폭을 비교 기준으로 선택할 경우 다른 것과 구별되는 방식은?",
+                infoChoice: { 
+                     1: "메시지 교환 방식" ,
+                     2: "데이터그램 패킷 교환",
+                     3: "가상 회선 패킷 교환",
+                     4: "회선 교환"
+                },
+                infoAnswer: "4",
+                infoDesc: "회선교환방식<br>- 호 설정이 이루어지고 나면 정보를 연속적으로 전송할 수 있는 전용 통신로와 같은 기능을 가짐<br>- 호 설정이 이루어진 다음은 교환기 내에서 처리를 위한 지연이 거의 없음<br>- 고정된 대역폭으로 데이터를 전송<br>- 송신스테이션과 수신스테이션 사이에 데이터를 전송하기 전에, 교환기를 통해 물리적으로 연결이 이루어져야함<br>- 송신과 수신스테이션 간에 호 설정 후, 항상 정보를 연속적으로 전송할 수 있는 전용 통신로 제공되는 셈<br>- 정보 전송 완료 후, 호 해제를 통해 점유되었던 회선을 내어 놓음으로써 다른 통신을 위해 사용될 수 있도록 함"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120225",
+                infoQuestion: "다음 중 인트라넷의 장점에 해당하지 않는 것은?",
+                infoChoice: { 
+                     1: "저렴한 구축비용" ,
+                     2: "특정 플랫폼만을 지원",
+                     3: "사내 표준화",
+                     4: "표준화된 문서 환"
+                },
+                infoAnswer: "2",
+                infoDesc: "정답율 74% 인트라넷의 장점<br>업무의 능률화 ...<br>기업구성원의 교육 및 자질향상 ...<br>다양한 비용절감 효과 ...<br>사내 정보 및 데이타관리의 효율성과 상품화"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120226",
+                infoQuestion: "웹디자인에서 내비게이션에 대한 설명으로 틀린 것은?",
+                infoChoice: { 
+                     1: "웹 콘텐츠를 분류하고 체계화시킨 후 이들을 연결시켜 방문자로 하여금 웹사이트를 이용할 수 있게 하는 체계를 말한다." ,
+                     2: "일관성 있는 아이콘과 그래픽을 사용하여 사용자가 홈페이지 어디서라도 길을 잃지 않고 필요한 정보를 쉽게 얻을 수 있도록 하는 것이다.",
+                     3: "웹 사이트의 전체적인 분위기를 결정하고 개인의 홍보나 회사의 홍보, 또 사용자간의 자발적 참여와 커뮤니티를 형성한다.",
+                     4: "사이트의 이동경로나 이동방법, 이동을 돕는 구조와 인터페이스를 모두 포함하는 개념이다."
+                },
+                infoAnswer: "3",
+                infoDesc: "정답률 : 78% 상식문제 ^^"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120227",
+                infoQuestion: "전자메일 서비스에 연관된 프로토콜(Protocol)이 아닌 것은?",
+                infoChoice: { 
+                     1: "IMAP" ,
+                     2: "NNTP",
+                     3: "POP3",
+                     4: "SMTP"
+                },
+                infoAnswer: "2",
+                infoDesc: "정답률 72% NNTP는 뉴스 그룹 관련 프로토콜입니다."
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120228",
+                infoQuestion: "자신이 원하는 정보나 특정한 목적을 이루기 위하여 인터넷을 이용해서 정보를 취득하는 일련의 작업을 의미하는 것은?",
+                infoChoice: { 
+                     1: "검색엔진" ,
+                     2: "정보검색",
+                     3: "월드 와일드 웹",
+                     4: "위즈윅"
+                },
+                infoAnswer: "2",
+                infoDesc: "정답률 : 80% 상식문제 ^^"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120229",
+                infoQuestion: "Java 스크립트 언어에 대한 설명으로 틀린 것은?",
+                infoChoice: { 
+                     1: "Java 스크립트 언어에서 변수명을 숫자 및 특수 문자로 시작할 수 없다." ,
+                     2: "Java 스크립트 언어는 HTML과 웹 브라우저와는 상호작용할 수 있지만, VRML과 같은 인터넷 자원과는 상호작용할 수 없다.",
+                     3: "Java 스크립트 언어는 대소문자를 구분한다.",
+                     4: "함수 eval()는 Java 스크립트의 내장함수이다."
+                },
+                infoAnswer: "2",
+                infoDesc: "Java 스크립트 언어는  VRML과 같은 인터넷 자원과는 상호작용할 수 습니다."
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"201202",
+                infoQuestion: "",
+                infoChoice: { 
+                     1: "" ,
+                     2: "",
+                     3: "",
+                     4: ""
+                },
+                infoAnswer: "",
+                infoDesc: ""
+            }
+        ];
+        
+        //선택자 
+        const quizWrap = document.querySelector(".quiz__wrap");
+        let quizScore = 0 ;
+        
+        
+        // const quizQuestion = quizWrap.querySelector(".quiz__question");
+        // quizQuestion.innerHTML = "<em>"+quizInfo[0].infoNumber+"</em>. "+quizInfo[0].infoQuestion;
+
+        //문제 출력
+        const updateQuiz = () =>{
+            const exam = [];
+            quizInfo.forEach((question, num)=>{
+                exam.push(`
+                            <div class="quiz">
+                                <div class="quiz__header">
+                                    <h2 class="quiz__title">${question.infoType} ${question.infoTime}</h2>
+                                </div>
+                                <div class="quiz__main">
+                                    <div class="quiz__question">
+                                        <em>${num+1}</em>. ${question.infoQuestion}
+                                    </div>
+                                    <div class="quiz__view">
+                                        <div class="wrapper">
+                                            <div class="dog__wrap ">
+                                                <div class="true">정답입니다!</div>
+                                                <div class="false">오답입니다!</div>
+                                                <div class="card-container">
+                                                    <div class="dog">
+                                                        <div class="head">
+                                                            <div class="ears"></div>
+                                                            <div class="face"></div>
+                                                            <div class="eyes">
+                                                                <div class="teardrop"></div>
+                                                            </div>
+                                                            <div class="nose"></div>
+                                                            <div class="mouth">
+                                                                <div class="tongue"></div>
+                                                            </div>
+                                                            <div class="chin"></div>
+                                                        </div>
+                                                        <div class="body">
+                                                            <div class="tail"></div>
+                                                            <div class="legs"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quiz__choice">
+                                        <label for="choice1${num}">
+                                            <input type="radio" id="choice1${num}" name="choice${num}" value="1">
+                                            <span class="choice">${question.infoChoice[1]}</span>
+                                        </label>
+                                        <label for="choice2${num}">
+                                            <input type="radio" id="choice2${num}" name="choice${num}" value="2">
+                                            <span class="choice">${question.infoChoice[2]}</span>
+                                        </label>
+                                        <label for="choice3${num}">
+                                            <input type="radio" id="choice3${num}" name="choice${num}" value="3">
+                                            <span class="choice">${question.infoChoice[3]}</span>
+                                        </label>
+                                        <label for="choice4${num}">
+                                            <input type="radio" id="choice4${num}" name="choice${num}" value="4">
+                                            <span class="choice">${question.infoChoice[4]}</span>
+                                        </label>
+                                    </div>
+                                    <div class="quiz__desc">
+                                        정답은 <em>${question.infoAnswer}</em>번입니다
+                                        <br>${question.infoDesc}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        `);
+            });
+            // console.log(exam);
+            exam.push(`
+                <div class="quiz__info">?</div>
+                <div class="quiz__check">정답 확인하기</div>
+            `)
+            quizWrap.innerHTML = exam.join('');
+
+            // quiz__desc 설명숨기기
+            document.querySelectorAll(".quiz__desc").forEach(el=> el.style.display="none");
+            // document.querySelector(".quiz__info").style.display="none";
+            
+            // exam.forEach((el , i )=>{
+            //     document.querySelector(`.quiz__desc${i}`).style.display="none";
+            // })
+
+        }
+        updateQuiz();
+        //정답확인
+
+        const answerQuiz = () =>{
+            const quizChoices = document.querySelectorAll(".quiz__choice");
+            quizScore = 0;
+
+            //사용자가 체크한 정답 == 문제의 정답
+            // alert("quizChoices.length ",quizChoices.length)
+            
+            quizInfo.forEach((question, num)=>{
+                const userSelector = `input[name=choice${num}]:checked`;
+                const quizSelectorWrap = quizChoices[num];
+                const userAnswer = (quizSelectorWrap.querySelector(userSelector)||{}).value;
+                const dogWrap =quizWrap.querySelectorAll(".dog__wrap");                       
+                
+                // console.log("userSelector ",userSelector,"____userAnswer",userAnswer);
+
+                if(userAnswer == question.infoAnswer){
+                    dogWrap[num].classList.remove("dislike");
+                    dogWrap[num].classList.add("like");
+                    quizScore++;
+                }else{
+                    dogWrap[num].classList.remove("like");
+                    dogWrap[num].classList.add("dislike");
+                }   
+                document.querySelectorAll(".quiz__desc").forEach(el=> el.style.display="block");
+            });
+            // 점수 보이기 alert(quizScore);
+            document.querySelector(".quiz__info").innerHTML=Math.ceil((quizScore/quizInfo.length*100))+"점";
+            // document.querySelector(".quiz__info").style.display="block";
+        }
+        // 정답클릭
+        document.querySelector(".quiz__check").addEventListener("click", answerQuiz);
+
+    </script>
+</body>
+</html>
