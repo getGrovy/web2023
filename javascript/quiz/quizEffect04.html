@@ -108,8 +108,6 @@
         const quizConfirmArea = quizWrap.querySelector(".quiz__answer");          //정답Area
         const dogWrap =quizWrap.querySelector(".dog__wrap");                        //강아지표정
 
-        // const quizAnswerResult = quizWrap.querySelector(".quiz__answer .result");//정답 삭제시킴
-
        //문제 정보
        const quizInfo =[
             {
@@ -123,7 +121,6 @@
             }
         ]
         //화면 출력
-        // quizTitle.textContent = quizInfo[0].infoType + " " + quizInfo[0].infoTime;
         function updateQuiz(){
             quizTitle.innerHTML =quizInfo[0].infoType + " " + quizInfo[0].infoTime;
             // quizQuestion.innerHTML= "<em>"+quizInfo[0].infoNumber+"</em>. "+quizInfo[0].infoQuestion;

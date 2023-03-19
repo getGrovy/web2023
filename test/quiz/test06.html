@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>둘만의 암호</title>
+    
+</head>
+<a href=" https://school.programmers.co.kr/learn/courses/30/lessons/155652"> 문제보러가기</a><br>
+<body>
+    
+</body>
+<script>
+function solution(s, skip, index) {
+    let answer = '';
+    let skipAlpha = "abcdefghijklmnopqrstuvwxyz";
+    let totAnswerStr="";
+    for (let s of skip){
+        // document.write(s," skip___<br> ");
+        skipAlpha = skipAlpha.replace(s, "");
+        // document.write(skipAlpha,"<br>replace____"+skipAlpha+"<br>");
+    }
+
+    // document.write("</br>","skipAlpha : "+skipAlpha+"</br>"+"</br>");
+
+    
+    console.log(skipAlpha);
+    
+
+    for (let answerStr of s) {
+        document.write(answerStr," >>> ");
+        document.write((skipAlpha.indexOf(answerStr)+index)%skipAlpha.length," >>> ");
+        document.write(skipAlpha.at((skipAlpha.indexOf(answerStr)+index)%skipAlpha.length), "<br>") ;
+    
+        totAnswerStr += skipAlpha.at((skipAlpha.indexOf(answerStr)+index)%skipAlpha.length);
+    }
+
+    // doubleSkipAlpha.indexOf(targetChar) + index)
+    // let doubleSkipAlpha = skipAlpha + skipAlpha + skipAlpha;
+
+    // for (let targetChar of s) {
+    //     let changeChar = doubleSkipAlpha.at(doubleSkipAlpha.indexOf(targetChar) + index);
+    //     answer += changeChar;
+    // }
+    document.write("</br> 질문에 대한 답",totAnswerStr);
+    return totAnswerStr;
+}
+
+solution("aukks","wbqd",5);
+</script>
+</html>
+

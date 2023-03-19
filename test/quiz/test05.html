@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옹알이</title>
+    
+</head>
+
+<body>
+    
+</body>
+<script>
+function solution(babbling) {
+    var answer = 0;
+    
+    for(i of babbling) {
+        if(i.length <= 0) continue
+        
+        // console.log(i);
+        let containBool = true;
+        // document.write(i," split text<br>");
+        let splitList = i.split(/aya|ye|woo|ma/);
+        splitList.forEach((el) =>{
+            // document.write("_el_"+el+"<br><br>");
+            if(el.length > 0) {
+                containBool = false;
+            }
+        });
+        
+        if(containBool)answer++;
+        
+    }
+    document.write(answer);
+    // return answer;
+
+}
+solution(["aya", "yee", "u", "maa", "wyeoo"]);
+</script>
+</html>
