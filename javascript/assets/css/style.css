@@ -89,7 +89,7 @@ body {
     margin-bottom: 10px;
 }
 .main__desc p {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     border-left: 5px solid #6990e2;
     padding: 12px 10px 10px 20px;
     background-color: #b9c6e0;
@@ -108,9 +108,11 @@ body {
     text-align: center;
     padding: 10px;
     margin-bottom: 50px;
+    transition: all 0.2s;
 }
 .main__desc a:hover{
     border-color: #6990e2;
+    background-color: #6990e2 ;
 }
 .main__sample {
     padding-top: 40px;
