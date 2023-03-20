@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지텍스트유형 01</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            text-decoration: none;
+            /* color: #000; */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        li {
+            list-style: none;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        .mb0  {margin-top: 0px !important;}
+        .mt10 {margin-top: 10px !important;}
+        .mt20 {margin-top: 20px !important;}
+        .mt30 {margin-top: 30px !important;}
+        .mt40 {margin-top: 40px !important;}
+        .mt50 {margin-top: 50px !important;}
+        .mt60 {margin-top: 60px !important;}
+        .mt70 {margin-top: 70px !important;}
+        
+        .mb10 {margin-bottom: 10px !important;}
+        .mb20 {margin-bottom: 20px !important;}
+        .mb30 {margin-bottom: 30px !important;}
+        .mb40 {margin-bottom: 40px !important;}
+        .mb50 {margin-bottom: 50px !important;}
+        .mb60 {margin-bottom: 60px !important;}
+        .mb70 {margin-bottom: 70px !important;}
+        /* common */
+        
+        .container {
+            width: 1160px;
+            margin: 0 auto; 
+            padding: 0;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section.center{
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            color: #666;
+            font-size: 22px;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+       
+        .text__inner {
+            text-align: left;
+            max-width: 32%;
+            margin-right: 20px;
+            /* width: 500px; */
+        }
+        
+        .text__inner .text__small {
+            font-size: 14px;
+            border-radius: 50px;
+            color:#fff;
+            padding: 1px 20px;
+            background-color: #fb0000;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .text__inner .text__title {
+            font-size: 50px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+        .text__inner .text__desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .text__inner .text__detail {
+            font-size: 16px;
+            line-height: 1.55;
+            color: #666; 
+        }
+        .image__inner {
+            width: 66%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* margin-left: 20; */
+        }
+        .image__inner .image{
+            width: 100%;
+        }
+        .image__inner .image center{
+            padding: 0 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="imagetext__wrap section nexon center">
+        <div class="container">
+            <div class="text__inner">
+                <div class="text">
+                    <span class="text__small">notice</span>
+                        <h2 class="text__title">알퐁스 도데가<br>발표한 단편소설</h2>
+                        <p class="text__desc">만약 당신이 아름다운 별빛 아래에서 밤을 지새운 적이 있다면, </p>
+                        <p class="text__detail">낮은 신분의 목동이 주인집의 아가씨를 연모하다가, <br>
+                            자신의 일터에서 밤을 보내게 된 그녀를 욕정과는 <br>
+                            거리가 먼 순수한 사랑으로 지켜주는 장면과 <br>
+                            심리를 간결한 문체로 묘사했다. <br>
+                            당시 프랑스의 문란한 연애 문화를 비판하며, <br>
+                            "이런 사랑도 얼마든지 있을 수 있다!!"<br>
+                            라고 보여주려고 쓴 소설.<br>
+                        </p>
+                </div>
+
+            </div>
+            <div class="image__inner">
+                <article class="image__header">
+                      <figure class="image center">
+                        <img src="../asset/img/IMG-TEXT-TYPE01-min.jpg" alt="밤하늘의 별1">
+                      </figure>
+                </article>
+                <article class="image__header">
+                    <figure class="image">
+                      <img src="../asset/img/IMG-TEXT-TYPE02-min.jpg" alt="밤하늘의 별2">
+                    </figure>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
