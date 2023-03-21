@@ -55,10 +55,10 @@ body.bg03::after {
     background: rgba(30, 36, 70, 0.4);
 }
 body.bg04::after {
-    background:  rgba(60, 36, 70, 0.3);
+    background:  rgba(60, 36, 70, 0.9);
 }
 body.bg05::after {
-    background:  rgba(60, 36, 70, 0.6);
+    background:  rgba(60, 133, 70, 0.7);
 }
 body.bg06::after {
     background: rgba(60, 133, 70, 0.5);

@@ -147,63 +147,63 @@
         });
 
 // 
-        document.querySelector(".s1").addEventListener("mouseover", function(){
-            cursor.classList.add("s1");
-        });
-        document.querySelector(".s1").addEventListener("mouseout", function(){
-            cursor.classList.remove("s1");
-        });
+        // document.querySelector(".s1").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s1");
+        // });
+        // document.querySelector(".s1").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s1");
+        // });
 
-        document.querySelector(".s2").addEventListener("mouseover", function(){
-            cursor.classList.add("s2");
-        });
+        // document.querySelector(".s2").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s2");
+        // });
 
-        document.querySelector(".s2").addEventListener("mouseout", function(){
-            cursor.classList.remove("s2");
-        });
+        // document.querySelector(".s2").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s2");
+        // });
 
-        document.querySelector(".s3").addEventListener("mouseover", function(){
-            cursor.classList.add("s3");
-        });
+        // document.querySelector(".s3").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s3");
+        // });
 
-        document.querySelector(".s3").addEventListener("mouseout", function(){
-            cursor.classList.remove("s3");
-        });
+        // document.querySelector(".s3").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s3");
+        // });
 
-        document.querySelector(".s4").addEventListener("mouseover", function(){
-            cursor.classList.add("s4");
-        });
+        // document.querySelector(".s4").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s4");
+        // });
 
-        document.querySelector(".s4").addEventListener("mouseout", function(){
-            cursor.classList.remove("s4");
-        });
+        // document.querySelector(".s4").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s4");
+        // });
 
-        document.querySelector(".s5").addEventListener("mouseover", function(){
-            cursor.classList.add("s5");
-        });
+        // document.querySelector(".s5").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s5");
+        // });
 
-        document.querySelector(".s5").addEventListener("mouseout", function(){
-            cursor.classList.remove("s5");
-        });
+        // document.querySelector(".s5").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s5");
+        // });
 
-        document.querySelector(".s6").addEventListener("mouseover", function(){
-            cursor.classList.add("s6");
-        });
+        // document.querySelector(".s6").addEventListener("mouseover", function(){
+        //     cursor.classList.add("s6");
+        // });
 
-        document.querySelector(".s6").addEventListener("mouseout", function(){
-            cursor.classList.remove("s6");
-        });
+        // document.querySelector(".s6").addEventListener("mouseout", function(){
+        //     cursor.classList.remove("s6");
+        // });
 
-        for(let i = 0 ; i <= 6 ; i++){
-            document.querySelector(".s"+i).addEventListener("mouseover",function(){
-                cursor.classList.add("s"+i);
-            });
-            document.querySelector(".s"+i).addEventListener("mouseout",function(){
-                cursor.classList.remove("s"+i);
-            });
-        }
+        // for(let i = 0 ; i <= 6 ; i++){
+        //     document.querySelector(".s"+i).addEventListener("mouseover",function(){
+        //         cursor.classList.add("s"+i);
+        //     });
+        //     document.querySelector(".s"+i).addEventListener("mouseout",function(){
+        //         cursor.classList.remove("s"+i);
+        //     });
+        // }
         
-        document.querySelectorAll(".mouse__text span").forEach((el , i)=>{
+        document.querySelectorAll(".mouse__text span").forEach(el =>{
             el.addEventListener("mouseover",function(){
                 cursor.classList.add("s"+(i+1));
             })
@@ -213,13 +213,13 @@
         });
 
         //getAttribute()
-        document.querySelectorAll(".mouse__text span").forEach((span, num)=>{
+        document.querySelectorAll(".mouse__text span").forEach(span => {
             let attr = span.getAttribute("class");
             //attr = s1, s2, s3, s4, s5, s6
-            span.addEventListener("mouseover", function(){
+            span.addEventListener("mouseover", ()=>{
                 cursor.classList.add(attr);
             })
-            span.addEventListener("mouseout", function(){
+            span.addEventListener("mouseout", ()=>{
                 cursor.classList.remove(attr);
             })
         });

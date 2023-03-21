@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/mouse.css">
 </head>
-<body class="img03 bg04 font03">
+<body class="img03 bg04 font04">
     <header id="header">
         <h1>Javascript Mouse Effect03</h1>
         <p>마우스 이펙트 - </p>
@@ -20,15 +20,103 @@
             <li ><a href="mouseEffect05.html">5</a></li>
             <li ><a href="mouseEffect06.html">6</a></li>
         </ul>
+    <style>
+        .mouse__wrap {
+            cursor: none;
+        }
+        header, footer {
+            z-index: 2;
+        }
+        .mouse__text {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .mouse__text p {
+           font-size: 3vw;
+           line-height: 1.6;
+           z-index: 2;
+        }
+        .mouse__text p:first-child {
+            font-size: 2.5vw;
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.4);
+            background-image: url(img/mouseEffect03-min.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            z-index: 1;
+        }
+    </style>
     </header>
     <!--header-->
     <main id="main">
-
+        <div class="mouse__wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__text">
+                <P>If you are not willing to risk the usual, you will have to settle for the ordinary. - Jim Rohn
+                <P>만약 네가 리스크를 무릅쓰지 않으려면, 어쩔 수 없이 평범함에 안주할 것이다. (짐 론)</P>
+            </div>
+        </div>
     </main>
     <!--main-->
     <footer id="footer">
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        const cursor = document.querySelector(".mouse__cursor");
+
+        // console.log(cursor.clientWidth);
+        // console.log(cursor.clientHeight);
+        // console.log(cursor.offsetWidth);
+        // console.log(cursor.offsetHeight);
+        
+        // console.log(cursor.getBoundingClientRect());
+        // 위 clg 값
+        // bottom: 200,
+        // height: 200,
+        // left: 0,
+        // right: 200,
+        // top: 0,
+        // width: 200,
+        // x: 0,
+        // y: 0,
+        // [[Prototype]]: DOMRect
+
+        const DOMRect ={
+            bottom: 200,
+            height: 200,
+            left: 0,
+            right: 200,
+            top: 0,
+            width: 200,
+            x: 0,
+            y: 0
+        }
+
+        const circle = cursor.getBoundingClientRect();
+
+        window.addEventListener("mousemove", e=>{
+            gsap.to(cursor,{
+                duration : 0.5 , 
+                left : e.pageX-circle.width/2 , 
+                top : e.pageY-circle.right/2
+            })
+        })
+    </script>
     <!--footer-->
 </body>
 </html>
