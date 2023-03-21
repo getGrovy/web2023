@@ -43,7 +43,6 @@
             user-select: none;
             pointer-events: none;
             transition: transform 0.3s;
-
         }
         .mouse__cursor2 {
             position: absolute;
@@ -65,8 +64,6 @@
             transform: scale(5);
             background-color: aquamarine;
         }
-
-        
         .mouse__cursor.active2 { 
             background-color: #00ffff80;
             border-color: rgb(179, 255, 0);
@@ -94,7 +91,7 @@
 <body class="img02 bg03 font02">
     <header id="header">
         <h1>Javascript Mouse Effect02</h1>
-        <p>마우스 이펙트 - 2</p>
+        <p>마우스 이펙트 - 마우스 따라다니기 with gsap</p>
         <ul>
             <li ><a href="mouseEffect01.html">1</a></li>
             <li class="active"><a href="mouseEffect02.html">2</a></li>
@@ -149,6 +146,18 @@
             //     cursor2.classList.remove("active");
             // })
             ////forEach
+            // document.querySelectorAll(".mouse__text span").forEach(el=>{
+            //     el.addEventListener("mouseenter",() => {
+            //         cursor.classList.add("active");
+            //         cursor2.classList.add("active");
+            //     });
+            //     el.addEventListener("mouseleave",() => {
+            //         cursor.classList.remove("active");
+            //         cursor2.classList.remove("active");
+            //     });
+            // });
+
+
             document.querySelectorAll(".mouse__text span").forEach(el=>{
                 el.addEventListener("mouseenter",() => {
                     cursor.classList.add("active");
@@ -159,7 +168,6 @@
                     cursor2.classList.remove("active");
                 });
             });
-
 
             document.querySelectorAll("header ul").forEach(el=>{
                 el.addEventListener("mouseenter",() => {
