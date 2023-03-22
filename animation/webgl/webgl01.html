@@ -23,7 +23,7 @@
     <div id="canvas"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
     <script>
-        let renderer, scene, camera, composer, circle, skelet, particle;
+        let renderer, scene, camera, composer, tryangle, skelet, particle;
 
         window.onload = function(){
             init();
@@ -31,6 +31,8 @@
         }
 
         function init(){
+
+            //렌더링 설정 <div id="canvas"></div>에 추가하는거에요 ! 
             renderer = new THREE.WebGLRenderer({antialias:true,  alpha: true});
             renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -38,21 +40,24 @@
             renderer.setClearColor(0x000000,0.0);
             document.getElementById("canvas").appendChild(renderer.domElement);
 
+            //scnen & 카메라 설정 ! 
             scene = new THREE.Scene();
             camera= new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
             camera.position.z =400;
             scene.add(camera);
             
-            //원
-            circle = new THREE.Object3D();
+            //도형설정 삼각형, 삼각형 실선, 하트 
+            tryangle = new THREE.Object3D();
             skelet = new THREE.Object3D();
             particle = new THREE.Object3D();
             
-            //화면에 추가
-            scene.add(circle);
+            //scene 설정한 도형을 scene(화면)에 추가
+            scene.add(tryangle);
             scene.add(skelet);
             scene.add(particle);
-            // let geom = new THREE.OctahedronGeometry(10,0);
+            
+
+            //삼각형 작은모델 추가 
             let geom = new THREE.OctahedronGeometry(4,0);
             let mat = new THREE.MeshPhongMaterial({
                 color : 0xffffff,
@@ -60,9 +65,9 @@
             });
             let planet = new THREE.Mesh(geom,mat);
             planet.scale.x = planet.scale.y = planet.scale.z = 16;
-            circle.add(planet);
+            tryangle.add(planet);
             
-            
+            //삼각형 실선 큰모델 추가 
             let geom2 = new THREE.OctahedronGeometry(10,0);
             let mat2 = new THREE.MeshPhongMaterial({
                 color : 0xffffff,
@@ -75,6 +80,7 @@
             
             skelet.add(planet2);
 
+            //particle추가 heart모양이에요 ! 
             const heartShape = new THREE.Shape();
             const x = 0, y = 0;
             heartShape.moveTo( x + 5, y + 5 );
@@ -91,6 +97,8 @@
                 // shading: THREE.Flatshading
             });
 
+
+            //particle추가 heart모양이에요 for문을 돌려 Math.random()구문으로 임의의위치에 1000개 추가했어요 ! 
             for(let i=0 ; i <1000 ; i++){
                 let mesh = new THREE.Mesh(geometry, marerial);
                 mesh.position.set(Math.random()-0.5, Math.random()-0.5,Math.random()-0.5 ).normalize();
@@ -100,6 +108,7 @@
             }
 
             //조명
+            //조명이 없으면 색상이 어떤색인지 보이지 않아요 조명부분을 scene에 추가하지 않을경우 검은색 도형만 보임!
             let lights =[];
             lights[0] = new THREE.DirectionalLight(0xffffff, 1);
             lights[0].position.set(1,0,0);
@@ -116,15 +125,18 @@
             window.addEventListener("resize", onWindowResize, false);
             scene.add(ambientLight);
         }
+        //리사이징시 camera 위치 조정 
         function onWindowResize(){
             camera.aspect = window.innerWidth /window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
+        //requestAnimationFrame을 통해 animate()재귀함수를 실행시켜요 
+        //각 도형들의 rotation을 설정해서 움직임을 정해요 ! 
         function animate(){
             requestAnimationFrame(animate);
-            circle.rotation.x -=0.005;            
-            circle.rotation.y -=0.007;
+            tryangle.rotation.x -=0.005;            
+            tryangle.rotation.y -=0.007;
 
             skelet.rotation.x +=0.02;            
             skelet.rotation.y +=0.04;
