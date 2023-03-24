@@ -360,7 +360,7 @@ INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES
 <pre><code class="language-js">SELECT count(youName) youAge FROM member;
 SELECT count(*) youAge FROM member;
 </code></pre>
-                    <h4 id="intro6-3" class="page-header">MySQL 데이터 수정하기 :D </h4>
+                    <h4 id="intro6-3" class="page-header">MySQL 데이터 수정하기 :D</h4>
                     <div class = "bs-callout bs-callout-info"><code>UPDATE</code>TABLE명<code>SET</code>컬럼명 조건</div>
                     <h4>모든 회원의 비밀번호를 1234로 수정하기</h4>
 <pre><code class="language-js">UPDATE member SET youPass = '1234';
@@ -374,7 +374,7 @@ SELECT count(*) youAge FROM member;
                     <h4>비밀번호를 '1234567'로 변경하고 패스워드를 memberID 기준으로 내림차순으로 5개만 변경하기</h4>
 <pre><code class="language-js">UPDATE member SET youPass = '1234567' ORDER BY memberID DESC LIMIT 5;
 </code></pre>
-                    <h4 id="intro6-4" class="page-header">MySQL 데이터 삭제하기 :D </h4>
+                    <h4 id="intro6-4" class="page-header">MySQL 데이터 삭제하기 :D</h4>
                     <div class = "bs-callout bs-callout-info"><code>DELETE FROM</code>테이블명<code>WHERE</code>조건</div>
                     <h4>memberID 5번을 삭제 하기 </h4>
 <pre><code class="language-js">DELETE FROM member WHERE memberID='5';
@@ -432,8 +432,6 @@ SELECT * FROM member ORDER BY memberID ASC;
     <footer class="bs-footer" role="contentinfo">
         <div class="container">
             <ul class="footer-links muted">
-                <li><a href="https://getgrovy.tistory.com/">getgrovy.tistory.com</a></li>
-                <li><a href="https://getgrovy.tistory.com/">getgrovy.tistory.com</a></li>
                 <li><a href="https://getgrovy.tistory.com/">getgrovy.tistory.com</a></li>
             </ul>
         </div>

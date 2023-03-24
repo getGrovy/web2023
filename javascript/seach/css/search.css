@@ -160,8 +160,6 @@
     text-align: right;
     padding: 2VW 2vw;
     border-top: 0.3vw dashed #000;
-    
-
 }
 .search__list {
     padding: 2vw;
@@ -177,7 +175,6 @@
 .search__list li.hide{
     display: none;
 }
-
 .search__deco01{
     position: absolute;
     left: -10vw;
