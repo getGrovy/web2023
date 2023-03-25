@@ -294,6 +294,7 @@
             quizInfo.forEach((question, num)=>{
                 const userSelector = `input[name=choice${num}]:checked`;
                 const quizSelectorWrap = quizChoices[num];
+                // ||{} 는 
                 const userAnswer = (quizSelectorWrap.querySelector(userSelector)||{}).value;
                 const dogWrap =quizWrap.querySelectorAll(".dog__wrap");                       
                 

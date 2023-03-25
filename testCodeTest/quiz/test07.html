@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대충만든자판</title>
+    
+</head>
+<a href="https://school.programmers.co.kr/learn/courses/30/lessons/160586"> 문제보러가기</a><br>
+<body>
+    
+</body>
+<script>
+    function solution(keymap, targets) {
+        //set join map
+        const answer = [];
+        // let mySet = new Set(keymap);
+
+        // mySet.add();
+        
+        // console.log(keymap);
+        let keyNum =0;
+        const mapKey = new Map();
+        for (const key of keymap) {
+            // console.log(key);
+            // console.log(key.length)
+            for (let i = 0; i < key.length; i++) {
+                // if(mapKey.get(key[i])==null)mapKey.set(key[i],i);
+                // mapKey.set(key[i],i+1)
+                mapKey.set(key[i],i)
+                if(mapKey.get(key[i])== null )mapKey.set(key[i],i);
+                // console.log(mapKey.get(key[i]));
+                // console.log(mapKey.get(key[i])+"_______");
+                // mapKey.set(key[i],i+1);
+                // console.log(`key[i] ${key[i]}   mapKey.get  (${mapKey.get(key[i])}) `) ;
+
+                
+                // console.log(mapKey.get(key[i]),".get(key[i])-----444444444----" ) ;
+                //1 map의 키 값이  존재하면 넣지 않는다 
+                
+                //2 중복값은 맨앞의 값만 호출? 
+
+                //3 targets의 값을 하나씩 map의 값과ㅏ 비교한다 
+                
+                // mapKey.set(mapSize,key[i]);
+
+
+            }
+        }
+        console.log(mapKey)
+        // const arrUnique = [...new Set(mapKey)];
+        // console.log(arrUnique);
+        
+        // console.log( mapKey.get("A"));
+
+        for (const target of targets) {
+            let count = 0;
+            for (let i = 0; i < target.length; i++) {
+                console.log(target[i]);
+                // count += map.get(target[i]);
+                console.log(`${mapKey.get(key[i])}`);
+            }
+            answer.push(count || -1);
+        }
+
+        return answer;       
+        
+    }
+    solution(["ABACD", "BCEFD"]	,	["ABCD","AABB"]);
+
+    // keymap	targets	result
+    // ["ABACD", "BCEFD"]	["ABCD","AABB"]	[9, 4]
+    // ["AA"]	["B"]	[-1]
+    // ["AGZ", "BSSS"]	["ASA","BGZ"]	[4, 6]
+
+
+
+</script>
+</html>
+

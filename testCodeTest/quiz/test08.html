@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대충만든자판</title>
+    
+    
+</head>
+<a href="https://school.programmers.co.kr/learn/courses/30/lessons/160586"> 문제보러가기</a><br>
+https://gobae.tistory.com/158
+<body>
+    
+</body>
+<script>
+    function solution(keymap, targets) {
+        const keytable = keymap.reduce((obj, keys) => {
+            
+
+            [...keys].forEach((key, i) => {
+            console.log(`key ${key} ,,, i ${i}`);
+            if (obj[key]) {
+                obj[key] = Math.min(obj[key], i + 1);
+            } else {
+                obj[key] = i + 1;
+            }
+            })
+            // console.log(obj);
+            return obj;            
+        });
+        console.log(keytable);
+    }
+    solution(["ABACD", "BCEFD"]	,	["ABCD","AABB"]);
+
+    // keymap	targets	result
+    // ["ABACD", "BCEFD"]	["ABCD","AABB"]	[9, 4]
+    // ["AA"]	["B"]	[-1]
+    // ["AGZ", "BSSS"]	["ASA","BGZ"]	[4, 6]
+
+
+
+</script>
+</html>
+
