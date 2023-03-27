@@ -28,7 +28,6 @@
 
     <main id="main">
         <div class="quiz__wrap">
-        
           <div class="quiz">
                 <div class="quiz__header">
                     <h2 class="quiz__title"></h2>
@@ -39,6 +38,7 @@
                     <div class="quiz__view">
                         <div class="wrapper">
                             <div class="dog__wrap ">
+                                <div class="dog__total">dsfsdfdf</div>
                                 <div class="true">정답입니다!</div>
                                 <div class="false">오답입니다!</div>
                                 <div class="card-container">
@@ -83,11 +83,10 @@
                         </label> -->
                     </div>
                     <div class="quiz__answer">
-                        <!-- <button class="confirm">정답 확인하기</button> -->
+                        <button class="confirm">점수 확인하기</button>
                         <button class="next">다음 문제</button>
                     </div>
-                    <div class="quiz__desc hide">
-                        
+                    <div class="quiz__desc">
                     </div>
                 </div>
             </div>
@@ -113,7 +112,7 @@
                 infoChoice: [
                     "소극적 입체는 현실적 형, 확실히 지각되는 형을 말한다." ,"입체는 면이 이동한 자취이다.","두 면과 각도를 가진 방향으로 이동하거나 면의 회전에 의해 생긴다.","순수한 입체는 구, 원통, 육면체 등과 같은 형이다"
                 ],
-                infoAnswer: "1",
+                infoAnswer: "소극적 입체는 현실적 형, 확실히 지각되는 형을 말한다.",
                 infoDesc: "입체는 3차원 함수를 생각하면 쉬워요 ! 점, 선, 공간 <br>>>즉 공간 or 입체적인 느낌을 주는게 아닌것 찾기"
             },
             {
@@ -124,7 +123,7 @@
                 infoChoice: [
                       "조화" ,"율동","균형","강조"
                 ],
-                infoAnswer: "2",
+                infoAnswer: "율동",
                 infoDesc: "디자인이 ... 연속될 >> 율동"
             },
             {
@@ -135,7 +134,7 @@
                 infoChoice: [ 
                     "영상 디자인" ,"완구 디자인","가전 디자인","가구 디자인"
                 ],
-                infoAnswer: "1",
+                infoAnswer: "영상 디자인",
                 infoDesc: "영상은... Product뜻에 부합하지않음"
             },
             {
@@ -146,7 +145,7 @@
                 infoChoice: [
                     "디자인은 고도로 복잡하고 세련된 숙련이다." ,"디자인은 항상 어떤 가능성을 전제로 시작된다.","디자인은 모든 사람의 일상이다.","디자인은 예술이다."
                 ],
-                infoAnswer: "3",
+                infoAnswer: "디자인은 모든 사람의 일상이다.",
                 infoDesc: "알잘딱ㅋ 느낌으로"
             },
             {
@@ -155,9 +154,9 @@
                 infoNumber:"20120205",
                 infoQuestion: "형태에 관한 시각의 기본 법칙을 내포한 게슈탈트(Gustalt)심리적 원리가 옳은 것은?",
                 infoChoice: [
-                    "연속성, 근접성, 유사성, 폐쇄성" ,"유사성, 연속성, 개방성, 폐쇄성","근접성, 개방성, 전경과 배경의 법칙","유사성, 이성적, 개방성, 접근성(근접성)"
+                "연속성, 근접성, 유사성, 폐쇄성" ,"유사성, 연속성, 개방성, 폐쇄성","근접성, 개방성, 전경과 배경의 법칙","유사성, 이성적, 개방성, 접근성(근접성)"
                 ],
-                infoAnswer: "1",
+                infoAnswer: "연속성, 근접성, 유사성, 폐쇄성",
                 infoDesc: "형태가 시(각)기(본) 연근유폐"
             },
             {
@@ -166,12 +165,154 @@
                 infoNumber:"20120206",
                 infoQuestion: "색채를 과학적으로 정리하여 스펙트럼을 7색으로 분리한 사람은?",
                 infoChoice: [
-                     "뉴턴" ,"먼셀","오스트발트","돈더스"
+                "뉴턴" ,"먼셀","오스트발트","돈더스"
                 ],
-                infoAnswer: "1",
+                infoAnswer: "뉴턴",
                 infoDesc: "색7뉴턴 뉴턴새ㄱ71로 외웠어요 ^^ "
             }
         ];
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizTitle = document.querySelector(".quiz__title");
+        const quizChoice = document.querySelector(".quiz__choice");
+        const quizQuestion = document.querySelector(".quiz__question");
+        const dogWrap =quizWrap.querySelector(".dog__wrap");        
+        const quizAnswer = quizWrap.querySelector(".quiz__answer"); 
+        const quizNext = quizWrap.querySelector(".quiz__answer .next");         //정답버튼
+        const quizDesc = quizWrap.querySelector(".quiz__desc");                 //desc
+        const quizConfirm = quizWrap.querySelector(".quiz__answer .confirm");   //점수버튼 confirm
+        const dogTot = quizWrap.querySelector(".dog__wrap .dog__total");        //총 문제 카운트 하기위해 설정해둠
+
+
+        let quizCount = 0;
+        let quizScore = 0;
+        
+        
+        //문제 정보 
+        // quizTitle.innerHTML = quizInfo[0].infoType + "&nbsp;" + quizInfo[0].infoTime ;
+        
+        //문제출력
+        const updateQuiz = (index) =>{
+            // alert("quizCount : "+index + "____quizInfo.length : "+quizInfo.length);
+            let typeTag = `
+                <span>${quizInfo[index].infoType}</span>
+                <em>${quizInfo[index].infoTime}</em>
+            `;
+            
+            let qustionTag= `
+                <em>${index+1}</em>.
+                <span>${quizInfo[index].infoQuestion}</span>
+            `;
+                // <em>${quizInfo[index].infoNumber.split("201202").join("")}</em>.
+            let choiceTag = `
+                <label for="choice1">
+                    <input type="radio" id="choice1" name="choice" value="1">
+                    <span class="choice">${quizInfo[index].infoChoice[0]}</span>
+                </label>
+                <label for="choice2">
+                    <input type="radio" id="choice2" name="choice" value="2">
+                    <span class="choice">${quizInfo[index].infoChoice[1]}</span>
+                </label>
+                <label for="choice3">
+                    <input type="radio" id="choice3" name="choice" value="3">
+                    <span class="choice">${quizInfo[index].infoChoice[2]}</span>
+                </label>
+                <label for="choice4">
+                    <input type="radio" id="choice4" name="choice" value="4">
+                    <span class="choice">${quizInfo[index].infoChoice[3]}</span>
+                </label>
+            `;
+            let descTag =`
+                정답 : ${quizInfo[index].infoAnswer}<br> 
+                해설 : ${quizInfo[index].infoDesc}<br> 
+            `;
+            quizTitle.innerHTML=typeTag;
+            quizChoice.innerHTML=choiceTag;
+            quizQuestion.innerHTML=qustionTag;
+            quizDesc.innerHTML=descTag;
+            //총문제는 quizInfo 배열의 길이 
+            //quizCount값은 quizInfo[quizCount] 이렇게 문제를 가져오기때문에 실질적인 문제의 count이다
+            dogTot.innerHTML=`남은문제 : ${quizInfo.length-quizCount-1}`;
+
+            //보기 선택자
+            const quizChoiceSpan = document.querySelectorAll(".quiz__choice span");
+            const quizChoiceinput = document.querySelectorAll(".quiz__choice input");
+            
+ 
+            // quizChoiceSpan.forEach((span,num) => {
+            //     span.setAttribute("onclick", "choiceSelected(this)");
+            // });
+            
+            //정답 정답 해설 숨기기
+            quizDesc.style.display="none";
+            quizAnswer.style.display="none";
+            quizConfirm.style.display="none";
+            
+            //강아지 초기화
+            dogReset();
+            
+            for(let i=0 ; i < quizChoiceSpan.length ; i++){
+                quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
+                // quizChoiceinput.disabled ="true";
+            }
+        };
+
+        //객관식 선택
+        function choiceSelected(answer){
+            let userAnswer = answer.textContent;
+            let currentAnswer = quizInfo[quizCount].infoAnswer;
+            dogReset();
+
+            if(userAnswer == currentAnswer){
+                dogWrap.classList.add("like");
+                quizScore++
+
+            }else {
+                dogWrap.classList.add("dislike");
+
+            }
+            if(quizCount == quizInfo.length-1 ){
+                // quizAnswer.style.display="none";?
+                quizDesc.style.display="block";
+                quizAnswer.style.display="block";
+                quizNext.style.display="none";
+                quizConfirm.style.display="block";
+
+                dogTot.innerHTML=`모든 문제를 풀었습니다.&nbsp;점수를확인해주세여`;
+            }else{
+                quizDesc.style.display="block";
+                quizAnswer.style.display="block";
+            }
+            
+                // dogTot.innerHTML=`점수 : 0`;
+
+            // }else{
+            //     quizDesc.style.display="block";
+            //     quizAnswer.style.display="block";
+            // }
+        }
+
+        updateQuiz(quizCount);
+
+        function dogReset(){
+            dogWrap.classList.remove("dislike", "like");
+        }
+
+        //정답확인
+        quizNext.addEventListener("click",()=>{
+            quizCount++;
+            updateQuiz(quizCount);
+            
+        });
+        quizConfirm.addEventListener("click",()=>{
+            quizConfirm.innerHTML=`${quizInfo.length}문제중 ${quizScore}문제 맞았습니다.<br>${Math.ceil((quizScore/quizInfo.length*100))}점`;
+        });
+
+        
+       //다풀었을때 점수 표시  총문제 맞춘문제수 & 틀린갯수
+       //총갯수 
+       //남은문제 ?
+
     </script>
 </body>
 </html>
