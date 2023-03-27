@@ -164,6 +164,23 @@ body {
 .quiz__answer .confirm:hover {
     background-color: #b4b4da;
 }
+
+.quiz__answer .next {
+    background-color: #a68ae5;
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-family: 'Cafe24SsurroundAir';
+    padding: 10px 20px;
+    font-size: 22px;
+    transition: 0.3s;
+    /* margin-bottom: 10px; */
+    /* cursor: pointer; */
+    /* text-shadow: 2px 2px 0px #747499; */
+    /* font-weight: bold; */
+}
+.quiz__answer .next:hover {
+    background-color: rgb(187, 167, 235);
+}
 .quiz__answer .result {
     background-color: #fff;
     border: 6px ridge #cacaca;

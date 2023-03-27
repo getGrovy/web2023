@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html"> Quiz </a><em>객관식 확인하기(슬라이드) 유형(여러문제)</em>🙂</h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li ><a href="quizEffect05.html">5</a></li>
+            <li class = "active"><a href="quizEffect06.html">6</a></li>
+
+        </ul>
+    </header> 
+    <!-- header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+        
+          <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question">
+                    </div>
+                    <div class="quiz__view">
+                        <div class="wrapper">
+                            <div class="dog__wrap ">
+                                <div class="true">정답입니다!</div>
+                                <div class="false">오답입니다!</div>
+                                <div class="card-container">
+                                    <div class="dog">
+                                        <div class="head">
+                                            <div class="ears"></div>
+                                            <div class="face"></div>
+                                            <div class="eyes">
+                                                <div class="teardrop"></div>
+                                            </div>
+                                            <div class="nose"></div>
+                                            <div class="mouth">
+                                                <div class="tongue"></div>
+                                            </div>
+                                            <div class="chin"></div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="tail"></div>
+                                            <div class="legs"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <!-- <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span class="choice"></span>
+                        </label> -->
+                    </div>
+                    <div class="quiz__answer">
+                        <!-- <button class="confirm">정답 확인하기</button> -->
+                        <button class="next">다음 문제</button>
+                    </div>
+                    <div class="quiz__desc hide">
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <!-- <div class="quiz__check">정답 확인하기</div> -->
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- footer -->
+    <script>
+        //문제정보
+        const quizInfo = [
+            {  
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120201",
+                infoQuestion: "입체에 대한 설명으로 옳지 않은 것은?",
+                infoChoice: [
+                    "소극적 입체는 현실적 형, 확실히 지각되는 형을 말한다." ,"입체는 면이 이동한 자취이다.","두 면과 각도를 가진 방향으로 이동하거나 면의 회전에 의해 생긴다.","순수한 입체는 구, 원통, 육면체 등과 같은 형이다"
+                ],
+                infoAnswer: "1",
+                infoDesc: "입체는 3차원 함수를 생각하면 쉬워요 ! 점, 선, 공간 <br>>>즉 공간 or 입체적인 느낌을 주는게 아닌것 찾기"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120202",
+                infoQuestion: "다음 중 각 부분 사이에 시각적인 강한 힘과 약한 힘이 규칙적으로 연속될 때에 생기는 디자인의 원리는?",
+                infoChoice: [
+                      "조화" ,"율동","균형","강조"
+                ],
+                infoAnswer: "2",
+                infoDesc: "디자인이 ... 연속될 >> 율동"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120203",
+                infoQuestion: "다음 중 제품 디자인(Product Design) 분야로 거리가 먼 것은?",
+                infoChoice: [ 
+                    "영상 디자인" ,"완구 디자인","가전 디자인","가구 디자인"
+                ],
+                infoAnswer: "1",
+                infoDesc: "영상은... Product뜻에 부합하지않음"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120204",
+                infoQuestion: "다음과 관계있는 디자인의 개념은?<br> '우리는 디자인 속에서 살고 있다'",
+                infoChoice: [
+                    "디자인은 고도로 복잡하고 세련된 숙련이다." ,"디자인은 항상 어떤 가능성을 전제로 시작된다.","디자인은 모든 사람의 일상이다.","디자인은 예술이다."
+                ],
+                infoAnswer: "3",
+                infoDesc: "알잘딱ㅋ 느낌으로"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120205",
+                infoQuestion: "형태에 관한 시각의 기본 법칙을 내포한 게슈탈트(Gustalt)심리적 원리가 옳은 것은?",
+                infoChoice: [
+                    "연속성, 근접성, 유사성, 폐쇄성" ,"유사성, 연속성, 개방성, 폐쇄성","근접성, 개방성, 전경과 배경의 법칙","유사성, 이성적, 개방성, 접근성(근접성)"
+                ],
+                infoAnswer: "1",
+                infoDesc: "형태가 시(각)기(본) 연근유폐"
+            },
+            {
+                infoType:"웹디자인기능사",
+                infoTime:"2012년 2회",
+                infoNumber:"20120206",
+                infoQuestion: "색채를 과학적으로 정리하여 스펙트럼을 7색으로 분리한 사람은?",
+                infoChoice: [
+                     "뉴턴" ,"먼셀","오스트발트","돈더스"
+                ],
+                infoAnswer: "1",
+                infoDesc: "색7뉴턴 뉴턴새ㄱ71로 외웠어요 ^^ "
+            }
+        ];
+    </script>
+</body>
+</html>
