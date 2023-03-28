@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트05</title>
+    <title>퀴즈 이펙트06</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/quiz.css">
     <style>
@@ -21,6 +21,7 @@
             <li><a href="quizEffect04.html">4</a></li>
             <li ><a href="quizEffect05.html">5</a></li>
             <li class = "active"><a href="quizEffect06.html">6</a></li>
+            <li><a href="quizEffect07.html">7</a></li>
 
         </ul>
     </header> 
@@ -264,6 +265,7 @@
                 dogWrap.classList.add("dislike");
 
             }
+
             if(quizCount == quizInfo.length-1 ){
                 // quizAnswer.style.display="none";?
                 quizDesc.style.display="block";
@@ -294,7 +296,21 @@
             
         });
         quizConfirm.addEventListener("click",()=>{
-            quizConfirm.innerHTML=`${quizInfo.length}문제중 ${quizScore}문제 맞았습니다.<br>${Math.ceil((quizScore/quizInfo.length*100))}점`;
+        
+            let score = Math.ceil((quizScore/quizInfo.length*100));
+
+            // if(score>60){
+            //     quizConfirm.innerHTML += "합격입니다."
+            // }else{
+            //     quizConfirm.innerHTML += "불합격입니다."
+            // }
+            // 삼항연산자를 변수안에 넣어서 값을 설정할수있다 ~~
+            const countResult = (score>60)? "합격" : "불합격";
+
+            quizConfirm.innerHTML=`${quizInfo.length}문제중 ${quizScore}문제 맞았습니다.<br>${score}점<br>${countResult}입니다.`;
+
+            
+
         });
 
         
