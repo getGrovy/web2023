@@ -38,7 +38,7 @@
                     <div class="quiz__view">
                         <div class="wrapper">
                             <div class="dog__wrap ">
-                                <div class="dog__total">dsfsdfdf</div>
+                                <div class="dog__total"></div>
                                 <div class="true">정답입니다!</div>
                                 <div class="false">오답입니다!</div>
                                 <div class="card-container">
@@ -193,7 +193,6 @@
         
         //문제출력
         const updateQuiz = (index) =>{
-            // alert("quizCount : "+index + "____quizInfo.length : "+quizInfo.length);
             let typeTag = `
                 <span>${quizInfo[index].infoType}</span>
                 <em>${quizInfo[index].infoTime}</em>
@@ -236,12 +235,6 @@
 
             //보기 선택자
             const quizChoiceSpan = document.querySelectorAll(".quiz__choice span");
-            const quizChoiceinput = document.querySelectorAll(".quiz__choice input");
-            
- 
-            // quizChoiceSpan.forEach((span,num) => {
-            //     span.setAttribute("onclick", "choiceSelected(this)");
-            // });
             
             //정답 정답 해설 숨기기
             quizDesc.style.display="none";
@@ -249,11 +242,11 @@
             quizConfirm.style.display="none";
             
             //강아지 초기화
-            dogReset();
+            dogWrap.classList.remove("dislike", "like");
+
             
             for(let i=0 ; i < quizChoiceSpan.length ; i++){
                 quizChoiceSpan[i].setAttribute("onclick", "choiceSelected(this)");
-                // quizChoiceinput.disabled ="true";
             }
         };
 
@@ -261,7 +254,7 @@
         function choiceSelected(answer){
             let userAnswer = answer.textContent;
             let currentAnswer = quizInfo[quizCount].infoAnswer;
-            dogReset();
+            dogWrap.classList.remove("dislike", "like");
 
             if(userAnswer == currentAnswer){
                 dogWrap.classList.add("like");
@@ -293,10 +286,6 @@
         }
 
         updateQuiz(quizCount);
-
-        function dogReset(){
-            dogWrap.classList.remove("dislike", "like");
-        }
 
         //정답확인
         quizNext.addEventListener("click",()=>{
