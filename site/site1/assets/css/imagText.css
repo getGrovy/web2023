@@ -16,6 +16,7 @@
     display: inline-block;
 }
 .imgText__inner .text h3 {
+    
     font-size: 50px;
     margin-bottom: 17px;
 }
@@ -24,6 +25,7 @@
     line-height: 1.5;
     color: #666;
     margin-bottom: 12px;
+    text-align: left;
 }
 .imgText__inner .text li {
     position: relative;

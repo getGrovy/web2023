@@ -1,4 +1,5 @@
 .banner__wrap {
+    height: 500px;
     position: relative;
     box-sizing: border-box;
     z-index: 10;
@@ -13,6 +14,7 @@
     background-image: url(../img/bannerType01.jpg);
     background-repeat: no-repeat;
     background-position: center ;
+    background-size: cover;
     z-index: -1;
 }
 .banner__inner {
@@ -31,19 +33,4 @@
 }
 .banner__inner a {
     color: #d6d6d6;
-}
-
-@media (max-width:960px){
-    .banner__inner h3 {
-        font-size: 40px;
-    }
-}
-@media (max-width:600px){
-    .banner__inner h3 {
-        font-size: 30px;
-    }
-    .banner__inner p {
-        margin-bottom: 50px;
-    }
-
 }
