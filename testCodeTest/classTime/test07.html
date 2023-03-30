@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMAIL TEST</title>
+</head>
+<body>
+    <div id="userInput">
+        <label>
+            <input type="email" id="userEmail" placeholder="이멜주소를 입력하세요" autofocus>
+        </label>
+        <button>실행</button>
+    </div>
+    <div id="result"></div>
+    <div id="result1"></div>
+</body>
+<script>
+    const email=document.querySelector("#userEmail");
+    const button=document.querySelector("button");
+    const result=document.querySelector("#result");
+
+    button.addEventListener("click",()=>{
+        let username, domain, half;
+
+        if(email.value != ""){
+            //@기준 으로 0변 위치 
+            username = email.value.split("@")[0]; 
+            //앞에 3글자 자르기 
+            username = username.substring(0,3); 
+            //@기준 으로 1변 위치 
+            domain= email.value.split("@")[1]
+            result.innerHTML=`${username} ... @ ${domain}`
+            //앞에 3글자와 ... @ 뒤에 출력합니다.
+
+            username1 = email.value.split("@")[0]; 
+            half  = username1.length //길이를 절반으로 나눕니다. ;
+            username1 = username1.substring(0, (username1.length - half));
+            //절반으로 나눈위치까지만 추출 
+            result1.innerHTML = `${username} ... @ ${domain}`;
+
+
+        }
+    });
+</script>
+</html>

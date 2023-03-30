@@ -69,7 +69,7 @@
                     <li><a href="#sample19">19. <strong>array.prototype.indexOf()</strong>😀           메서드는 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
                     <li><a href="#sample20">20. <strong>array.prototype.lastIndexOf()</strong>       메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
                     <li><a href="#sample21">21. <strong>array.prototype.join()</strong>😀              메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.</a></li>
-                    <li><a href="#sample22">22. <strong>array.prototype.pop()</strong>               메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
+                    <li><a href="#sample23">22. <strong>array.prototype.pop()</strong>               메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
                     <li><a href="#sample23">23. <strong>array.prototype.push()</strong>😀              메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다.</a></li>
                     <li><a href="#sample24">24. <strong>array.prototype.reduce()</strong>            메서드는 배열의 각 요소를 실행하고, 하나의 결과값을 반환합니다.</a></li>
                     <li><a href="#sample25">25. <strong>array.prototype.reduceRight()</strong>       메서드는 배열의 각 요소를 마지막부터 실행하고, 하나의 결과값을 반환합니다.</a></li>
@@ -77,17 +77,17 @@
                     <li><a href="#sample27">27. <strong>array.prototype.shift()</strong>             메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
                     <li><a href="#sample28">28. <strong>array.prototype.unshift()</strong>           메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</a></li>
                     <li><a href="#sample29">29. <strong>array.prototype.slice()</strong>😀            메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.</a></li>
-                    <li><a href="#sample29">29. <strong>array.prototype.splice()</strong>😀           메서드는 배열의 기존요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</a></li>
-                    <li><a href="#sample30">30. <strong>array.prototype.sort()</strong>😀             메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </a></li>
-                    <li><a href="#sample31">31. <strong>array.prototype.toLocaleString()</strong>    메서드는 배열의 요소를 문자열로 반환합니다.</a></li>
-                    <li><a href="#sample32">32. <strong>array.prototype.toString()</strong>          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</a></li>
-                    <li><a href="#sample33">33. <strong>array.prototype.values()</strong>😀            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</a></li>
+                    <li><a href="#sample30">30. <strong>array.prototype.splice()</strong>😀           메서드는 배열의 기존요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</a></li>
+                    <li><a href="#sample31">31. <strong>array.prototype.sort()</strong>😀             메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </a></li>
+                    <li><a href="#sample32">32. <strong>array.prototype.toLocaleString()</strong>    메서드는 배열의 요소를 문자열로 반환합니다.</a></li>
+                    <li><a href="#sample33">33. <strong>array.prototype.toString()</strong>          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample34">34. <strong>array.prototype.values()</strong>😀            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</a></li>
                     
                 </ul>
             </div>
             <div class="main__sample">
-                <div id="sample00" class="sample">
-                    <h3>배열 메서드 : join()</h3>
+                <div id="sample21" class="sample">
+                    <h3>21. join()</h3>
                     <p>join() 메서드는 배열 요소를 문자열로 결합합니다. 반환은 문자열입니다.</p>
 <pre><code class="language-js">{
     const arrNum1 = [100, 200, 300, 400, 500];
@@ -104,7 +104,7 @@
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                (5) [100, 200, 300, 400, 500]<br>
+                                (5) [100, 200, 300, 400, 500]<br>
                                 100200300400500<br>
                                 100 200 300 400 500<br>
                                 100*200*300*400*500
@@ -116,65 +116,118 @@
                         <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
                     </div>
                 </div>
-                <!-- sample00 -->
-                <div id="sample01" class="sample">
-                    <h3>배열 메서드 : push() , pop() </h3>
-                    <p>push() 반환(숫자)는 배열 마지막 요소에 요소를 추가하고, pop() 메서드는 배열 마지막 요소를 삭제합니다. </p>
+                
+                <!-- sample21 -->
+                <div id="sample29" class="sample">
+                    <h3>29. slice()</h3>
+                    <div class="noticeDark">
+                        <h4>배열.slice ( 시작위치 , [끝나는위치] ) </h4>
+                        <p>시작위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환해 준다 </p>
+                    </div>
 <pre><code class="language-js">{
-    const arrNum1 = [100, 200, 300, 400, 500];
-    const arrPush1 = arrNum1.push(600);
-    console.log(arrNum1);
+    let arrSlice =['j','a','v','a','s','c','r','i','p','t'].slice(0);
+    console.log(arrSlice);
+    // ['j','a','v','a','s','c','r','i','p','t']
+    console.log(arrSlice.slice(2));
+    // [j , a]
+    console.log(arrSlice.slice(0,4));
+    // [j, a, v, a]
+    console.log(arrSlice.slice(5,10));
+    console.log(arrSlice.slice(5,11));
+    // [c','r','i','p','t']
+    console.log(arrSlice.slice(5,-1));
+    // [c','r','i','p']
+    console.log(arrSlice.slice(5,-2));
+    // [c','r','i']
+    console.log(arrSlice.slice(-1));
+    // 맨뒤에서부터 1칸
+    // ['t']
+    console.log(arrSlice.slice(-2));
+    // ['p','t']
 
-    const arrNum2 = [100, 200, 300, 400, 500];
-    const arrPush2 = arrNum2.pop();
-    console.log(arrNum2);
+    console.log(arrSlice.slice(-3,-1));
+    // 범위 : 뒤에서 부터 3칸, 맨뒤의 -1 칸 제거
+    // ['i','[p]']
 } 
 </pre></code>                   
-                    <div class="resultDark">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                (6) [100, 200, 300, 400, 500, 600]</br>
-                                (4) [100, 200, 300, 400]</br>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="noticeDark">
-                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
-                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
-                    </div>
+                    
                 </div>
-                <!-- sample01 -->
+                <!-- sample29 -->
 
-                <div id="sample02" class="sample">
-                    <h3>배열 메서드 : unshift() / shift()</h3>
-                    <p>unshift() 메서드는 배열 처음 요소에 요소를 추가하고,shift() 메서드는 배열 처음 요소를 삭제합니다. </p>
+                <div id="sample30" class="sample">
+                    <h3>30. splice()</h3>
+                    <div class="noticeDark">
+                        <h4>배열.slice ( 시작위치 , [삭제 갯수], [요소 여러게 가능] ) </h4>
+                        <p>... </p>
+                    </div>
 <pre><code class="language-js">{
-    const arrNum1 = [100, 200, 300, 400, 500];
-    const arrPush1 = arrNum1.unshift(600);
+    const arrNum1 = [100,200, 300, 400, 500];
+    const resultNum1 = arrNum1.splice(1);
+    //splice는 변수에 할당해 있는 값을 변경함
     console.log(arrNum1);
+    //[100]
+    
+    //splice는 리턴값은 splice(1)을 제외한 값 반환
+    console.log(resultNum1);
+    //[200,300,400,500]
 
-    const arrNum2 = [100, 200, 300, 400, 500];
-    const arrPush2 = arrNum2.shift();
+    const arrNum2 = [100,200, 300, 400, 500];
+    //1번쨰 순서부터 2개
+    const resultNum2 = arrNum2.splice(1, 2); 
+
+    console.log(resultNum2);
+    //[200,300] 
     console.log(arrNum2);
+    //[100, 400, 500]
+
+    const arrNum3 = [100,200, 300, 400, 500];
+    const resultNum3 = arrNum3.splice(1, 4); 
+    
+    console.log(arrNum3);
+    console.log(resultNum3);
+    //[100] 
+    //[200, 300, 400, 500]
+    
+    const arrNum4 = [100,200, 300, 400, 500];
+    const resultNum4 = arrNum4.splice(1, 2, "javascript"); 
+    console.log(arrNum4);
+    //[100, javascript , 400, 500]
+    console.log(resultNum4);
+    // [300,400]
+
+    const arrNum5 = [100,200, 300, 400, 500];
+    const resultNum5 = arrNum5.splice(1, 0, "javascript5"); 
+    console.log(arrNum5);
+    //[100, 'javascript', 200, 300, 400 ,500]
+    console.log(resultNum5);
+    //[]
+
+    const arrNum6 = [100,200, 300, 400, 500];
+    const resultNum6 = arrNum6.splice(0, 4, "javascript"); 
+    console.log(arrNum6);
+    //['javascript',500]
+    console.log(resultNum6);
+    //[100,200,300,400]
+
+    const arrNum7 = [100,200, 300, 400, 500];
+    const resultNum7 = arrNum7.splice(2, 2, "javascript","react"); 
+    console.log(arrNum7);
+    //[100,200,'javascript','react',[500]]
+    console.log(resultNum7);
+    //[300,400]
+
+    const arrNum8 = [100,200, 300, 400, 500];
+    const resultNum8 = arrNum8.splice(-2, 2, "javascript"); 
+    //음수는 뒤에서 부터 -2 는 뒤에서 2칸 
+    console.log(arrNum8);
+    // [100,200,300,"javascript"]
+    console.log(resultNum8);
+    // [400, 500]
 } 
 </pre></code>                   
-                    <div class="resultDark">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                (6) [600, 100, 200, 300, 400, 500]</br>
-                                (4) [200, 300, 400, 500]</br>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="noticeDark">
-                        <h4>let i의 값에 따라 반복문의 횟수가 정해짐</h4>
-                        <p>임의의 변수로 원하는 횟수가 맞는지 확인하기 !</p>
-                    </div>
                 </div>
-                <!-- sample02 -->
-                </div>
+                <!-- sample30 -->
+                
             </div>
         </div>            
     </main>
@@ -183,17 +236,15 @@
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- footer -->
+
     <script src="assets/js/prism.js"></script>
     <script>
-        const arrNum1 = [100, 200, 300, 400, 500];
-        let text1 = arrNum1.join('');
-        let text2 = arrNum1.join(' ');
-        let text3 = arrNum1.join('*');
-        console.log(arrNum1);
-        console.log(text1);
-        console.log(text2);
-        console.log(text3);
+
+       
         
+
+
     </script>
+
 </body>
 </html>

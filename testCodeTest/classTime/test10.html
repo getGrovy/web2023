@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let numArr =[];
+    for(let i = 0 ; i <100 ; i++){
+        numArr[i] = i;
+    };
+
+    let numArr01=[] ;
+    let arrChk = 0;
+
+    for (let i = 0 ; numArr01.length <100; i++ ) {
+        arrChk= Math.floor(Math.random()*(100));
+        if(numArr01.indexOf(arrChk) == -1){
+            numArr01.push(arrChk)
+        }
+        console.log(numArr01.length + "____ "+ arrChk + "____반복횟수____"+i );
+    }
+    console.log(numArr01);
+
+</script>
+</html>

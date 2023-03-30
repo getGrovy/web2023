@@ -78,8 +78,8 @@
                     <li><a href="#sample28">28. <strong>string.prototype.toUpperCase()</strong>    메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
                     <li><a href="#sample29">29. <strong>string.prototype.toString()</strong>       메서드는 데이터를 문자열로 변환하고, 문자열을 반환합니다.</a></li>
                     <li><a href="#sample30">30. <strong>string.prototype.trim()</strong>           메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
-                    <li><a href="#sample31">31. <strong>string.prototype.trimEnd()</strong>        메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
-                    <li><a href="#sample32">32. <strong>string.prototype.trimStart()</strong>      메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample31">31. <strong>string.prototype.trimStart()</strong>        메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample32">32. <strong>string.prototype.trimEnd()</strong>      메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
                     <li><a href="#sample33">33. <strong>string.prototype.valueOf()</strong>        메서드는 객체의 원시값을 반환합니다.</a></li>
                 </ul>
             </div>
@@ -214,6 +214,168 @@
                     
                 </div>
                 <!--sample18-->
+                
+
+                 <div id="sample18" class="sample">
+                    <h3>18. 문자 메서드 : search()</h3>
+                    <div class="noticeDark">
+                        <h4>"문자열".search(검색값)</h4>
+                        <p>"문자열".search(검색값) && "문자열".search(정규식표현) </p>
+                        <ul>
+                            <li>문자열(정규식)을 검색하고, 위치값(숫자)를 반환합니다.</li>
+                            <li>문자열을 검색하며 , 주어진 값과 일치하는것이 없으면 -1을 반환합니다.</li>
+                        </ul>
+                    </div>
+<pre><code class="language-js">{
+    console.log("javascript refercence".match("javascript"));      // 배열[0]에 "javascript"
+    console.log("javascript refercence".match("refercence"));      // 배열[0]에 "refercence"
+    console.log("javascript refercence".match("r"));               // 배열[0]에 "r"
+    console.log("javascript refercence".match("R"));               // null 없음
+    console.log("javascript refercence".match(/refercence/));      // refercence
+    console.log("javascript refercence".match(/Refercence/));      // null 없음
+    console.log("javascript refercence".match(/Refercence/i));     // refercence i는 대소문자 
+    console.log("javascript refercence".match(/r/g));              // [r,r,r] 반환 r은 다찾기
+    console.log("javascript Refercence".match(/R/ig));             // [r,R,r] 반환
+} 
+</pre></code>                   
+                    
+                </div>
+                <!--sample18-->
+                <div id="sample19" class="sample">
+                    <h3>19. slice()</h3> 
+                    <div class="noticeDark">
+                        <h4>배열.slice ( 시작위치 , [끝나는위치]) </h4>
+                        <p>시작위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환해 준다 </p>
+                    </div>
+ 
+<pre><code class="language-js">{
+    let strSlice = "javascript";
+    console.log(strSlice.slice());
+    //javascript
+    console.log(strSlice.slice(1));
+    //avascript
+    console.log(strSlice.slice(2));
+    //vascript
+    console.log(strSlice.slice(0 ,1));
+    //j
+    console.log(strSlice.slice(0 ,2));
+    //ja
+    console.log(strSlice.slice(5 ,10));
+    //cript
+    console.log(strSlice.slice(5 ,-1));
+    //crip
+    console.log(strSlice.slice(5 ,-2));
+    //cri
+    
+    console.log(strSlice.slice(-1));
+    //음수 일경우 맨뒤의 칸을 제거
+    //t
+    console.log(strSlice.slice(-2)); 
+    //pt
+} 
+</pre></code>
+                </div>
+                <!-- sample19 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22. split()</h3> 
+                    <div class="noticeDark">
+                        <h4>배열.split ( 시작위치 , [끝나는위치]) </h4>
+                        <p>시작위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환해 준다 </p>
+                    </div>
+                    <!-- <p></p> -->
+<pre><code class="language-js">{
+    let strSplit = "javascript";
+    console.log(strSplit.split(""));
+    // ['j','a','v','a','s','c','r','i','p','t']
+    console.log(strSplit.split("", 1));
+    // ['j']
+    console.log(strSplit.split("", 2));
+    // ['j', 'a']
+
+    strSplit = "java script";
+    console.log(strSplit.split(" "));
+    // ['java','script']
+
+    strSplit = "java script";
+    console.log(strSplit.split(" ",1));
+    // ['java']
+
+    strSplit = "javascript";
+    console.log(strSplit.split("j"));
+    // ['','avascript']
+    console.log(strSplit.split("a"));
+    // ['j','v','script']
+
+    strSplit = "java/scr/ipt";
+    console.log(strSplit.split("/"));
+    // ['java', 'scr', 'ipt']
+    strSplit = "java&scr!ipt";
+    console.log(strSplit.split("&"));
+    // ['java','script']
+    console.log(strSplit.split(/ \& | \!/));
+    // / & | ! /  or  / & | \ ! /  
+    // 정규 표현식
+    // ['java', 'scr' ,'ipt']
+    
+    strSplit = "javascript";
+    console.log(strSplit.split().join());
+    console.log(strSplit.split().join("*"));
+    console.log(strSplit.split("").reverse().join(''));
+    console.log(strSplit.split("").reverse().join('*'));
+    //javascript 문자열로 출력 
+    //j*a*v*a*s*c*r*i*p*t 문자열로 출력 
+    //tpircsavaj
+    //t*p*i*r*c*s*a*v*a*j
+} 
+</pre></code>                   
+                </div>
+                <!-- sample22 -->
+
+                <div id="sample30" class="sample">
+                    <h3>30. trim()</h3> 
+                    <div class="noticeDark">
+                        <h4>문자열.trim ( ) </h4>
+                        <p>앞뒤 공백 제거 </p>
+                    </div>
+                    <!-- <p></p> -->
+<pre><code class="language-js">{
+    let strTrim = " javascript ";
+    console.log(strTrim.trim());
+    //"javascript"
+} 
+</pre></code>                   
+                </div>
+                <!-- sample30 -->
+                <div id="sample31" class="sample">
+                    <h3>31. trimStart()</h3> 
+                    <div class="noticeDark">
+                        <h4>문자열.trimStart( ) </h4>
+                        <p>앞 공백 제거 </p>
+                    </div>
+                    <!-- <p></p> -->
+<pre><code class="language-js">{
+    let strTrim = " javascript ";
+    console.log(strTrim.trimStart());
+    //"javascript  "
+} 
+</pre></code>                   
+                </div>
+                <!-- sample31 -->
+                <div id="sample32" class="sample">
+                    <h3>32. trimEnd()</h3> 
+                    <div class="noticeDark">
+                        <h4>배열.trimEnd( ) </h4>
+                    </div>
+                    <!-- <p></p> -->
+<pre><code class="language-js">{
+    let strTrim = " javascript ";
+    console.log(strTrim.trimEnd());
+    //"  javascript"
+} 
+</pre></code>                   
+                </div>
+                <!-- sample32 -->
             </div>
         </div>            
     </main>
@@ -224,30 +386,10 @@
     <!-- footer -->
     <script src="assets/js/prism.js"></script>
     <script>
-        // console.log("javascript refercence".lastIndexOf("javascript"));      // 0
-        // console.log("javascript refercence".lastIndexOf("javascripts"));     // -1
-        // console.log("javascript refercence".lastIndexOf("j"));               // 0
-        // console.log("javascript refercence".lastIndexOf("jv"));              // -1
-        // console.log("javascript refercence".lastIndexOf("r"));               // 15
-        // console.log("javascript refercence".lastIndexOf("javascript",16));    // 0
-        // console.log("javascript refercence".lastIndexOf("javascript",0));    // 0
-        // console.log("javascript refercence".lastIndexOf("javascript",1));    // 0
-        // console.log("javascript refercence".lastIndexOf("javascript",1));    // -1
-        // console.log("javascript refercence".lastIndexOf("refercence",0));    // -1 뒤에서부터 순서를 자름
-        // console.log("javascript refercence".lastIndexOf("refercence",10));   // -1
-        // console.log("javascript refercence".lastIndexOf("refercence",11));   // 11 
-        // console.log("javascript refercence".lastIndexOf("refercence",12));   // 11
-
-        // console.log("javascript refercence".lastIndexOf(/refercence/));      // refercence
-        // console.log("javascript refercence".lastIndexOf(/Refercence/));      // null 없음
-        // console.log("javascript refercence".lastIndexOf(/Refercence/i));     // refercence i는 대소문자 
-        // console.log("javascript refercence".lastIndexOf(/r/g));              // [r,r,r] 반환 r은 다찾기
-        // console.log("javascript Refercence".lastIndexOf(/R/ig));             // [r,R,r] 반환
-
-
-
-
-
+        let strTrim = " javascript ";
+        console.log(strTrim.trimStart());
+        console.log(strTrim.trimEnd());
+        console.log(strTrim.trim());
     </script>
 </body>
 </html>

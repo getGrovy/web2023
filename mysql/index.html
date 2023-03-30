@@ -231,6 +231,14 @@ mysql>
     PRIMARY KEY(memberID)
 ) charset=utf8;
 </code></pre>                    
+<pre><code class="language-js">create table reviews(
+    reviewID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY(reviewID)
+) charset=utf8;
+</code></pre>                    
                     <h4 id="intro5-2" class="page-header">MySQL 테이블 전체보기 :D </h4>
                     <div class = "bs-callout bs-callout-info">show tables;</div>
 <pre><code class="language-js"> show tables;
@@ -313,6 +321,21 @@ INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUE
 INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("itshena01@gmail.com","조한미","1234","19930211","31","03140316");
 INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("aimee00418@gmail.com","권현정","1234","19830211","39","03140316");
 </code></pre>
+
+<pre><code class="language-js">
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "맛없어" ,"1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "맛있어" ,"1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("6", "맛없다고","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("5", "맛있다구","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("14", "또먹으러 올게","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("24", "또먹으러 안옴","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("11", "강추","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("19", "비추","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("21", "반가워","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("27", "해위","1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("16", "쏘쏘","1234567");
+    
+    </code></pre>
                     <h4 id="intro6-2" class="page-header">MySQL 데이터 불러오기 :D </h4>
                     <div class = "bs-callout bs-callout-info"><code>SELECT </code>필드명<code> FROM </code>TABLE명 <code> WHERE </code>조건;</div>
                     <h4>전체 데이터 불러오기</h4>
