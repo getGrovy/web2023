@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩시험2</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;
+        vertical-align: top;
+    }
+    .wrap {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    #header img {
+        width: 140px;
+    }
+
+    #header li{
+        letter-spacing: normal;
+        display: inline-block;
+        margin: 0;
+        padding: 20px;
+    }
+    .banner {
+        margin-bottom: 20px;
+    }
+    .banner img{
+        width: 1000px;
+    }
+    .notice {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .notice1 {
+        width: 47%;
+        list-style: none;
+        /* display: flex; */
+        /* justify-content: space-between; */
+        border: 1px solid #ccc;
+        position: relative;
+        padding: 23px;
+        /* text-align: center; */
+    }
+    .notice1 h3{
+    }
+    .notice1 li{
+        display: flex;;
+        list-style: none;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+    .notice1 li a{
+        width: 70%;   
+    }
+    .notice1 ul .more {
+        position: absolute;
+        right: 40px;
+        top: 27px;
+
+    }
+    .notice1 ul .more::after{
+        content: '';
+        background-image: url(img/plus.jpg);
+        position: absolute;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+
+    .notice1 li span{
+        width: 30%;   
+        text-align: right;
+    }
+
+    .notice2 {
+        width: 47%;
+
+    }
+    .card {
+        padding: 30px 0;
+    }
+    .card h2 {
+        margin-bottom: 10px;
+    }
+    .card-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .card-inner > div {
+        width: 24%;
+        /* height: 50px; */
+    }
+    .card-inner > div > strong {
+        display: inline-block;
+        padding: 20px 0;
+    }
+    #footer {
+        border-top: 1px solid #ccc;
+        padding: 20px 0 ; 
+        color: #ccc;
+    }
+    #footer strong{
+        display: block;
+        padding: 20px 0;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <header id="header">
+        <h1><img src="img/logo01.jpg" alt="롯데월드"></h1>
+            <ul>
+                <li><strong>즐길거리</strong></li>
+                <li><strong>요금/우대혜택</strong></li>
+                <li><strong>참여프로그램</strong></li>
+                <li><strong>이용가이드</strong></li>
+                <li><strong>소통서비스</strong></li>
+            </ul>
+        </header>
+        <main>
+            <div class="banner"><img src="img/banner01.jpg" alt="미라클있수마수">
+            </div>
+            <section class="notice">
+                <div class="notice1">
+                    <h3>롯데월드 소식</h3>
+                    <ul>
+                        <li><a href="#">그럴씨진관 미라클</a><span>2022.09.03</span></li>
+                        <li><a href="#">이용 요금 조정 미라클</a><span>2022.09.03</span></li>
+                        <li><a href="#">드림스테이지 힘내 미라클</a><span>2022.09.03</span></li>
+                        <li><a href="#">드림스테이지 힘내 소주한잔 미라클</a><span>2022.09.03</span></li>
+                        <a class="more">더보기</a>
+                    </ul>
+                    
+                </div>
+                <div class="notice2">
+                    <img src="img/banner02.jpg" alt="온종일 혜택 on">
+                </div>
+            </section>
+            <section class="card">
+                <h2>특별한 경험</h2>
+                <div class="card-inner">
+                    <div><img src="img/notice01.jpg"><strong>연간회원안내</strong></div>
+                    <div><img src="img/notice02.jpg"><strong>프리미엄투어</strong></div>
+                    <div><img src="img/notice03.jpg"><strong>공연참여프로그램</strong></div>
+                    <div><img src="img/notice04.jpg"><strong>단체프로그램</strong></div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            서울특별시 송파구 올림픽로 240 호텔롯데월드 | 대표자 : 박동기<br>
+            사업자등록번호:219-85-00014 | 통신판매업신고번호 | 송파 제5513호 | 전화:1661-2000
+            <strong>COPYRIGHT 2018 LOTTEWORD ALL RIGHTS RESERVED.</strong>
+        </footer>
+    </div>
+</body>
+</html>
