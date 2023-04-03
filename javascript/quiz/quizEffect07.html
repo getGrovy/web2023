@@ -222,18 +222,20 @@
             
         }
         dataQuestion();
-        //f
+        
+        
+        //quiz >> omr 체크 동기화
         const answerSelect= ()=>{
-            
             //cbtQuiz 모든 체크 값을 가져 오는거에요 
             let checkAllRadio = cbtQuiz.querySelectorAll('input[type=radio]:checked');
 
             checkAllRadio.forEach((radioNum, index)=>{
-                // console.log( radioNum.id.slice(6));
                 cbtOmr.querySelector("input[id=omr"+radioNum.id.slice(6)).checked = true;
             });
             chkQuizNumber(checkAllRadio);
         }
+        
+        //omr >> quiz 체크 동기화
         const answerSelectOmr =()=>{
             //cbtOmr에서 모든 체크 값을 가져 오는거에요 
             let checkAllRadio1 = cbtOmr.querySelectorAll('input[type=radio]:checked');
