@@ -227,9 +227,9 @@
             //줄어드는것 
             totQuestion = questionAll.length;
             //모든 체크박스 값을 가져 오는 거에요 ㅎㅎㅎㅎㅎ
-            checkboxes = document.querySelectorAll('input[type=radio]:checked');
+            checkAllRadio = document.querySelectorAll('input[type=radio]:checked');
             //cbt__remainder 는 상단에 cbt__info 부분에 추가 시켜 줬어요 
-            document.querySelector(".cbt__remainder em").innerHTML = totQuestion-checkboxes.length+"문항";
+            document.querySelector(".cbt__remainder em").innerHTML = totQuestion-checkAllRadio.length+"문항";
             totQuestion = questionAll.length;
         }
         // 정답 확인
