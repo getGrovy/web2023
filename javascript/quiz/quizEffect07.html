@@ -34,8 +34,7 @@
     <main id="main">
         <div class="quiz__wrap__cbt">
             <div class="cbt__header">
-                <h2>2020년 1회 정보처리기능사 기출문제</h2>
-                
+                <h2>2012년 2회 웹디자인기능사 기출문제</h2>
             </div>
             <div class="cbt__conts">
                 <div class="cbt__quiz">
@@ -62,7 +61,6 @@
             <div class="cbt__time"> 59분 10초</div>
             <div class="cbt__submit">제출하기</div>
             <div class="cbt__aside">
-                
                 <div class="cbt__info">
                         <div class="cbt__title">수험자 : <em>정희석</em></div>
                         <div class="cbt__score">
@@ -121,7 +119,6 @@
                     const formattedQuestion = {
                         number : index+1,
                         question: item.question
-                        
                     };
                     //펼침연산자로 각각의 배열에 보기 123을 넣어준다 
                     const answerChoices = [...item.incorrect_answers];
@@ -159,21 +156,15 @@
                 newQuestion(questionAll); 
                 document.querySelector(".cbt__score em").innerHTML = questionAll.length+"문항";
                 document.querySelector(".cbt__remainder em").innerHTML = questionAll.length+"문항";
-
-                
-                totQuestion =questionAll.length;
             })
             .catch((err) => console.log(err));
-            // let inputString = prompt('이름을 입력하세요', '이름을 적어주세요');
-            // while(inputString=='' || inputString ==undefined){
-            //     inputString = prompt('이름을 입력하세요', '이름 왜 안적어ㅡㅡ');
-            // }
+            let inputString = prompt('이름을 입력하세요', '이름을 적어주세요');
+            while(inputString=='' || inputString ==undefined){
+                inputString = prompt('이름을 입력하세요', '이름 왜 안적어ㅡㅡ');
+            }
             
-            // document.querySelector(".cbt__title").innerHTML = inputString;
+            document.querySelector(".cbt__title").innerHTML = inputString;
         }
-
-
-
 
         //문제 만들기
         const newQuestion = () => {
@@ -257,6 +248,7 @@
         // 정답 확인
         const answerQuiz = () =>{
             const cbtSelects = document.querySelectorAll(".cbt__selects");
+            const cbtOmr = document.querySelectorAll(".omr");
             // console.log(cbtSelects)
             questionAll.forEach((question, number) =>{
                
@@ -266,7 +258,7 @@
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector)||{}).value;
   
                 const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
-                console.log(`userAnswer ${Number(numberAnswer)+1}  question.Answer ${question.Answer}`);
+                // console.log(`userAnswer ${Number(numberAnswer)+1}  question.Answer ${question.Answer}`);
                 if(Number(numberAnswer)+1 == question.Answer){
                     // console.log("정답")
                     cbtSelects[number].parentElement.classList.add("good");
@@ -277,6 +269,9 @@
                     //오답일경우 정답표시
                     const label = cbtSelects[number].querySelectorAll("label");
                     label[question.Answer-1].classList.add("correct");
+                    const OmrLabel = cbtOmr[number].querySelectorAll("label");
+                    console.log(OmrLabel);
+                    OmrLabel[question.Answer-1].classList.add("correct");
                 }
 
                 const quizDesc = document.querySelectorAll(".cbt__desc");
