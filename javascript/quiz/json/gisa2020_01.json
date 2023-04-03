@@ -5,7 +5,10 @@
         "correct_answer": "Visitor",
         "incorrect_answers": ["Builder","Prototype","Bridge"],
         "keyword": "디자인 패턴",
-        "keyword_num": "24"
+        "keyword_num": "24",
+        "desc" : "설명입니다",
+        "question_img" : "gisa2020_01_01",
+        "question_desc" : "question_desc"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체지향 프로그램에서 데이터를 추상화하는 단위는?",
