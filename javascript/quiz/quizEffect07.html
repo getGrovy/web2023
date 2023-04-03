@@ -201,16 +201,16 @@
                 omr.push(`
                     <div class="omr">
                         <strong>${question.number}</strong>
-                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_0">
+                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number+1}_0" onclick="answerSelectOmr(this)"">
                         <label for="omr${number}_1"><span class="label-inner">1</span>
                         </label>
-                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_1">
+                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number+1}_1" onclick="answerSelectOmr(this)"">
                         <label for="omr${number}_2"><span class="label-inner">2</span>
                         </label>
-                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_2">
+                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number+1}_2" onclick="answerSelectOmr(this)"">
                         <label for="omr${number}_3"><span class="label-inner">3</span>
                         </label>
-                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_3">
+                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number+1}_3" onclick="answerSelectOmr(this)"">
                         <label for="omr${number}_4"><span class="label-inner">4</span>
                         </label>
                     </div>
@@ -222,16 +222,36 @@
             
         }
         dataQuestion();
-
+        //f
         const answerSelect= ()=>{
-            //줄어드는것 
-            totQuestion = questionAll.length;
-            //모든 체크박스 값을 가져 오는 거에요 ㅎㅎㅎㅎㅎ
-            checkAllRadio = document.querySelectorAll('input[type=radio]:checked');
-            //cbt__remainder 는 상단에 cbt__info 부분에 추가 시켜 줬어요 
-            document.querySelector(".cbt__remainder em").innerHTML = totQuestion-checkAllRadio.length+"문항";
-            totQuestion = questionAll.length;
+            
+            //cbtQuiz 모든 체크 값을 가져 오는거에요 
+            let checkAllRadio = cbtQuiz.querySelectorAll('input[type=radio]:checked');
+
+            checkAllRadio.forEach((radioNum, index)=>{
+                // console.log( radioNum.id.slice(6));
+                cbtOmr.querySelector("input[id=omr"+radioNum.id.slice(6)).checked = true;
+            });
+            chkQuizNumber(checkAllRadio);
         }
+        const answerSelectOmr =()=>{
+            //cbtOmr에서 모든 체크 값을 가져 오는거에요 
+            let checkAllRadio1 = cbtOmr.querySelectorAll('input[type=radio]:checked');
+
+            checkAllRadio1.forEach((radioNum, index)=>{
+                cbtQuiz.querySelector("input[id=select"+radioNum.id.slice(3)).checked = true;
+                
+            });
+            chkQuizNumber(checkAllRadio1);
+        }
+        //남은문항 계산하기
+        const chkQuizNumber=(checkAll)=>{
+            //값초기화
+            totQuestion = questionAll.length;
+            //cbt__remainder 는 상단에 cbt__info 부분에 추가 시켜 줬어요 
+            document.querySelector(".cbt__remainder em").innerHTML = totQuestion-checkAll.length+"문항";
+        }
+
         // 정답 확인
         const answerQuiz = () =>{
             const cbtSelects = document.querySelectorAll(".cbt__selects");
