@@ -224,8 +224,6 @@
         dataQuestion();
 
         const answerSelect= ()=>{
-
-
             //줄어드는것 
             totQuestion = questionAll.length;
             //모든 체크박스 값을 가져 오는 거에요 ㅎㅎㅎㅎㅎ
@@ -257,8 +255,6 @@
                     //오답일경우 정답표시
                     const label = cbtSelects[number].querySelectorAll("label");
                     label[question.Answer-1].classList.add("correct");
-
-
                 }
 
                 const quizDesc = document.querySelectorAll(".cbt__desc");
