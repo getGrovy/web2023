@@ -62,12 +62,12 @@
             <div class="cbt__submit">제출하기</div>
             <div class="cbt__aside">
                 <div class="cbt__info">
-                        <div class="cbt__title">수험자 : <em>정희석</em></div>
-                        <div class="cbt__score">
-                            <span>전체문제수 : <em></em></span>
-                            <span class="cbt__remainder">남은문제수 : <em></em></span>
+                    <div class="cbt__title">수험자 : <em>정희석</em></div>
+                    <div class="cbt__score">
+                        <span>전체문제수 : <em></em></span>
+                        <span class="cbt__remainder">남은문제수 : <em></em></span>
                     </div>
-                </div>
+                    </div>
                 <div class="cbt__omr">
                     <!-- <div class="omr">
                         <strong>1</strong>
@@ -110,7 +110,7 @@
         
         //데이터 불러오기
         const dataQuestion = () => {
-            fetch("json/gineungsaWD2012_02.json")  //이파일을 가져올거야  
+            fetch("json/gineungsaWD2012_02.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
             // fetch("json/gisa2020_01.json")  //이파일을 가져올거야  
             //gisa2020_01
             .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
@@ -124,7 +124,7 @@
                     const answerChoices = [...item.incorrect_answers];
 
                     //랜덤함수
-                    formattedQuestion.Answer = Math.floor( Math.random()*answerChoices.length)+1; 
+                    formattedQuestion.Answer = Math.round( Math.random()*answerChoices.length)+1; 
 
                     // splice로 임의의 위치 formattedQuestion.Answer로 정답값을 넣어주는거에요 
                     answerChoices.splice(formattedQuestion.Answer-1,0,item.correct_answer);
@@ -138,11 +138,11 @@
                     //hasOwnProperty는 값이 있을경우 즉 true일때 if문을 실행해요 
                     //문제에 대한 해설이 있으면 출력해 줄거에요 
                     if(item.hasOwnProperty("question_desc")){
-                        formattedQuestion.questionDesc = item.question_desc;
+                        formattedQuestion.question_desc = item.question_desc;
                     }
                     //문제에 대한 이미지가 있으면 출력해 줄거에요 
                     if(item.hasOwnProperty("question_img")){
-                        formattedQuestion.questionImg = item.question_img;
+                        formattedQuestion.question_img = item.question_img;
                     }
                     //문제에 대한 desc 있으면 출력해 줄거에요 
                     if(item.hasOwnProperty("desc")){
@@ -174,7 +174,8 @@
                 exam.push(
                     `<div class="cbt">
                         <div class="cbt__question"><span>${question.number}. </span>${question.question}</div>
-                        
+                        <div class="cbt__question__img">${question.question_img}</div>
+                        <div class="cbt__question__desc">${question.question_desc}</div>
                         <div class="cbt__selects">
                             <input type="radio" id="select${number}_1" name="select${number}" value="${number+1}_0" onclick="answerSelect(this)">
                             <label for="select${number}_1"><span>${question.choice1}</span></label>

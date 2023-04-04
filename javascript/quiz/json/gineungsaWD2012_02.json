@@ -22,7 +22,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음과 관계있는 디자인의 개념은?<br> '우리는 디자인 속에서 살고 있다'",
+        "question": "다음과 관계있는 디자인의 개념은?",
+        "question_desc" : "'우리는 디자인 속에서 살고 있다'",
         "incorrect_answers": ["디자인은 고도로 복잡하고 세련된 숙련이다." ,"디자인은 항상 어떤 가능성을 전제로 시작된다.","디자인은 예술이다."],
         "correct_answer": "디자인은 모든 사람의 일상이다.",
         "desc": "알잘딱ㅋ 느낌으로,, 정답율 90% ! "
@@ -64,7 +65,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음은 민들레꽃의 홀씨에 대한 그림이다. 이 그림에서 느낄 수 있는 디자인 원리는? <img src='//img.comcbt.com/cbt/data/j9/j920120408/j920120408m10.gif?1345725598'style='width:100px' >",
+        "question": "다음은 민들레꽃의 홀씨에 대한 그림이다. 이 그림에서 느낄 수 있는 디자인 원리는?",
+        "question_img" : "gineungsaWD2012_02_01",
         "incorrect_answers": ["착시","조화","균형"],
         "correct_answer":  "율동" ,
         "desc": "정답율 90 % 그림을 보고 생각해봐요 민들레꽃 홀씨가 날라가는 장면을 ! "
@@ -85,7 +87,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음이 설명하고 있는 것은? <BR>-주어진 길이를 가장 이상적으로 나누는비<br>-근사값이 약 1.618인 무리수다",
+        "question": "다음이 설명하고 있는 것은?",
+        "question_desc" : "- 주어진 길이를 가장 이상적으로 나누는비<br>- 근사값이 약 1.618인 무리수다",
         "incorrect_answers": [ "비례" ,"루트사각형","프로포션"],
         "correct_answer": "황금비율",
         "desc": "정답률 : 95% 상식문제에요 ! "
@@ -99,7 +102,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음 그림에서 왼쪽 원을 보다가 오른쪽 원을 볼 때 나타나는 현상은?<img src='//img.comcbt.com/cbt/data/j9/j920120408/j920120408m15.gif?1345725598'style='width:75px'>",
+        "question": "다음 그림에서 왼쪽 원을 보다가 오른쪽 원을 볼 때 나타나는 현상은?",
+        "question_img" : "gineungsaWD2012_02_02",
         "incorrect_answers": [ "대비" ,"배색","혼합"], 
         "correct_answer": "잔상",
         "desc": "정답률 : 81% 잔상효과 <br>망막이 느낀 자극이 계속 남아 있어서 지속적으로 형상이 남는 것 <br>긍적적(양성, 정의)잔상 : 명도와 색상에 대한 자극이 그대로 지속됨 <br>소극적(음성, 부의)잔상 : 색상, 명도, 채도가 반대로 느껴짐"
@@ -155,7 +159,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "HTML 문서에서 하이퍼링크 설정 시 새로운 창을 열어 문서를 연결하는 속성을 지정하고자 한다. ①에 들어갈 옵션으로 옳은 것은?<br> &lt;href:'hrdkorea.co.kr' target='①'&gt;",
+        "question": "HTML 문서에서 하이퍼링크 설정 시 새로운 창을 열어 문서를 연결하는 속성을 지정하고자 한다. ①에 들어갈 옵션으로 옳은 것은?",
+        "question_desc" : " &lt;href:'hrdkorea.co.kr' target='①'&gt;",
         "incorrect_answers": [ "_self" ,"_parent","_top"],
         "correct_answer": "_blank",
         "desc": "_blank : 새 윈도우 창을 열어서, 웹페이지를 엽니다. 기존의 창은 그대로 남겨져 있습니다<br>_self : 현재 윈도우창에 그대로, 링크된 웹페이지를 엽니다. ( 현재의 프레임 )<br>_parent : 현재 프레임의 부모 프레임에서 새웹페이지가 열립니다.<br>_top : 최상위 프레임에서 열립니다"
@@ -218,7 +223,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음과 같은 자바스크립트 소스를 헤드(head)태그 안에 삽입 시 브라우저에서 적용되는 결과는?<br>&lt;script language='javascript'&gt;<br>  alert('welcome to the Morning Glory'); <br>&lt;/script&gt;",
+        "question": "다음과 같은 자바스크립트 소스를 헤드(head)태그 안에 삽입 시 브라우저에서 적용되는 결과는?",
+        "question_desc" : "&lt;script language='javascript'&gt;<br>&nbsp;&nbsp;alert('welcome to the Morning Glory'); <br>&lt;/script&gt;",
         "incorrect_answers": ["페이지가 열릴 때 Welcom to the Morning Glory라는 플래시가 출력된다.","페이지가 열릴 때 Welcome to the Morning Glory라는 문구가 한자씩 브라우저에 새겨진다.","페이지가 열릴 때 Welcome to the Morning Glory라는 문구가 이메일로 보내진다."],
         "correct_answer":  "페이지가 열릴 때 자동으로 Welcome to the Morning Glory라는 문구가 있는 메시지 창이 뜬다." ,
         "desc": "정답률 80% 문제에요! "
@@ -316,7 +322,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음이 설명하고 있는 것은? <br>-실사와 애니매이션을 합성하는 기법으로 많이 사용된다. <br>-먼저 촬영한 실제 필름 위에 애니메이션을 위한 셀을 올려놓고 실사 안에 추가하고자 하는 애니매이션을 삽입한다.", 
+        "question": "다음이 설명하고 있는 것은? ", 
+        "question_desc" : "- 실사와 애니매이션을 합성하는 기법으로 많이 사용된다. <br>- 먼저 촬영한 실제 필름 위에 애니메이션을 위한 셀을 올려놓고 실사 안에 추가하고자 하는 애니매이션을 삽입한다.",
         "incorrect_answers": ["모션캡쳐","플립북","모핑"],
         "correct_answer":  "로토스코핑" ,
         "desc": "사람의 움직임을 영화 카메라 등으로 찍은 후, 그것을 한 프레임씩 애니메이션으로 옮겨 그리는 기법 "
@@ -372,7 +379,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음과 같은 설명에 해당되는 리샘플링 알고리즘은?<br>-사진처럼 복잡한 음영과 색의 변화가 심한 이미지에 적합 <br>-새로 생성해야할 픽셀의 색채 값을 추출하기위해 방사형의 주변으로부터 픽셀들의 평군적인 색채값을 찾기 <br>-가장 사실적인 세부 묘사를 얻을수있다.",
+        "question": "다음과 같은 설명에 해당되는 리샘플링 알고리즘은?",
+        "question_desc" : "- 사진처럼 복잡한 음영과 색의 변화가 심한 이미지에 적합 <br>- 새로 생성해야할 픽셀의 색채 값을 추출하기위해 방사형의 주변으로부터 픽셀들의 평군적인 색채값을 찾기 <br>- 가장 사실적인 세부 묘사를 얻을수있다.",
         "incorrect_answers": [ "Bilinear" ,"Resolution","IBM PC"],
         "correct_answer": "Bicubic",
         "desc": "Bicubic리 샘플링 알고리즘 <br>이미지 처리는 느리지만 가장좋은 상태로 산출되도록함<br>새로 생성해야할 픽셀의 색채 값을 추출하기 위해 방사형의 주변으로 부터 픽셀들의 평균적인 색채 값을 찾는것<br>사진처럼 복잡한 음영과 색의 변화가 심한 이미지에 적합하다."
@@ -414,7 +422,8 @@
     },
     {
         "subject":"웹디자인기능사",
-        "question": "다음이 설명하고 있는 것은?<br>-디자이너는 각 해상도마다 사이트가 어떻게 보이게 할 것인지를 결정하고, 일관적인 작업이 이뤄지도록 구성 요소들이 배치되는 크기를 비례감있게 잡아야한다.",
+        "question": "다음이 설명하고 있는 것은?",
+        "question_desc" : "- 디자이너는 각 해상도마다 사이트가 어떻게 보이게 할 것인지를 결정하고, 일관적인 작업이 이뤄지도록 구성 요소들이 배치되는 크기를 비례감있게 잡아야한다.",
         "incorrect_answers": [ "Programming" ,"GUI","Margin"],
         "correct_answer": "Grid System",
         "desc": "Grid system Grid를 나눠 반응형웹사이트를 만들수있다."
