@@ -220,20 +220,14 @@
                 questionLengh = questionAll.length;
                 cbtLength.innerHTML = questionLengh;
                 cbtRest.innerHTML = questionLengh;
-
-                
-
             })
             .catch((err) => console.log(err));
-            
-                
         }
 
         //문제 만들기
         const newQuestion = () => {
             const exam = [];
             const omr = [];
-            // <img src="img/gineungsaWD2023_01_01.jpg" alt="기능사">
             questionAll.forEach((question, number) => {
                 exam.push(`
                     <div class="cbt">
@@ -253,7 +247,6 @@
                         <div class="cbt__desc hide">${question.desc}</div>
                     </div>
                 `);
-
                 omr.push(`
                     <div class="omr">
                         <strong>${question.number}</strong>
@@ -268,8 +261,6 @@
                     </div>
                 `)
                 //전체 문제수 만들기
-            
-
             });
             cbtQuiz.innerHTML = exam.join('');
             cbtOmr.innerHTML = omr.join('');
@@ -297,7 +288,6 @@
                     cbtSelects[number].parentElement.classList.add("good");
                 } else {
                     cbtSelects[number].parentElement.classList.add("bad");
-                    
                     //오답 일 경우 정답 표시
                     const label = cbtSelects[number].querySelectorAll("label");
                     label[question.answer-1].classList.add("correct");
