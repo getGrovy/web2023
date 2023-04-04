@@ -281,8 +281,8 @@
     {
         "subject":"웹디자인기능사",
         "question": "주석문 처리를 HTML 태그를 사용하여 옳게 표현한 것은?",
-        "incorrect_answers": [ "&lt;%-- 주석내용 --&gt;" ,"&lt;*-- 주석내용 --&gt;","&lt;!-- 주석내용 --&gt;","&lt;@-- 주석내용 --&gt;"],
-        "correct_answer": "3",
+        "incorrect_answers": [ "&lt;%-- 주석내용 --&gt;" ,"&lt;*-- 주석내용 --&gt;","&lt;@-- 주석내용 --&gt;"],
+        "correct_answer": "&lt;!-- 주석내용 --&gt;",
         "desc": "정답률 85% 상식 문제 입니다 ^^;"
     },
     {

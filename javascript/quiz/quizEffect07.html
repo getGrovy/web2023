@@ -270,9 +270,9 @@
                     //오답일경우 정답표시
                     const label = cbtSelects[number].querySelectorAll("label");
                     label[question.Answer-1].classList.add("correct");
-                    const OmrLabel = cbtOmr[number].querySelectorAll("label");
-                    console.log(OmrLabel);
-                    OmrLabel[question.Answer-1].classList.add("correct");
+                    // const OmrLabel = cbtOmr[number].querySelectorAll("label");
+                    // console.log(OmrLabel);
+                    // OmrLabel[question.Answer-1].classList.add("correct");
                 }
 
                 const quizDesc = document.querySelectorAll(".cbt__desc");
