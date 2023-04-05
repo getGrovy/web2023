@@ -152,7 +152,7 @@
                     <div class="cbt__view">
                         <!-- <input type="text" id='cbtUserName' autofocus placeholder="이름적어주세요" /><br> -->
                         <input type="text" id='cbtUserName' autofocus placeholder="이름적어주세요" /><br>
-                        당신은 <span class="subject">과목을 미선택하였습니다.</span>
+                        <span class="subject">과목을 선택하세요.</span>
                     </div>
                     <!-- <button class="minimal">시작하기</button> -->
                     <button class="cbt__start__btn">시작하기</button>
@@ -197,7 +197,7 @@
         let questionTimeRemain = 1000;
         
         const startQuiz = () => {
-            if(cbtSubject.textContent =="과목을 미선택하였습니다.")return alert("과목을 선택해주세요.");
+            if(cbtSubject.textContent =="과목을 선택하세요.")return alert("과목을 선택해주세요.");
             //모달창 닫기 이벤트
             cbtStart.classList.add("hide");
             // console.log(first)
@@ -407,7 +407,7 @@
         const changeSelect = (e)=>{
             let selectValue = e.value
             let selectText = e.options[e.selectedIndex].text;
-            cbtSubject.innerHTML = selectText+"를 선택하셨습니다.";
+            cbtSubject.innerHTML = selectText;
             cbHeader.innerHTML = selectText;   
             dataQuestion(selectValue);    
         }   

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가장가까이있는숫자 </title>
+</head>
+<body>
+    https://school.programmers.co.kr/learn/courses/30/lessons/142086
+</body>
+<script>
+    function solution(s) {
+    let result = [];
+    let chkStr = [];
+
+        for(let i = 0; i < s.length; i++){
+            //false반환값을 true로 변경하여 push해줌 true이면 넘어가게 초기값 설정
+            console.log("i "+i)
+            if(!chkStr.includes(s[i])){
+                result.push(-1);
+                //문자열을 순서대로 배열에 넣어줌
+                chkStr.push(s[i]);
+            } else if(chkStr.includes(s[i])){
+                //가장나중에 들어온 문자의 위치를 last로 몇번쨰 있는지 확인 
+                result.push(i - chkStr.lastIndexOf(s[i]));
+                chkStr.push(s[i]);
+            }
+            return answer;
+        }
+    
+    }
+    // "banana"	[-1, -1, -1, 2, 2, 2]
+// "foobar"
+// 2 8 3 이 나온다
+solution("assaaassss"); 
+// solution("foobar"); 
+// solution("10203", "15"); 
+</script>
+</html>
