@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 나누기 </title>
+</head>
+<body>
+    https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=javascript
+</body>
+<script>
+function solution(s) {
+    let answer = 0;
+    let tinyStr = "" ;
+    let count1 = 0;
+    let count2 = 0;
+  
+    //문자열확인 !
+    for (let c of s) {
+
+        // false : 0 , null, undefined , false , ""(빈문자열)
+        // true : 1, "0", "1", "abc", [], {}, true 
+        //if(!) = false 반환 첫문자열 넣어주기 
+        if(!tinyStr){
+            // console.log("tinyStr ",tinyStr," c ",c)
+            tinyStr = c;
+        }  
+        //들어온문자와 c가 같으면 count1증가 아니면 count2증가
+        (tinyStr == c) ? count1++ : count2++;
+
+        
+        // console.log("_c_",c ,"_tinyStr_", tinyStr,"_count1_",count1,"_count2_",count2);
+        // count1과 count2의 숫자가 같다면 answer를 증가 & 나머지를 초기화
+        if (count1 === count2) {
+            answer++;
+            count1 = 0;
+            count2 = 0;
+            tinyStr = "";
+        }
+    }
+
+    //문자열이 남아있을때 
+    if (tinyStr.length>0) answer++;
+    
+
+    return answer;
+  }
+  
+//   console.log(solution("banana")); // 3 ba na na
+//   console.log(solution("abracadabra")); // 6 ab ra ca da br a
+//   console.log(solution("aaabbaccccabba"	)); // 3
+</script>
+</html>

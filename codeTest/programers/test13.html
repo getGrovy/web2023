@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달리기 경주</title>
+</head>
+<body>
+    https://school.programmers.co.kr/learn/courses/30/lessons/178871
+</body>
+<script>
+function solution(players, callings) {
+    for( x of callings){
+        const index = players.indexOf(x);
+        if(players.indexOf(x)){
+            if (index !== -1) {
+            let top = [...players];
+            // console.log("top :"+top + " 초기화");
+            let end = [...players];
+            // console.log("end :" +end + " 초기화");
+            // console.log("players :" +players);
+
+            let r = players.indexOf(x);
+            // console.log("x" +x+" 호출 "+ r);
+            top = top.slice(0,r-1);
+            top.push(x)
+            // console.log("top : "+top);
+            end.splice(r,1);
+            // console.log("end :" +end);
+            let last =end.slice(r-1);
+            // console.log("end slice :" +end.slice(r-1));
+            players = [...top , ...last ]
+            // console.log("top : "+players);
+            }
+        }
+    }
+    return players;
+}
+
+  
+  solution(["mumu", "soe", "poe", "kai", "mine"],["kai", "kai", "mine", "mine"]);
+//
+</script>
+
+</html>

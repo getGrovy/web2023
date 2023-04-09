@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대충만든자판</title>
+    
+</head>
+<a href="https://school.programmers.co.kr/learn/courses/30/lessons/160586"> 문제보러가기</a><br>
+<body>
+    
+</body>
+<script>
+    function solution(keymap, targets) {
+        const answer = [];
+        //1 키의 최소값을 담을 map 객체 선언
+        const mapKey = new Map();
+        //2 키의 최소값비교  & 2중배열
+        for(keys of keymap) {
+            //3 초기값 인덱스를 담고 , 값이있을땐 비교
+            for(let i=0; i<keys.length; i++) {
+                (mapKey.has(keys[i])) ? mapKey.set(keys[i], Math.min(mapKey.get(keys[i]), i+1)) : mapKey.set(keys[i], i+1);
+            }
+        };
+        // console.log(mapKey)
+        
+        for(tar of targets) { 
+            let keyNum =0;
+            for(let i=0; i<tar.length; i++) {
+                //4 있을경우 누르는값저장 없다면 정지
+                if(mapKey.has(tar[i])) {
+                    keyNum += mapKey.get(tar[i]);
+                } else {
+                    keyNum = -1;
+                    break; 
+                }
+            }
+            answer.push(keyNum)
+        };
+        console.log(answer)
+        return answer;       
+        
+    }
+    solution(["ABACD", "BCEFD"]	,	["ABCD","AABB"]);
+    solution(["ABACD", "BCEFD"]	,	["ABCD","AABBGGG"]);
+
+    // solution( ["AA"]	,	[["B"],["A"]]);
+
+    // keymap	targets	result
+    // ["ABACD", "BCEFD"]	["ABCD","AABB"]	[9, 4]
+    // ["AA"]	["B"]	[-1]
+    // ["AGZ", "BSSS"]	["ASA","BGZ"]	[4, 6]
+
+
+
+</script>
+</html>
+

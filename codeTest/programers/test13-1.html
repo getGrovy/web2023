@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달리기 경주</title>
+</head>
+<body>
+    https://school.programmers.co.kr/learn/courses/30/lessons/178871
+</body>
+<script>
+  solution(["mumu", "soe", "poe", "kai", "mine"],["kai", "kai", "mine", "mine"])
+
+function solution(players, callings) {
+    let runInfo ={};
+    //obj값변경
+    players.map((p,index)=>{
+        runInfo[p] = index;
+    });
+    for (let i = 0; i < callings.length; i++) {
+        const callName = runInfo[callings[i]];
+        const getOffName = players[callName-1];
+        // console.log(`callName ${callName} callName-1 ${callName-1} getOffName ${getOffName}`);
+        
+        //players 순서에 값 넣기 
+        players[callName-1] = callings[i];
+        // console.log("콜"+players);
+        players[callName] = getOffName;
+        // console.log("뒤로"+players);
+
+        //obj 값변경
+        runInfo[callings[i]] = callName-1;
+        runInfo[getOffName]  = callName;
+        // console.log(players)
+    }
+    return players;
+}
+</script>
+
+</html>
