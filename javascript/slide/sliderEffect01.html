@@ -88,27 +88,64 @@
         let sliderCount = slider.length; //전체 이미지 갯수
         let sliderInterval = 3000;      //이미지 변경 간격 시간
         let secondCount =0;
-        setInterval(()=>{
-            //첫번째 이미지를 안보이게 해줌
-            //두번째 이미지를 보이게 해줌
-            //style.display = none 은 애니매이션효과 못처리함
+        // setInterval(()=>{
+        //     //첫번째 이미지를 안보이게 해줌
+        //     //두번째 이미지를 보이게 해줌
+        //     //style.display = none 은 애니매이션효과 못처리함
             
-            // slider[0].style.opacity="0";
-            // slider[1].style.opacity="1";
-            // secondCount++;
+        //     // slider[0].style.opacity="0";
+        //     // slider[1].style.opacity="1";
+        //     // secondCount++;
             
-            // 0 1 2 3 4 0 1 2 3 4 0 
-            // 1 2 3 4 0 1
-            let nextIndex = (currentIndex +1)%sliderCount;
-            // console.log(currentIndex , nextIndex);
-            slider[(currentIndex)].style.opacity="0";
-            slider[(nextIndex)].style.opacity="1";
-            currentIndex = nextIndex;
-            // console.log(nextIndex);
+        //     // 0 1 2 3 4 0 1 2 3 4 0 
+        //     // 1 2 3 4 0 1
+        //     let nextIndex = (currentIndex +1)%sliderCount;
+        //     // console.log(currentIndex , nextIndex);
+        //     // opacity >>> 0: 완전투명  ~ 1: 완전불투명
+        //     slider[(currentIndex)].style.opacity="0";
+        //     slider[(nextIndex)].style.opacity="1";
+        //     currentIndex = nextIndex;
+        //     // console.log(nextIndex);
 
-        },sliderInterval)
-
-        
+        // },sliderInterval)
     </script>
+     <!-- // gsap  --> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+     <script>
+         setInterval(()=>{
+            let nextIndex = (currentIndex +1)%sliderCount;
+
+             // gsap.to(sliderInner)
+            //  console.log(slider[currentIndex] , " currentIndex ",currentIndex);
+             gsap.to(slider[currentIndex], {
+                opacity : 0,
+                duration : 2.5,
+                ease : "elastic.out(1, 0.3)"
+             });
+             gsap.to(slider[nextIndex], {
+                opacity : 1,
+                duration : 2.5,
+                ease : "elastic.out(1, 0.3)"
+             })
+            currentIndex = nextIndex;
+
+         },sliderInterval);
+     </script>
+
+     <!-- jquery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+     <script>
+        //  setInterval(()=>{
+        //     let nextIndex = (currentIndex +1)%sliderCount;
+            
+        //     $(slider[(currentIndex)]).animate({opacity:"0"}, 1000);
+        //     $(slider[(nextIndex)]).animate({opacity:"1"}, 1000);
+            
+        //     currentIndex = nextIndex;
+        //  },sliderInterval);
+        
+
+     </script>
 </body>
 </html>
