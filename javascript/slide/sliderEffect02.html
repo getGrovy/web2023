@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>02. 슬라이드 이펙트</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <style>
+        /* slider__wrap */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 이미지가 보이는 영역 */
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 450px;
+            /* overflow: hidden; */
+        }
+        /* 전체 이미지를 감싸고 있는 부모박스 : 이미지가 움직이는 영역  */
+        .slider__inner {
+            display: flex;
+            flex-wrap: wrap;
+            width: 4000px;
+            height: 450px;
+        }
+        /* 개별적인 이미지  */
+        .slider {
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body class="img02 bg02 font02">
+    <header id="header">
+        <h1>Javascript slider Effect02</h1>
+        <p>슬라이드 이펙트 : 좌로 움직이기</p>
+        <ul>
+            <li><a href="sliderEffect01.html">1</a></li>
+            <li class="active"><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+        </ul>
+    </header>
+    <!-- //header-->
+    <main id="main">
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <div class="slider"><img src="./img/slideEffect06-min.jpg" alt="이미지6"></div>
+                    <div class="slider"><img src="./img/slideEffect07-min.jpg" alt="이미지7"></div>
+                    <div class="slider"><img src="./img/slideEffect08-min.jpg" alt="이미지8"></div>
+                    <div class="slider"><img src="./img/slideEffect09-min.jpg" alt="이미지9"></div>
+                    <div class="slider"><img src="./img/slideEffect10-min.jpg" alt="이미지10"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main-->
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- //footer-->
+    <script>
+        //선택자 
+        const sliderWrap =document.querySelector(".slider__wrap");
+        const sliderImg =sliderWrap.querySelector(".slider__img");      //보여지는영역
+        const sliderInner =sliderWrap.querySelector(".slider__inner");  //움직이는영역
+        const slider =sliderWrap.querySelectorAll(".slider");           //개별이미지
+
+        let currentIndex = 0 ; //현재 보이는 이미지
+        let sliderCount = slider.length; //전체 이미지 갯수
+        let sliderInterval = 3000;      //이미지 변경 간격 시간
+
+        </script>
+        
+        <script>
+            // sliderInner.style.transform =translateX("0px");
+            // sliderInner.style.transform =translateX("-800px");
+            // sliderInner.style.transform =translateX("-1600px");
+            // sliderInner.style.transform =translateX("-2400px");
+            // sliderInner.style.transform =translateX("-3200px");
+            // sliderInner.style.transform =translateX("0px");
+            
+            
+            // javascript 
+            // sliderInner.style.transition = "all 0.6s";
+            
+            // setInterval(() => {
+            //         currentIndex = (currentIndex+1) % sliderCount ; 
+            //         // sliderInner.style.transform =translateX(nextIndex+"px");
+            //         // console.log(currentIndex)
+            //         sliderInner.style.transform ="translateX("+ -800*currentIndex+"px)";
+                
+            // }, sliderInterval);
+                
+        </script>
+        
+        <!-- // gsap  --> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script>
+            setInterval(()=>{
+                currentIndex = (currentIndex +1)% sliderCount;
+
+                // gsap.to(sliderInner)
+                gsap.to(".slider__inner", {
+                    x :-800 * currentIndex,
+                    duration : 1
+                    // ease : "elastic.out(1, 0.3)"
+                    // duration: 2.5, 
+                    // ease: "elastic.out(1, 0.3)",
+                })
+            },sliderInterval);
+        </script>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script>
+            // setInterval(()=>{
+                // currentIndex =(currentIndex+1) % $(".slider").length;
+                // $(".slider__inner").css("position","relative");
+                // $(".slider__inner").animate({left: -800 *currentIndex },600,"easeOutElastic");
+            // },sliderInterval);
+        </script>
+</body>
+</html>

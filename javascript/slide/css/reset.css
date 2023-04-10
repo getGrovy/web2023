@@ -1,0 +1,150 @@
+@import url('https://webfontworld.github.io/Cafe24Syongsyong/Cafe24Syongsyong.css');
+@import url('https://webfontworld.github.io/HSYeolumMoolbit/HSYeolumMoolbit.css');
+@import url('https://webfontworld.github.io/utoChyaochyureu/UtoChyaoChyureu.css');
+@import url('https://webfontworld.github.io/earlyfont/EF_Diary.css');
+@import url('https://webfontworld.github.io/Cafe24SsurroundAir/Cafe24SsurroundAir.css');
+@import url('https://webfontworld.github.io/crown/CrownMychew.css');
+@import url('https://webfontworld.github.io/baskinrobbins/BaskinRobbins.css');
+@import url('https://webfontworld.github.io/BMJua/BMJua.css');
+@import url('https://webfontworld.github.io/earlyfont/EF_Hyunygothic.css');
+@import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+li, ul, ol {
+    list-style: none;
+}
+img {
+    vertical-align: top; 
+    width: 100%;
+    /* 인라인구조의 여백을 없에기위해? */
+}
+em {
+    font-style: normal;
+}
+.font01 {
+    font-family: 'Cafe24SsurroundAir';
+}
+.font02 {
+    font-family: 'BaskinRobbins';
+}
+.font03 {
+    font-family: 'CrownMychew';
+}
+.font04 {
+    font-family: 'BMJua';
+}
+.font05 {
+    font-family: 'EF_Hyunygothic';
+}
+.font06 {
+    font-family: 'MabinogiClassic';
+}
+.font07 {
+    font-family: 'EF_Diary';
+}
+.font08 {
+    font-family: 'UtoChyaoChyureu';
+}
+.font09 {
+    font-family: 'HSYeolumMoolbit';
+}
+.font10 {
+    font-family: 'Cafe24Syongsyong';
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 5s;
+}
+body {
+    /* background-color: #89e6fb; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+body.img01 {
+    background-image: url(../img/slideEffect01-min.jpg);
+}
+body.img02 {
+    background-image: url(../img/slideEffect02-min.jpg);
+}
+body.img03 {
+    background-image: url(../img/slideEffect03-min.jpg);
+}
+body.img04 {
+    background-image: url(../img/slideEffect04-min.jpg);
+}
+body.img05 {
+    background-image: url(../img/slideEffect05-min.jpg);
+}
+body.img06 {
+    background-image: url(../img/slideEffect06-min.jpg);
+}
+body.img07 {
+    background-image: url(../img/slideEffect07-min.jpg);
+}
+body.img08 {
+    background-image: url(../img/slideEffect08-min.jpg);
+}
+body.img09 {
+    background-image: url(../img/slideEffect09-min.jpg);
+}
+body.img10 {
+    background-image: url(../img/slideEffect10-min.jpg);
+}
+body::after {
+    content: '';
+    position: absolute;
+    left: 0 ; top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 36, 70, 0.7);
+    z-index: -1;
+}
+body.bg01::after {
+    background: rgba(5, 36, 133, 0.7);
+}
+body.bg02::after {
+    background: rgba(30, 70, 70, 0.7);
+}
+body.bg03::after {
+    background: rgba(30, 36, 70, 0.4);
+}
+body.bg04::after {
+    background:  rgba(60, 36, 70, 0.9);
+}
+body.bg05::after {
+    background:  rgba(60, 133, 70, 0.7);
+}
+body.bg06::after {
+    background: rgba(60, 133, 70, 0.5);
+}
+body.bg07::after {
+    background: rgba(60, 133, 70, 0.3);
+}
+body.bg08::after {
+    background: rgba(133, 30, 52, 0.7);
+}
+body.bg09::after {
+    background: rgba(133, 30, 52, 0.3);
+}
+body.bg10::after {
+    background: rgba(133, 30, 52, 0.5);
+}
+
