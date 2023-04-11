@@ -22,8 +22,8 @@ function solution(babbling) {
         let containBool = true;
         // document.write(i," split text<br>");
         let splitList = i.split(/aya|ye|woo|ma/);
+        console.log("splitList : " , splitList)
         splitList.forEach((el) =>{
-            // document.write("_el_"+el+"<br><br>");
             if(el.length > 0) {
                 containBool = false;
             }
@@ -36,6 +36,7 @@ function solution(babbling) {
     // return answer;
 
 }
+// solution(["aya", "yee", "u", "maa"]);
 solution(["aya", "yee", "u", "maa", "wyeoo"]);
 </script>
 </html>
