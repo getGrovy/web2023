@@ -95,7 +95,7 @@
         function sliderEffect(){
             currentIndex++;
             sliderInner.style.transition = "all 0.6s";
-            sliderInner.style.transform = "translateX(-"+sliderHeight*currentIndex +"px)";
+            sliderInner.style.transform = "translateY(-"+sliderHeight*currentIndex +"px)";
 
             //마지막 이미지에 위치 했을 때 
             // console.log(slider);
@@ -148,7 +148,7 @@
                 currentIndex=0;
             }
         }
-        setInterval(sliderEffect3, sliderInterval);
+        setInterval(sliderEffect, sliderInterval);
         
 
         </script>
