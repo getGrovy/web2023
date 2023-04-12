@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
-    <title>04. 슬라이드 이펙트</title>
+    <title>05. 슬라이드 이펙트</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slider.css">
     <style>
@@ -26,9 +26,9 @@
         }
         /* 전체 이미지를 감싸고 있는 부모박스 : 이미지가 움직이는 영역  */
         .slider__inner {
-            display: flex;
-            flex-wrap: wrap;
-            width: 4800px;  /*총이미지*/
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            width: 800px;  /*총이미지*/
             height: 2250px;
         }
         /* 개별적인 이미지  */
@@ -42,14 +42,14 @@
 </head>
 <body class="img06 bg07 font07">
     <header id="header">
-        <h1>Javascript slider Effect04</h1>
-        <p>슬라이드 이펙트 : 좌로 움직이기(연속적으로)</p>
+        <h1>Javascript slider Effect05</h1>
+        <p>슬라이드 이펙트 : 세로로 움직이기(연속적으로)</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
             <li><a href="sliderEffect03.html">3</a></li>
-            <li class="active"><a href="sliderEffect04.html">4</a></li>
-            <li><a href="sliderEffect05.html">5</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li class="active"><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
         </ul>
     </header>
@@ -85,7 +85,7 @@
         let currentIndex = 0 ;                              //현재 보이는 이미지
         let sliderCount = slider.length;                    //전체 이미지 갯수
         let sliderInterval = 2000;                          //이미지 변경 간격 시간
-        let sliderWidth= slider[0].offsetWidth;             //가로값 가져오기
+        let sliderHeight= slider[0].offsetHeight;             //가로값 가져오기
         
         let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
         
@@ -95,7 +95,7 @@
         function sliderEffect(){
             currentIndex++;
             sliderInner.style.transition = "all 0.6s";
-            sliderInner.style.transform = "translateX(-"+sliderWidth*currentIndex +"px)";
+            sliderInner.style.transform = "translateX(-"+sliderHeight*currentIndex +"px)";
 
             //마지막 이미지에 위치 했을 때 
             // console.log(slider);
@@ -103,7 +103,7 @@
                 // alert("last ");
                 setTimeout(()=>{
                     sliderInner.style.transition = "0.0s";
-                    sliderInner.style.transform = "translateX(0px)";
+                    sliderInner.style.transform = "translateY(0px)";
                 }, 700);
                 currentIndex=0;
             }
@@ -113,14 +113,14 @@
             currentIndex++;
             gsap.to(sliderInner, {
                         duration: 0.6,
-                        x: -sliderWidth * currentIndex,
+                        y: -sliderHeight * currentIndex,
                         // ease: "power2.inOut"
                     });
             if(currentIndex == sliderCount){
                 setTimeout(()=>{
                     gsap.to(".slider__inner", {
                             duration : 0,
-                            x :0,
+                            y :0,
                             ease : "none"
                         });
                 },700);
@@ -133,7 +133,7 @@
             console.log(currentIndex);
             $(".slider__inner").css("position","relative");
             $(sliderInner).animate(
-                {left :-sliderWidth * currentIndex },
+                {top :-sliderHeight * currentIndex },
                 2000,
                 "easeOutElastic"
             );
@@ -141,7 +141,7 @@
             if(currentIndex==sliderCount){
                 console.log("first")
                 $(sliderInner).animate(
-                    {left :0},
+                    {top :0},
                     0,
                     "none"
                 );
