@@ -22,7 +22,7 @@
             position: relative;
             width: 800px;
             height: 450px;;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
         /* 전체 이미지를 감싸고 있는 부모박스 : 이미지가 움직이는 영역  */
         .slider__inner {
@@ -33,7 +33,6 @@
         }
         /* 개별적인 이미지  */
         .slider {
-            /* position: relative; */
             width: 800px;
             height: 450px;
         }
@@ -63,7 +62,6 @@
         }
         .slider__dot {
             position: absolute;
-            /* left: 50%; */
             bottom: 50px;
             translate: translateX(-50%);
         }
@@ -79,14 +77,14 @@
 
         }
         .slider__dot .dot.active{
-            background-color: rgba(255 , 255, 255, 1);
+            background-color: rgba(255 , 255, 255, 0.5);
         }
     </style>
 </head>
 <body class="img06 bg07 font07">
     <header id="header">
         <h1>Javascript slider Effect06</h1>
-        <p>슬라이드 이펙트 : </p>
+        <p>슬라이드 이펙트 : 버튼 슬라이드</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
@@ -94,6 +92,7 @@
             <li><a href="sliderEffect04.html">4</a></li>
             <li><a href="sliderEffect05.html">5</a></li>
             <li class="active"><a href="sliderEffect06.html">6</a></li>
+            <li ><a href="sliderEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //header-->
@@ -177,7 +176,7 @@
         });
 
         let sliderDotBtn  = sliderWrap.querySelectorAll(".slider__dot .dot");    //닷메뉴 
-
+        // 닷버튼 클릭했을때
         sliderDotBtn.forEach((btn, index)=>{
             btn.addEventListener("click",()=>{
                 gotoSlider(index);
