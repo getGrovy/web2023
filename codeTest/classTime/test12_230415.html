@@ -110,14 +110,13 @@
 
 
         document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
-            createNum1();
-            // createNum2();
+            // createNum1();
+            createNum2();
             
             //정렬
-            randomTot.sort(function(a,b){
-                return a-b;
+            randomTot.sort(function (a, b) {
+                return a - b;
             });
-
             document.querySelector(".lootto__num").innerHTML = `${randomTot.join(', ')}`;
             //초기화
             randomTot=[];
@@ -125,27 +124,15 @@
         
         let randomTot = []; // 로또번호
         function createNum1(){
-            let randomNum = Math.floor(Math.random() * 45) ;
-
-            //배열크기가 6이면 정지하는 while
-            while ( randomTot.length<6) {
-                let randomNum = Math.floor(Math.random() * 45)+1 ;
-                
+            //6자리면 스탑
+            while ( randomTot.length < 6) {
+                let randomNum = Math.floor(Math.random() * 45) ;
                 //randomTot에 값이 안들어 있을경우 값을 넣어주기 
                 if(randomTot.indexOf(randomNum)<0){
                     // console.log((randomTot.indexOf(randomNum)));
                     randomTot.push(randomNum);
                 }
             }
-            //오름차순정렬
-            // randomTot.sort(function(a,b){
-            //     return a-b;
-            // });
-            // 내림차순정렬
-            // randomTot.sort(function(a,b){
-            //     return a-b;
-            // });
-            // console.log(randomTot);
         }
 
         function createNum2 () {
@@ -154,14 +141,11 @@
         const set = new Set();
         while ( set.size < 6) {
                 let num = Math.floor(Math.random() * 45)+ 1;
-                set.add(" " + num);
+                set.add(num);
             }
-            console.log(set);
-
             // 정렬을 위해 다시 배열로 변경
-             randomTot = Array.from([...set]);
-            
+            randomTot = Array.from([...set]);
         };        
-        console.log(createNum2)
+        
     </script>
 </html>
