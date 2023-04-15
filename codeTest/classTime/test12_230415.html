@@ -74,6 +74,7 @@
         let author= document.querySelector(".wise__author");
         let wiseAll=[]; //모든 퀴즈 정보 저장 
         let item =[];
+        //명언 start
         const dataQuestion = () => {
             fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
             .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
@@ -102,13 +103,7 @@
             author.innerHTML = `- ${item[totIndex].author}`;  
         }, 10000);
 
-
-
-
-
-
-
-
+        //로또번호 만들기 start 
         document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
             // createNum1();
             createNum2();
@@ -136,7 +131,6 @@
         }
 
         function createNum2 () {
-
         // 새로운 set 객체 생성
         const set = new Set();
         while ( set.size < 6) {
