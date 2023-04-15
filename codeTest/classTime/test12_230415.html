@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .result__wrap {
+        width: 500px;
+        /* height: 250px; */
+        background-color: #000;
+        color: #fff;
+        margin: 0 auto;
+        position: relative;
+    }
+    #result {
+        padding: 30px;
+        text-align: left;
+    }
+    .wise__quote{
+        display: inline-block;
+        
+        font-size: 20px;
+    }
+    .wise__writer{
+        display: inline-block;
+    }
+    .lotto__wrap {
+        width: 500px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        text-align: center;
+        background-color: #000;
+        color: white;
+    }
+    .lotto__start__btn {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        border: 1px solid #aaa;
+        background-color: #000000;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .lotto__start__btn:hover {
+        background-color: #fff;
+        color: #000
+    }
+</style>
+<body>
+    <div class="result__wrap">
+        <div id="result">
+            <h1>오늘의 명언</h1><br>
+            <h2 class="wise__quote"></h2><br><br>
+            <span class="wise__author"></span>
+        </div>
+    </div>
+    <div class="lotto__wrap">
+        로또번호 번호뽑기<br><br>
+        <button class="lotto__start__btn">랜덤뽑기</button>
+        <br><br>
+        <span class="lootto__num"></span>
+    </div>
+</body>
+    <script>
+        let quonte= document.querySelector(".wise__quote");
+        let author= document.querySelector(".wise__author");
+        let wiseAll=[]; //모든 퀴즈 정보 저장 
+        let item =[];
+        const dataQuestion = () => {
+            fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
+            .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
+            .then(items=> {                 //객체를 한번더 가공해서 출력할꺼야
+                //랜덤한 번호의 명언을 가져옴 
+                let totIndex = Math.round(Math.random() * items.quotes.length) ;
+                //가져온 명언과 지은이를 넣어줌 
+                quonte.innerHTML = ` ${items.quotes[totIndex].id}. ${items.quotes[totIndex].quote} `;
+                author.innerHTML= `- ${items.quotes[totIndex].author}`;    
+                items.quotes.forEach(element => {
+                    item.push({
+                        id:element.id,
+                        quote:element.quote,
+                        author:element.author
+                    });
+                });
+            })
+            .catch((err) => console.log(err));
+        }
+        // 초기값 불러오기
+        dataQuestion();
+        // console.log(items)
+        setInterval(() => {
+            let totIndex = Math.round(Math.random() * item.length) ;
+            quonte.innerHTML =  `${item[totIndex].id}. ${item[totIndex].quote} `;
+            author.innerHTML = `- ${item[totIndex].author}`;  
+        }, 10000);
+
+
+
+
+
+
+
+
+        document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
+            createNum();
+            document.querySelector(".lootto__num").innerHTML = `${randomTot.join(', ')}`;
+            //초기화
+            randomTot=[];
+        });
+        
+        let randomTot = []; // 로또번호
+        function createNum(){
+            let randomNum = Math.floor(Math.random() * 45) ;
+            // alert();
+            for(let i =0; i<60 ; i++){
+                let randomNum = Math.floor(Math.random() * 45) ;
+                
+                //randomTot에 값이 안들어 있을경우 값을 넣어주기 
+                if(randomTot.indexOf(randomNum)<0){
+                    // console.log((randomTot.indexOf(randomNum)));
+                    randomTot.push(randomNum);
+                }
+                //6자리면 스탑
+                if(randomTot.length == 5)break
+            }
+            //오름차순정렬
+            randomTot.sort(function(a,b){
+                return a-b;
+            });
+            // 내림차순정렬
+            // randomTot.sort(function(a,b){
+            //     return a-b;
+            // });
+            // console.log(randomTot);
+        }
+        
+    </script>
+</html>
