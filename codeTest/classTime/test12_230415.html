@@ -74,6 +74,7 @@
         let author= document.querySelector(".wise__author");
         let wiseAll=[]; //모든 퀴즈 정보 저장 
         let item =[];
+        //명언 start
         const dataQuestion = () => {
             fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
             .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
@@ -102,45 +103,43 @@
             author.innerHTML = `- ${item[totIndex].author}`;  
         }, 10000);
 
-
-
-
-
-
-
-
+        //로또번호 만들기 start 
         document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
-            createNum();
+            // createNum1();
+            createNum2();
+            
+            //정렬
+            randomTot.sort(function (a, b) {
+                return a - b;
+            });
             document.querySelector(".lootto__num").innerHTML = `${randomTot.join(', ')}`;
             //초기화
             randomTot=[];
         });
         
         let randomTot = []; // 로또번호
-        function createNum(){
-            let randomNum = Math.floor(Math.random() * 45) ;
-            // alert();
-            for(let i =0; i<60 ; i++){
+        function createNum1(){
+            //6자리면 스탑
+            while ( randomTot.length < 6) {
                 let randomNum = Math.floor(Math.random() * 45) ;
-                
                 //randomTot에 값이 안들어 있을경우 값을 넣어주기 
                 if(randomTot.indexOf(randomNum)<0){
                     // console.log((randomTot.indexOf(randomNum)));
                     randomTot.push(randomNum);
                 }
-                //6자리면 스탑
-                if(randomTot.length == 5)break
             }
-            //오름차순정렬
-            randomTot.sort(function(a,b){
-                return a-b;
-            });
-            // 내림차순정렬
-            // randomTot.sort(function(a,b){
-            //     return a-b;
-            // });
-            // console.log(randomTot);
         }
+
+        function createNum2 () {
+        // 새로운 set 객체 생성
+        const set = new Set();
+        while ( set.size < 6) {
+                let num = Math.floor(Math.random() * 45)+ 1;
+                set.add(num);
+            }
+            // 정렬을 위해 다시 배열로 변경
+            randomTot = Array.from([...set]);
+        };        
         
     </script>
 </html>

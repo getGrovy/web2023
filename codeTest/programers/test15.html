@@ -13,15 +13,37 @@
 <script>
 function solution(k, score) {
     let answer = [];
-    let Result =[];
+    let result =[];
 
-
+    // score.sort(function(a,b){
+    //     return b-a;
+    // });
+    // console.log(score);
+    
+    score.forEach((element,i) => {
+        if(i<k){
+            result.push(element)
+        }
+        if(element>Math.min(...result)){
+            result.pop();
+            console.log(result , element)   
+            result.push(element);
+            result.sort(function(a,b){
+                return b-a;
+            });
+        }
+        answer.push(result[result.length-1]);
+    });
+    // console.log(answer);
     return answer;
 }
-
+solution(3,[10, 100, 20, 150, 1, 100, 200])
 // 3	[10, 100, 20, 150, 1, 100, 200]	[10, 10, 10, 20, 20, 100, 100]
 // 4	[0, 300, 40, 300, 20, 70, 150, 50, 500, 1000]	[0, 0, 0, 0, 20, 40, 70, 70, 150, 300]
-
+//     // arr.sort(function(a,b){
+    //  return a-b ; 오름차순 ( 작은수먼저 )
+    //  return b-a ; 내림차순 ( 큰수먼저 )
+    // })
 </script>
 
 </html>
