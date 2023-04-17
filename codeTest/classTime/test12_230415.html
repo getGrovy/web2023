@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>codeTest\classTime\test12_230415.html
+</head>
 <style>
     *{
         margin: 0;
         padding: 0;
-        background-color: #000;
     }
+    .wrap {
+        height: 100vh;
+        background-size: cover;
+        z-index: 100;
+    }
+   
+    
     .result__wrap {
         width: 500px;
         /* height: 250px; */
@@ -36,45 +42,54 @@
         margin: 0 auto;
         padding-bottom: 30px;
         text-align: center;
-        background-color: #000;
         color: white;
     }
     .lotto__start__btn {
         width: 100px;
         height: 100px;
         border-radius: 10px;
-        border: 1px solid #aaa;
-        background-color: #000000;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
+
         color: white;
         font-size: 15px;
         cursor: pointer;
     }
     .lotto__start__btn:hover {
-        background-color: #fff;
-        color: #000
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #fff
     }
 </style>
 <body>
-    <div class="result__wrap">
-        <div id="result">
-            <h1>오늘의 명언</h1><br>
-            <h2 class="wise__quote"></h2><br><br>
-            <span class="wise__author"></span>
+    <div class="wrap">
+        <div class="result__wrap">
+            <div id="result">
+                <h1>오늘의 명언</h1><br>
+                <h2 class="wise__quote"></h2><br><br>
+                <span class="wise__author"></span>
+            </div>
+        </div>
+        <div class="lotto__wrap">
+            로또번호 번호뽑기<br><br>
+            <button class="lotto__start__btn">랜덤뽑기</button>
+            <br><br>
+            <span class="lootto__num"></span>
         </div>
     </div>
-    <div class="lotto__wrap">
-        로또번호 번호뽑기<br><br>
-        <button class="lotto__start__btn">랜덤뽑기</button>
-        <br><br>
-        <span class="lootto__num"></span>
+    <div class="wrap2">
     </div>
 </body>
     <script>
         let quonte= document.querySelector(".wise__quote");
         let author= document.querySelector(".wise__author");
+        let wrapBackImg= document.querySelector(".wrap");
+        let wrapBackImg2= document.querySelector(".wrap2");
+        let imgUrl1  = "https://source.unsplash.com/random/?night";
+        let imgUrl2  = "https://source.unsplash.com/random/?nightsky";
+        // imgBack.src=url;
         let wiseAll=[]; //모든 퀴즈 정보 저장 
         let item =[];
-        //명언 start
+
         const dataQuestion = () => {
             fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
             .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
@@ -96,50 +111,51 @@
         }
         // 초기값 불러오기
         dataQuestion();
-        // console.log(items)
+        wrapBackImg.style.backgroundImage="url("+imgUrl1+")";
+        wrapBackImg2.style.backgroundImage="url("+imgUrl2+")";
+        let sliderClone = wrapBackImg2.cloneNode(true);    //첫번째 이미지 복사
+        
+        let chk01 = 0;
         setInterval(() => {
             let totIndex = Math.round(Math.random() * item.length) ;
             quonte.innerHTML =  `${item[totIndex].id}. ${item[totIndex].quote} `;
             author.innerHTML = `- ${item[totIndex].author}`;  
-        }, 10000);
-
-        //로또번호 만들기 start 
-        document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
-            // createNum1();
-            createNum2();
             
-            //정렬
-            randomTot.sort(function (a, b) {
-                return a - b;
-            });
+        }, 3000);
+        
+
+        document.querySelector(".lotto__start__btn").addEventListener("click",()=>{
+            createNum();
             document.querySelector(".lootto__num").innerHTML = `${randomTot.join(', ')}`;
             //초기화
             randomTot=[];
         });
         
         let randomTot = []; // 로또번호
-        function createNum1(){
-            //6자리면 스탑
-            while ( randomTot.length < 6) {
+        function createNum(){
+            let randomNum = Math.floor(Math.random() * 45) ;
+            // alert();
+            for(let i =0; i<60 ; i++){
                 let randomNum = Math.floor(Math.random() * 45) ;
+                
                 //randomTot에 값이 안들어 있을경우 값을 넣어주기 
                 if(randomTot.indexOf(randomNum)<0){
                     // console.log((randomTot.indexOf(randomNum)));
                     randomTot.push(randomNum);
                 }
+                //6자리면 스탑
+                if(randomTot.length == 5)break
             }
+            //오름차순정렬
+            randomTot.sort(function(a,b){
+                return a-b;
+            });
+            // 내림차순정렬
+            // randomTot.sort(function(a,b){
+            //     return a-b;
+            // });
+            // console.log(randomTot);
         }
-
-        function createNum2 () {
-        // 새로운 set 객체 생성
-        const set = new Set();
-        while ( set.size < 6) {
-                let num = Math.floor(Math.random() * 45)+ 1;
-                set.add(num);
-            }
-            // 정렬을 위해 다시 배열로 변경
-            randomTot = Array.from([...set]);
-        };        
         
     </script>
 </html>
