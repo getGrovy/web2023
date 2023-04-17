@@ -82,13 +82,10 @@
     <script>
         let quonte= document.querySelector(".wise__quote");
         let author= document.querySelector(".wise__author");
-        let wrapBackImg= document.querySelector(".wrap");
-        let wrapBackImg2= document.querySelector(".wrap2");
-        let imgUrl1  = "https://source.unsplash.com/random/?night";
-        let imgUrl2  = "https://source.unsplash.com/random/?nightsky";
-        // imgBack.src=url;
-        let wiseAll=[]; //모든 퀴즈 정보 저장 
         let item =[];
+        let wrapBackImg= document.querySelector(".wrap");
+        let imgUrl1  = "https://source.unsplash.com/random/?night";
+        let wiseAll=[]; //모든 퀴즈 정보 저장 
 
         const dataQuestion = () => {
             fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
@@ -112,8 +109,6 @@
         // 초기값 불러오기
         dataQuestion();
         wrapBackImg.style.backgroundImage="url("+imgUrl1+")";
-        wrapBackImg2.style.backgroundImage="url("+imgUrl2+")";
-        let sliderClone = wrapBackImg2.cloneNode(true);    //첫번째 이미지 복사
         
         let chk01 = 0;
         setInterval(() => {
