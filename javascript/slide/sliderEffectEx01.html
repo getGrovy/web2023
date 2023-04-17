@@ -13,9 +13,7 @@
             margin: 40px;
         }
         .slider {
-            background-size: cover;
             width: 100%;
-            height: 100vh;
             position: absolute;
             left: 0;
             top: 0;
@@ -29,7 +27,7 @@
 
     </style>
 </head>
-<body class="  font01">
+<body class="font01">
     <header id="header">
         <h1>Javascript slider Effect Ex01 </h1>
         <p>json 명언 & unsplash 이미지 무한가져오기</p>
@@ -45,7 +43,7 @@
         </ul>
         <div id="result">
             <h2>오늘의 명언</h2><br>
-            <h2 class="wise__quote"></h2><br><br>
+            <h3 class="wise__quote"></h3><br>
             <span class="wise__author"></span>
         </div>
     </header>
@@ -53,11 +51,9 @@
     <!-- //header-->
     <main id="main">
         <div class="slider__wrap">
-            <div class="slider__img">
-                <div class="slider"><img src="https://source.unsplash.com/random/?night=v?1" alt="이미지1"></div>
-                <div class="slider"><img src="https://source.unsplash.com/random/?night=v?2" alt="이미지2"></div>
-                <div class="slider"><img src="" alt="이미지3"></div>
-            </div>
+            <div class="slider"><img src="https://source.unsplash.com/random/?night=v?1" alt="이미지1"></div>
+            <div class="slider"><img src="https://source.unsplash.com/random/?night=v?2" alt="이미지2"></div>
+            <div class="slider"><img src="" alt="이미지3"></div>
         </div>
     </main>
     <!-- //main-->
@@ -68,7 +64,6 @@
     <script>
         //선택자 
         const sliderWrap =document.querySelector(".slider__wrap");
-        const sliderImg =sliderWrap.querySelector(".slider__img");
         const slider =sliderWrap.querySelectorAll(".slider");
         const img =sliderWrap.querySelectorAll(".slider img");
         let author= document.querySelector(".wise__author");
@@ -119,7 +114,7 @@
             currentIndex = nextIndex;
             // 다다음 이미지에 unsplash에서 배경을 받는당
             // 숨김상태라 안보이지만 이미지 주소는 변경됨
-            img[nextnextIndex].src = "https://source.unsplash.com/random/?night?v?"+srcRandom;
+            img[nextnextIndex].src = imgUrl1+"v?"+srcRandom;
 
             // 랜덤한 명언 가져오기
             let totIndex = Math.ceil(Math.random() * item.length)-1 ;
