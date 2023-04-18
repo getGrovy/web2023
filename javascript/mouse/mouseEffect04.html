@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. 마우스 이펙트</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/mouse.css">
+</head>
+<body class="img05 bg02 font05">
+    <header id="header">
+        <h1>Javascript Mouse Effect05</h1>
+        <p>마우스 이펙트 - </p>
+        <ul>
+            <li ><a href="mouseEffect01.html">1</a></li>
+            <li ><a href="mouseEffect02.html">2</a></li>
+            <li ><a href="mouseEffect03.html">3</a></li>
+            <li class="active"><a href="mouseEffect04.html">4</a></li>
+            <li ><a href="mouseEffect05.html">5</a></li>
+            <li ><a href="mouseEffect06.html">6</a></li>
+        </ul>
+    <style>
+        #header {
+            z-index: 100;
+        }
+        .mouse__wrap {
+        }
+        .mouse__img {
+            width: 100%;
+            height: 100vh;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .mouse__img figure {
+            width: 50vw;
+            height: 50vh;
+            position: relative;
+            overflow: hidden;
+            /* background-color: #fff; */
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3);
+            transition : transform 500ms ease;
+            cursor: none;
+        }
+        .mouse__img figure:hover {
+            transform: scale(1.025);
+        }
+        .mouse__img figure img{
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            /* filter: hue-rotate(120deg) */
+            filter: sepia(60%)
+        }
+ 
+        .mouse__img figure figcaption{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: aliceblue;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+    </header>
+    <!--header-->
+    <main id="main">
+        <div class="mouse__wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__img">
+                <figure>
+                    <img src="img/mouseEffect10-min.jpg" alt="이미지">
+                    <figcaption>
+                        <p>"누구나 언제나 어디서든지 시작할 수 있다. 우리는 지금, 우리가 가진 것으로부터 시작해야 한다."</p>
+                        <p>"Anyone can start from anywhere at any time. We must start from what we have right now."</p>
+                        <p> - 존 코리진</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    <!--main-->
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        document.querySelector(".mouse__img figure").addEventListener("mousemove",(e)=>{
+            // console.log(e)
+            // gsap.to(".mouse__cursor", {
+            //     duration: .2,
+            //     left: e.pageX,
+            //     top: e,pageY
+            // });
+            gsap.to(".mouse__cursor",{
+                duration : 0.2 , 
+                left : e.pageX,
+                top : e.pageY
+            })
+            
+            // 마우스 좌표값 구하기 
+            let mousePageX =e.pageX;
+            let mousePageY =e.pageY;
+
+            //전체 화면 가로 값
+            // window.innerWidth   //1920 브라우저크기
+            // window.outerWidth   //1920 브라우저크기 ( 스크롤바 포함 )
+            // window.screen.width //1920 화면크기
+
+            //마우스 좌표값 기준점 가운데로 설정 
+            let centerPageX = window.innerWidth /2 - mousePageX ;
+            let centerPageY = window.innerHeight /2 - mousePageY ;
+
+            //이미지 움직이기
+
+            const imgMove = document.querySelector(".mouse__img figure img");
+            // imgMove.style.transform ="translate("+centerPageX/30+"px , "+centerPageY/30+"px)"
+            gsap.to(imgMove,{
+                duration : 0.2 , 
+                left : centerPageX/30,
+                top : centerPageY/30
+            })
+        });
+
+        // const DOMRect ={
+        //     bottom: 200,
+        //     height: 200,
+        //     left: 0,
+        //     right: 200,
+        //     top: 0,
+        //     width: 200,
+        //     x: 0,
+        //     y: 0
+        // }
+
+        // const circle = cursor.getBoundingClientRect();
+
+        // window.addEventListener("mousemove", e=>{
+        //     gsap.to(cursor,{
+        //         duration : 0.5 , 
+        //         left : e.pageX-circle.width/2 , 
+        //         top : e.pageY-circle.right/2
+        //     })
+        // })
+    </script>
+    <!--footer-->
+</body>
+</html>

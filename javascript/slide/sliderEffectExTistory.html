@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>오늘의명언</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <style>
+        #header #result{
+            margin: 40px;
+        }
+        .slider {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s ease-in;
+        }
+        
+        .slider:nth-child(1){z-index: -10;}
+        .slider:nth-child(2){z-index: -11;}
+        .slider:nth-child(3){z-index: -12;}
+
+
+    </style>
+</head>
+<body class="  font01">
+    <header id="header">
+        <h1>Javascript slider Effect Ex01 </h1>
+        <p>json 명언 & unsplash 이미지 무한가져오기</p>
+        <ul>
+            <li ><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+            <li><a href="sliderEffect06.html">6</a></li>
+            <li ><a href="sliderEffect07.html">7</a></li>
+            <li class="active"><a href="sliderEffectEx.html">Ex</a></li>
+        </ul>
+        <div id="result">
+            <h1>오늘의 명언</h1><br>
+            <h2 class="wise__quote"></h2><br><br>
+            <span class="wise__author"></span>
+        </div>
+    </header>
+   
+    <!-- //header-->
+    <main id="main">
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider"><img src="https://source.unsplash.com/random/?night=v?1" alt="이미지1"></div>
+                <div class="slider"><img src="https://source.unsplash.com/random/?night=v?2" alt="이미지2"></div>
+                <div class="slider"><img src="" alt="이미지3"></div>
+            </div>
+        </div>
+    </main>
+    <!-- //main-->
+    <footer id="footer">
+        <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
+    </footer>
+    <!-- //footer-->
+    <script>
+        //선택자 
+        const sliderWrap =document.querySelector(".slider__wrap");
+        const sliderImg =sliderWrap.querySelector(".slider__img");
+        const slider =sliderWrap.querySelectorAll(".slider");
+        const img =sliderWrap.querySelectorAll(".slider img");
+        let author= document.querySelector(".wise__author");
+        let quonte= document.querySelector(".wise__quote");
+        let imgUrl1  = "https://source.unsplash.com/random/?night";
+        let item =[];
+        let currentIndex = 0 ; //현재 보이는 이미지
+        let srcRandom =4;
+        let sliderCount = slider.length; //전체 이미지 갯수
+        let sliderInterval = 4000;      //이미지 변경 간격 시간
+        
+        const dataQuestion = () => {
+            fetch("json/dummy01.json")  //이파일을 가져올거야  https://getgrovy.github.io/web2023/javascript/quiz/json/gineungsaWD2012_02.json
+            .then(res => res.json())        //이파일은 json이야 객체로바꿀꺼야 
+            .then(items=> {                 //객체를 한번더 가공해서 출력할꺼야
+                //랜덤한 번호의 명언을 가져옴 
+                let totIndex = Math.round(Math.random() * items.quotes.length) ;
+                //가져온 명언과 지은이를 넣어줌 
+                quonte.innerHTML = ` ${items.quotes[totIndex].id}. ${items.quotes[totIndex].quote} `;
+                author.innerHTML= `- ${items.quotes[totIndex].author}`;    
+                items.quotes.forEach(element => {
+                    item.push({
+                        id:element.id,
+                        quote:element.quote,
+                        author:element.author
+                    });
+                });
+            })
+            .catch((err) => console.log(err));
+        }
+        dataQuestion();
+
+        setInterval(()=>{
+            // 다음이미지와 다다음 이미지의 순번을 미리 세팅
+            let nextIndex = (currentIndex +1)%sliderCount;
+            let nextnextIndex = (nextIndex +1)%sliderCount;
+            // console.log(currentIndex , nextIndex);
+            // opacity >>> 0: 완전투명  ~ 1: 완전불투명
+      
+            // 지금보이는 이미지는 투명하게
+            slider[currentIndex].style.opacity="0";
+            // 다음이미지는 화면에 뿌려쥼 
+            slider[nextIndex].style.opacity="1";
+            // 다다음 이미지는 투명화
+            slider[nextnextIndex].style.opacity="0";
+            
+            // sliderInterval 후 보여줄 slider[nextIndex] 설정
+            currentIndex = nextIndex;
+            // 다다음 이미지에 unsplash에서 배경을 받는당
+            // 숨김상태라 안보이지만 이미지 주소는 변경됨
+            img[nextnextIndex].src = "https://source.unsplash.com/random/?night?v?"+srcRandom;
+
+            // 랜덤한 명언 가져오기
+            let totIndex = Math.ceil(Math.random() * item.length)-1 ;
+            quonte.innerHTML =  `${item[totIndex].id}. ${item[totIndex].quote} `;
+            author.innerHTML = `- ${item[totIndex].author}`;
+            srcRandom++;
+        },sliderInterval);
+    </script>
+ 
+</body>
+</html>

@@ -1,0 +1,79 @@
+@import url('https://webfontworld.github.io/Cafe24Syongsyong/Cafe24Syongsyong.css');
+@import url('https://webfontworld.github.io/HSYeolumMoolbit/HSYeolumMoolbit.css');
+@import url('https://webfontworld.github.io/utoChyaochyureu/UtoChyaoChyureu.css');
+@import url('https://webfontworld.github.io/earlyfont/EF_Diary.css');
+@import url('https://webfontworld.github.io/Cafe24SsurroundAir/Cafe24SsurroundAir.css');
+@import url('https://webfontworld.github.io/crown/CrownMychew.css');
+@import url('https://webfontworld.github.io/baskinrobbins/BaskinRobbins.css');
+@import url('https://webfontworld.github.io/BMJua/BMJua.css');
+@import url('https://webfontworld.github.io/earlyfont/EF_Hyunygothic.css');
+@import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+li, ul, ol {
+    list-style: none;
+}
+img {
+    vertical-align: top; 
+    width: 100%;
+    /* 인라인구조의 여백을 없에기위해? */
+}
+em {
+    font-style: normal;
+}
+.font01 {
+    font-family: 'Cafe24SsurroundAir';
+}
+.font02 {
+    font-family: 'BaskinRobbins';
+}
+.font03 {
+    font-family: 'CrownMychew';
+}
+.font04 {
+    font-family: 'BMJua';
+}
+.font05 {
+    font-family: 'EF_Hyunygothic';
+}
+.font06 {
+    font-family: 'MabinogiClassic';
+}
+.font07 {
+    font-family: 'EF_Diary';
+}
+.font08 {
+    font-family: 'UtoChyaoChyureu';
+}
+.font09 {
+    font-family: 'HSYeolumMoolbit';
+}
+.font10 {
+    font-family: 'Cafe24Syongsyong';
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 5s;
+}
+
+body {
+    background-color: #222;
+}
+
