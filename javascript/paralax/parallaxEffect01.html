@@ -120,8 +120,6 @@
                 <p class="parallax__item__desc">"과거는 학습의 역할만 하고, 미래는 우리가 만들어가는 것이다." - 로버트 슐러</p>
             </section><!-- section 9 -->
 
-            
-            
        </div>
     </main>
     <!-- //main-->
@@ -146,44 +144,57 @@
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- //footer-->
+   
     <script>
         const parllaxInfoScroll =document.querySelector(".parallax__info .scroll span");
-        const infoli = document.querySelectorAll(".info li");
+        const infoli = document.querySelectorAll(".info ul li span");
         
-        for(let i = 1 ; i <= infoli.length ; i++){
-            document.querySelector(".info .offset0"+i+" ").innerHTML = document.getElementById("section0"+i+"").offsetTop;
-        }
         
         window.addEventListener("scroll" , ()=>{
             let scrollTop = window.pageYOffset;
             // let scrollTop = window.pageYOffset || window.scrollY|| document.documentElement.scrollTop;
-                parllaxInfoScroll.innerHTML =parseInt(scrollTop);
-
-                document.querySelectorAll(".parallax__item").forEach((item, index)=>{
-                    if(scrollTop > item.offsetTop-200){
-                        // console.log(scrollTop ,"_____", item.offsetTop)
-                        document.querySelectorAll(".parallax__nav li").forEach(li =>{
+            parllaxInfoScroll.innerHTML =parseInt(scrollTop);
+            
+            document.querySelectorAll(".parallax__item").forEach((item, index)=>{
+                if(scrollTop > item.offsetTop-200){
+                    // console.log(scrollTop ,"_____", item.offsetTop)
+                    document.querySelectorAll(".parallax__nav li").forEach(li =>{
                             li.classList.remove("active");
                         })
                         document.querySelector(".parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
                     }
+                })
             })
-        })
-
-        document.querySelectorAll(".parallax__nav li a").forEach(li => {
-            li.addEventListener("click",(e)=>{
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior:"smooth"
+            
+            document.querySelectorAll(".parallax__nav li a").forEach(li => {
+                li.addEventListener("click",(e)=>{
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior:"smooth"
                 });
             })
-        })
-        // infoli.forEach(element,index => {
-        //     console.log(index)
-        //     // document.querySelector(".info .offset0"+(index+1)+"" ).innerHTML = document.getElementById("section0"+(index+1)+"").offsetTop; 
-            
-        // });
+        });
+       
 
+        // let index = 1;
+        // for (  let el  of infoli){
+        //     el.innerHTML = document.getElementById("section0"+index+"").offsetTop; 
+        //     index++;
+        // }
+
+
+
+        // infoli.forEach( (el,index) => {
+        //     console.log(el,index)
+        //     el.innerHTML = document.getElementById("section0"+(index+1)+"").offsetTop; 
+        // });
+       
+
+        // for(let i = 0 ; i < infoli.length ; i++){
+        //     document.querySelector(".info .offset0"+(i+1)).innerHTML = document.getElementById("section0"+(i+1)).offsetTop;
+        // }
+
+            
         // document.querySelector(".info .offset01 ").innerHTML = document.getElementById("section01").offsetTop;
         // document.querySelector(".info .offset02 ").innerHTML = document.getElementById("section02").offsetTop;
         // document.querySelector(".info .offset03 ").innerHTML = document.getElementById("section03").offsetTop;
@@ -194,8 +205,17 @@
         // document.querySelector(".info .offset08 ").innerHTML = document.getElementById("section08").offsetTop;
         // document.querySelector(".info .offset09 ").innerHTML = document.getElementById("section09").offsetTop;
         
-        // for in forEach
+        
     </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script>
+        $("#main").ripples({
+            resolution: 512,
+            dropRadius: 20,
+            perturbance: 0.04,
+        });
+    </script> -->
     <!-- script -->
 </body>
 </html>
