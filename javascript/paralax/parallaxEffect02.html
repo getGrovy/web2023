@@ -146,11 +146,15 @@
             document.querySelector(".parallax__info span").innerText = parseInt(scrollTop);
             
             document.querySelectorAll(".parallax__item").forEach((item, num) => {
-                if(scrollTop >= item.offsetTop -2 ){
-                    document.querySelectorAll(".parallax__dot li").forEach(li => {                        li.classList.remove("active");
+                if(scrollTop >= item.offsetTop-300 ){
+                    document.querySelectorAll(".parallax__dot li").forEach(li => {
+                        li.classList.remove("active");
+                        document.querySelector(".parallax__item__num").style.zIndex=-2;
                     });
                     document.querySelector(".parallax__dot li:nth-child("+(num+1)+")").classList.add("active");
-                    // document.querySelector(".parallax__item__num").style.zIndex = 1000;
+                    // document.querySelectorAll(".parallax__item__num").style.zIndex = 1000;
+                    document.querySelectorAll(".parallax__item__num")[num].style.zIndex=1000;
+                    console.log(num);
                     // parallax__item__num
                 }
             });
