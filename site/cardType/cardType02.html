@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 02</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            text-decoration: none;
+            color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto; 
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .container h2{
+            text-align: center;
+            margin-top: 120px;
+        }
+        .container p{
+            text-align: center;
+            margin-top: 28px;
+            font-size: 22px;
+            color: #67778a;
+            line-height: 1.5;
+        }
+        .card__inner {
+            margin-top: 70px;
+            height: 726px;
+            margin-bottom: 120px;
+        }
+        .card__grid1,
+        .card__grid2 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__grid2 > div,
+        .card__grid1 > div{
+            width: 24%;
+            position: relative;
+        }
+        .card__grid2 > div::after,
+        .card__grid1 > div::after{
+            content: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='25' height='25' rx='5' fill='%23F9C94E'/%3E%3Cpath d='M8.57031 12.5001L17.1417 12.5001M17.1417 12.5001L13.9275 9.28578M17.1417 12.5001L13.9275 15.7144' stroke='%23F5F6FA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            position: absolute;
+            top: 225px;
+            right: 0;
+            /* z-index: 10; */
+        }
+        .card__grid2 > div img,
+        .card__grid1 > div img{
+            width: 275px;
+            height: 203px;
+            border-radius: 10px;
+        }
+        .card__grid1 > div span,
+        .card__grid2 > div span{
+            display: inline-block;
+            font-size: 28px;
+            margin-top: 19px;
+        }
+        .card__grid1 > div p,
+        .card__grid2 > div p    {
+            margin-top: 12px;
+            font-size: 18px;
+            text-align: left;
+            color: #b6b6b6;
+        }
+        .card__grid2 {
+            margin-top: 50px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="card__wrap section nexon">
+        <div class="container">
+           <h2>포트폴리오 구경하기</h2>
+           <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 강의 사이트입니다. <br>
+            Gmarket Sans Light 22px 150% #67778A </p>
+        </div>
+        <div class="card__inner container">
+            <div class="card__grid1">
+                <div class="card__cont1">
+                    <img src="../asset/img/Rectangle 698.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont2">
+                    <img src="../asset/img/Rectangle 685.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont3">
+                    <img src="../asset/img/Rectangle 686.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont4">
+                    <img src="../asset/img/Rectangle 687.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+            </div>
+            <div class="card__grid2">
+                <div class="card__cont5">
+                    <img src="../asset/img/Rectangle 688.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont6">
+                    <img src="../asset/img/Rectangle 695.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont7">
+                    <img src="../asset/img/Rectangle 698.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+                <div class="card__cont8">
+                    <img src="../asset/img/Rectangle 699.png" alt="카드이미지">
+                    <span>김현정, 포폴! </span>
+                    
+                    <p>사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
