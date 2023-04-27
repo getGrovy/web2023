@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <title>텍스트 유형01</title>
+    <style>
+        /* reset */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        * {
+            text-decoration: none;
+            font-family: 'GmarketSans';
+            /* color: #000; */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        .wrap {
+            width: 1160px;
+            margin: 0 auto; 
+            /* padding: 0 20px; */
+            /* background-color: rgba(0, 0, 0, 0.1); */
+            margin-top: 120px;
+            display: flex;
+            
+        }
+        .aside__wrap{
+            width: 33.33%;
+        }
+        .aside__wrap span{
+            width: 150px;
+            height: 23px;
+            /* margin: 0 243px 10px 0; */
+            padding: 5px 30px 3px 30px;
+            
+            border-radius: 30px;
+            background-color: #f34;
+            color: #fff;
+        }
+        .aside__wrap h1{
+            margin-top: 12px;
+            font-size: 50px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            
+        }
+        .aside__wrap p{
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+        }
+        .text__wrap{
+            width: 66.66%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 65px;
+        }
+        .text__cont1.text::before{
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #1833C0;
+            background-image: url(../asset/img/textType01_02.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+            left : 0px;
+            top:-70px;
+        }
+        .text__cont2.text::before{
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #1FC8A9;
+            background-image: url(../asset/img/textType01_01.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+            right : 310px;
+            top:-70px;
+        }
+        .text__cont3.text::before{
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #37C81F;
+            background-image: url(../asset/img/textType01_03.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+            left : 0px;
+            top: 180px;
+        }
+        .text__cont4.text::before{
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #C81FA3;
+            background-image: url(../asset/img/textType01_04.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+            right : 310px;
+            top: 180px;
+        }
+        .text__wrap > div {
+            width: 48%;
+        
+            margin-bottom: 121px;
+        }
+        .text__wrap > div h2{
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+        }
+        .text__wrap > div p{
+            font-size: 18px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <aside class="aside__wrap">
+            <span>FRONTEND</span>
+            <h1>프론트앤드<br>전문과정</h1>
+            <p>프론트앤드 개발자로 취업하기 위한<br>
+                전문 과정입니다.<br>
+                여러분들도 도전해보세요!</p> 
+        </aside>
+        <div class="text__wrap">
+            <div class="text__cont1 text">
+                <h2>웹디자인</h2>
+                <p>웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작할</p>
+            </div>
+            <div class="text__cont2 text">
+                <h2>웹퍼블리셔</h2>
+                <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</p>
+            </div>
+            <div class="text__cont3 text">
+                <h2>프론트앤드 개발자</h2>
+                <p>사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다.</p>
+            </div>
+            <div class="text__cont4 text">
+                <h2>백앤드 개발자</h2>
+                <p>용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

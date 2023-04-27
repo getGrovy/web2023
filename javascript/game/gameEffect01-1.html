@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME Effect</title>
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/music.css">
+</head>
+<body>
+    <div class="cursor">
+        <img src="image/game_mouse01.png" alt>
+    </div>
+    <header id="header">
+        <h1>grovy game word</h1>
+        <div class="time"></div>
+
+    </header>
+
+    <main>
+        <div class="icon__box">
+            <div class="icon1">
+                <img src="image/game_icon01.png" alt="뮤직">
+                <span>뮤직듣기</span>
+            </div>
+            <div class="icon2">
+                <img src="image/game_icon02.png" alt="뮤직">
+                <span>뮤직듣기</span>
+            </div>
+            <div class="icon3">
+                <img src="image/game_icon03.png" alt="뮤직">
+                <span>뮤직듣기</span>
+            </div>
+            <div class="icon4">
+                <img src="image/game_icon04.png" alt="뮤직">
+                <span>뮤직듣기</span>
+            </div>
+        </div>
+        <!-- 뮤직플레이어 -->
+        <div class="music__wrap">
+            <div class="music__inner">
+                <div class="music__header">
+                    <span class="left"></span>
+                    <h2>MUSIC</h2>
+                    <span class="right"></span>
+                </div>
+                <div class="music__contents">
+                    <div class="music__view">
+                        <div class="image">
+                            <img src="image/music_view01.png" alt="음악">
+                        </div>
+                        
+                        <div class="title">
+                            <h3>노래 제목</h3>
+                            <p>노래 작가 이름</p>
+                        </div>
+                        <div class="music__control">
+                            <div class="progress">
+                                <div class="bar">
+                                    <audio src="audio/Anxiety - NEFFEX.mp3"></audio>
+                                </div>
+                                <div class="timer">
+                                    <span current>0:00</span>
+                                    <span duration>3:55</span>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <span>
+                                    <i class="repat" id="control-repeat" title="전체 반복"></i>
+                                </span>
+                                <span>
+                                    <i class="prev" id="control-prev" title="이전곡 재생"></i>
+                                </span>
+                                <span>
+                                    <i class="play" id="control-play" title="재생"></i>
+                                </span>
+                                <span>
+                                    <i class="next" id="control-next" title="다음곡 재생"></i>
+                                </span>
+                                <span>
+                                    <i class="list" id="control-list" title="재생 목록"></i>
+                                </span>
+                                <!-- <span class="repeat_one">한곡 반복</span>
+                                <span class="shuffle">랜덤 반복</span>
+                                <span class="stop">정지 반복</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="music__footer"></div>
+            </div>
+        </div>
+        <!-- 뮤직플레이어 -->
+    </main>
+
+    <footer id="footer">
+        <div class="info"><span id="infoData"></span></div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="js/music.js"></script>
+    
+
+    <script>
+        let nowTime = document.querySelector(".time") ;
+        let footerInfo = "";
+        let infor = document.getElementById("infoData");
+
+        // $(".icon__box").click((e)=>{
+        //     // console.log(e.children);
+        //     // var id_check = $(this).attr("id");
+        //     $("#header").attr('class','blue')
+        // })
+        
+        $(".icon1").mousedown (()=>{
+            $("#header").attr('class','red');
+            infor.innerHTML = "빨간음악을 클릭하셨습니다";
+            $("#infoData").attr('class','red');
+            changeFooter();
+        });
+        $(".icon2").mousedown(()=>{
+            $("#header").attr('class','blue')
+            infor.innerHTML = "파란음악을 클릭하셨습니다";
+            $("#infoData").attr('class','blue');
+            changeFooter();
+
+        });
+        $(".icon3").mousedown(()=>{
+            $("#header").attr('class','green')
+            infor.innerHTML = "초록음악을 클릭하셨습니다";
+            $("#infoData").attr('class','green');
+            changeFooter();
+        });
+        $(".icon4").mousedown(()=>{
+            $("#header").attr('class','yellow')
+            infor.innerHTML = "노란음악을 클릭하셨습니다";
+            $("#infoData").attr('class','yellow');
+            changeFooter();
+
+        });
+
+
+        $(".icon1").draggable({
+            containment: ".icon_box", scroll: false ,
+            start: function() {
+                $(".cursor img").attr("src" , "image/game_mouse01.png"),
+                infor.innerHTML = "빨간음악을 드레그 시작했습니다";
+                $("#infoData").attr('class','red');
+            },
+            drag : function(){
+                infor.innerHTML = "빨간음악을 드레그 하고있습니다.";
+
+            },
+            stop : function(){
+                infor.innerHTML = "빨간음악을 드레그 끝났습니다",
+                changeFooter()
+            }
+        });
+    
+        $(".icon2").draggable({containment: ".icon__box", scroll: false ,
+            start: function() {
+                $(".cursor img").attr("src" , "image/game_mouse02.png"),
+                $("#infoData").attr('class','blue')
+            },
+            drag : function(){
+                infor.innerHTML = "파란음악을 드레그 하고있습니다.";
+
+            },
+            stop : function(){
+                infor.innerHTML = "파란음악을 드레그 끝났습니다",
+                changeFooter()
+            }
+        });
+        
+
+        $(".icon3").draggable({containment: ".icon__box", scroll: false ,  
+            start: function() {
+                $(".cursor img").attr("src" , "image/game_mouse03.png"),
+                $("#infoData").attr('class','green')
+
+            },
+            drag : function(){
+                infor.innerHTML = "초록음악을 드레그 하고있습니다.";
+
+            },
+            stop : function(){
+                infor.innerHTML = "초록음악을 드레그 끝났습니다",
+                changeFooter()
+            }
+        });
+        
+        $(".icon4").draggable({containment: ".icon__box", scroll: false ,
+            start: function() {
+                $(".cursor img").attr("src" , "image/game_mouse04.png"),
+                $("#infoData").attr('class','yellow');
+            },
+            drag : function(){
+                infor.innerHTML = "노란음악을 드레그 하고있습니다.";
+
+            },
+            stop : function(){
+                infor.innerHTML = "노란음악을 드레그 끝났습니다",
+                changeFooter()
+            }
+        });
+        
+
+        window.onload = function(){
+            window.addEventListener("mousemove",e=>{
+                gsap.to(".cursor", {
+                    duration : 0.1,
+                    left : e.pageX-5,
+                    top : e.pageY-10
+                })
+            })
+            printTime();
+            printAgent();
+            // 3. 아이콘 클릭시 해더 배경색 변경 
+            // 4. 현재 뮤직듣기를 드래그 끝났습니다. 10초이후 2번으로 변경
+            
+        }
+        // function printTime() {
+        //     setInterval(()=>{
+        //         const chkTime = new Date();
+        //         nowTime.innerHTML = `<span> ${chkTime.getFullYear()}년 ${chkTime.getMonth()+1}월 ${chkTime.getDate()}일 ${chkTime.getHours()}시 ${chkTime.getMinutes()}분 ${chkTime.getSeconds()}초 </span>`;
+
+        //     }, 1000);
+        // }
+        function printTime() {
+            const chkTime = new Date();
+            nowTime.innerHTML = `<span> ${chkTime.getFullYear()}년 ${chkTime.getMonth()+1}월 ${chkTime.getDate()}일 ${chkTime.getHours()}시 ${chkTime.getMinutes()}분 ${chkTime.getSeconds()}초 </span>`;
+            setTimeout("printTime()", 1000);
+        }
+         function printAgent(){
+            if(!("navigator" in window)){
+                return "unknown";
+            }
+            //운영체제 정보 알아내기
+            let os = navigator.userAgent.toLowerCase();
+            let sw = screen.width;
+            let sh = screen.height;
+            
+            if (os.indexOf("windows") >= 0) {
+                footerInfo = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                infor.innerHTML = footerInfo;
+            }else if (os.indexOf("macintosh") >= 0) {
+                footerInfo = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                infor.innerHTML = footerInfo;
+
+            } else if (os.indexOf("iphone") >= 0) {
+                footerInfo =  "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                infor.innerHTML = footerInfo;
+
+            } else if (os.indexOf("android") >= 0) {
+                footerInfo =  "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                infor.innerHTML = footerInfo;
+            }
+        }
+        
+        function changeFooter(){
+            
+            let changeColor = setInterval(() => {
+                // $("#header").removeClass('red blue green yellow');
+                $("#infoData").removeClass('red blue green yellow');
+                infor.innerHTML = footerInfo;
+            }, 5000);
+
+            function stopInterval (changeColor) {
+                clearInterval(changeColor);
+            }
+            setTimeout(stopInterval, 10000, changeColor)
+        }
+        
+    </script>
+</body>
+</html>
