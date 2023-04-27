@@ -216,6 +216,23 @@
         });
 
         //현재시간
+
+            window.addEventListener("mousemove",e=>{
+                gsap.to(".cursor", {
+                    duration : 0.1,
+                    left : e.pageX-5,
+                    top : e.pageY-10
+                })
+            })
+            printTime();
+            printAgent();
+            // 1. 시간출력          printTime();     
+            // 2. 하단 정보 출력    printAgent();    
+            // 3. 아이콘 클릭시 해더 배경색 변경 
+            // 4. 현재 뮤직듣기를 드래그 끝났습니다. 10초이후 2번으로 변경  changeFooter()
+            
+        
+
         function printTime() {
             const clock = document.querySelector("#header .time");
             let now = new Date();
@@ -254,11 +271,28 @@
             }
         }
         
+
         //5초후 현재 OS출력하기
         function settime(){
             setTimeout(function(){
                 prinAgent()
             },5000);
+
+        function changeFooter(){
+            let changeColor = setInterval(() => {
+                // $("#header").removeClass('red blue green yellow');
+                $("#infoData").removeClass('red blue green yellow');
+                infor.innerHTML = footerInfo;
+                
+                console.log(1);
+            }, 10000);
+
+            function stopInterval (changeColor) {
+                console.log(2);
+
+                clearInterval(changeColor);
+            }
+            setTimeout(stopInterval, 11000, changeColor)
         }
 
         //로딩 됐을시 실행
