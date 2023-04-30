@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    body{
+        margin: 0 auto;
+        width: 1200px;
+    }
+    .header{
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .logo{
+        width: 30%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 200px;
+    }
+    .content >div {
+        width: 33%;
+    }
+    .con1{
+        background-color: rgba(0, 0, 255, 0.5);
+    }
+    .con2{
+        background-color: rgba(0, 0, 255, 0.7);
+    }
+    .con3{
+        background-color: rgba(0, 0, 255, 1);
+    }
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100px;
+    }
+    .flogo{
+        width: 20%;
+        background-color: rgba(0, 255, 255, 0.3);
+
+    }
+    .copyright {
+        width: 60%;
+        background-color: rgba(0, 255, 0, 0.7);
+
+    }
+    .sns{
+        width: 20%;
+        background-color: rgba(0, 255, 255, 1);
+
+    }
+    .imgCont{
+        height: 300px;
+        /* overflow: hidden; */
+        /* background-color: rgba(0, 0, 255, 0.3); */
+        position: relative;
+    }
+    .imgCont > div {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        top: 0;
+    }
+    .div1{
+        background-color: #ff0000;
+    }
+    .div2{
+        background-color: #843838;
+    }
+    .div3{
+        background-color: #330f0f;
+    }
+</style>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+        <div class="menu"></div>
+    </header>
+    <div class="wrap">
+        <div class="imgCont">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+        </div>
+        <div class="content">
+            <div class="con1"></div>
+            <div class="con2"></div>
+            <div class="con3"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="flogo"></div>
+        <div class="copyright"></div>
+        <div class="sns"></div>
+    </footer>
+    <script>
+        const imgCont = document.querySelectorAll(".imgCont div") ;
+        
+        let currentIndex = 0 ; //현재 보이는 이미지
+        let sliderCount = imgCont.length; //전체 이미지 갯수
+        let sliderInterval = 3000;      //이미지 변경 간격 시간
+        let secondCount =0;
+        
+        setInterval(() => {
+            let nextIndex = (currentIndex +1)%sliderCount;
+            
+            imgCont[currentIndex].style.transition = "all 0.6s";
+            imgCont[currentIndex].style.opacity = '0';
+            imgCont[nextIndex].style.opacity = '1';
+            currentIndex = nextIndex;
+        }, 1000);
+    </script>
+</body>
+</html>

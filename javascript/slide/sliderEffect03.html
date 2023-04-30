@@ -87,12 +87,12 @@
         </script>
         
         <script>
-            // sliderInner.style.transition = "all 0.6s";
-            // setInterval(() => {
-            //         currentIndex = (currentIndex+1) % sliderCount ; 
-            //         sliderInner.style.transform ="translateY("+ -450*currentIndex+"px)";
+            sliderInner.style.transition = "all 0.6s";
+            setInterval(() => {
+                    currentIndex = (currentIndex+1) % sliderCount ; 
+                    sliderInner.style.transform ="translateY("+ -450*currentIndex+"px)";
                 
-            // }, sliderInterval);
+            }, sliderInterval);
         </script>
         
         <!-- // gsap  --> 
@@ -115,12 +115,12 @@
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-        <script>
+        <!-- <script>
             setInterval(()=>{
                 currentIndex =(currentIndex+1) % $(".slider").length;
                 $(".slider__inner").css("position","relative");
                 $(".slider__inner").animate({top: -450*currentIndex },2000,"easeOutElastic");
             },sliderInterval);
-        </script>
+        </script> -->
 </body>
 </html>

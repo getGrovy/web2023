@@ -4,114 +4,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1</title>
+    <title>메뉴 버튼 기능 3번</title>
     <style>
-        * {
-            margin: 0;
+        *{
             padding: 0;
+            margin: 0;
         }
         #wrap {
-            width: 1200px;
-            margin: 0 auto;
-        }
-        #header {
-            height: 100px;
             display: flex;
         }
-        #header h1{
-            width: 20%;
-            height: inherit;
-            background-color: #B6B6B6;
+        #aside h1 {
+            width: 200px;
+            height: 100px;
+            background-color: #fd2020;
         }
-        
-        #nav {
-            width: 100%;
-            height: 300px;
-            background-color: #7B7B7B;
+        #aside nav {
+            width: 200px;
+            height: 550px;
+            background-color: #930808;
         }
         #main {
+            width: 800px;
+            height: 650px;
+        }
+        #slider {
+            width: 100%;
+            height: 350px;
+            background-color: #ffae00;
+        }
+        #banner {
+            display: flex;
             width: 100%;
             height: 200px;
-            background-color: #ccc;
-            display: flex;
+            /* background-color: #fff; */
         }
-        .m1 {
-            width: 33.333%;
-            background-color: #e28080;
+        .banner1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #96ff7b;
         }
-        .m2 {
-            width: 33.333%;
-            background-color: #910000;
+        .banner2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #28fc4f;
         }
-        .m3 {
-            width: 33.333%;
-            background-color: #EEFF52;
+        .banner3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #00ff91;
         }
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #FFB0B0;
             display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
         }
-        #footer .f1 {
+        .footer1 {
             width: 20%;
-            background-color: #00b7ff;
+            height: 100px;
+            background-color: #b905f0;
         }
-        #footer .f2 {
+        .footer2 {
             width: 80%;
-            background-color: #000000;
+            height: 50px;
+            background-color: #ff0055;
         }
-        #footer .f3 {
-            width: 20%;
-            background-color: #7900eb;
+        .footer3 {
+            width: 80%;
+            height: 50px;
+            background-color: #970636;
         }
         a {
             text-decoration: none;
-            color: #000;
+            color: #000000;
         }
         li {
             list-style: none;
         }
         .nav {
-            width: 80%;
-            background-color: #cc3434;
-            padding: 30px 40px;
+            padding-top: 30px;
+            box-sizing: border-box;
         }
         .nav > ul {
-            display: flex;
-            justify-content: right;
+            text-align: center;
         }
         .nav > ul > li {
-            position: relative;
+            margin-top: -1px;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
         }
         .nav > ul > li > a {
-            background-color: #F3D5D5;
             display: block;
-            padding: 10px 40px;
+            width: 120px;
+            height: 30px;
+            border: 1px solid #000;
+            background-color: #cacaca;
         }
         .nav > ul > li > a:hover {
-            background-color: #A36060;
+            background-color: #9c9c9c;
         }
         .nav > ul > li > ul {
-            position: absolute;
-            left: 0;
-            top: 40px;
-            background-color: #da0303;
             width: 100%;
+            text-align: center;
+            background-color: #ddd;
             display: none;
         }
+        .nav > ul > li > ul > li {}
         .nav > ul > li > ul > li > a {
             padding: 10px;
             display: block;
         }
         .nav > ul > li > ul > li > a:hover {
-            background-color: #3700ff;
+            background-color: #b3b3b3;
+            
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <header id="header">
+        <div id="aside">
             <h1></h1>
             <nav class="nav">
                 <ul>
@@ -153,53 +166,31 @@
                     </li>
                 </ul>
             </nav>
-        </header>
-        <nav id="nav"></nav>
-        <main id="main">
-            <div class="m1"></div>
-            <div class="m2"></div>
-            <div class="m3"></div>
-        </main>
-        <footer id="footer">
-            <div class="f1"></div>
-            <div class="f2"></div>
-            <div class="f3"></div>
-        </footer>
+        </div>
+        <div id="main">
+            <div id="slider">이미지 슬라이드</div>
+            <div id="banner">
+                <div class="banner1">공지사항/갤러리</div>
+                <div class="banner2">배너</div>
+                <div class="banner3">바로가기</div>
+            </div>
+            <div id="footer">
+                <div class="footer1">로고</div>
+                <div class="footer2">하단메뉴</div>
+                <div class="footer3">COPYRIGHT</div>
+            </div>
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        // $(".nav > ul > li").mouseover(function(){
-        //     // $(".nav > ul > li").find(".submenu").stop().slideDown();
-        //     $(this).find(".submenu").stop().slideDown();
-
-        // });
-
-        // $(".nav > ul > li").mouseout(function(){
-        //     // $(".nav > ul > li").find(".submenu").stop().slideUp();
-        //     $(this).find(".submenu").stop().slideUp();
-
-        // });
+        //스크립트 메뉴 단일 컨트롤
         document.querySelectorAll(".nav > ul > li").forEach(li => {
-            li.addEventListener("mouseover", () => {
+            li.addEventListener("mouseover", e => {
                 li.querySelector("ul").style.display = "block";
             });
-            li.addEventListener("mouseout", () => {
+            li.addEventListener("mouseout", e => {
                 li.querySelector("ul").style.display = "none";
             });
         });
-        
-        // document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //     li.addEventListener("mouseover", () => {
-        //         document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //             li.querySelector(".submenu").style.display = "block";
-        //         })
-        //     })
-        //     li.addEventListener("mouseout", () => {
-        //         document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //             li.querySelector(".submenu").style.display = "none";
-        //         })
-        //     })
-        // });
     </script>
 </body>
 </html>

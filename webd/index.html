@@ -4,84 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디기</title>
+    <title>웹디자인기능사 실기 레이아웃</title>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        li {
+            list-style: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        h2 {
+            text-align: center;
+            padding: 10px;
+        }
+        #wrap {
+            display: flex;
+        }
+        #nav {
+            padding: 20px;
+            display: flex;
+        }
+        #nav li a {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin-bottom: 2px;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 2px;
+        }
+        #nav li a:hover,
+        #nav li.active a{
+            border-color: #000;
+            background-color: #000;
+            color: #fff;
+        }
+        #main {
+            margin: 20px;
+            margin-left: 0;
+            border: 1px solid #ccc;
+            width: calc(100% - 40px);
+        }
+    </style>
 </head>
-<style>
-    @import url('https://webfontworld.github.io/TheJamsil/TheJamsil.css');
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: "TheJamsil";
-    }
-    li {
-        list-style: none;
-    }
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-    iframe{
-        width : 100%;
-        height: 100vh;
-    }
-    #wrap{
-        display: flex;
-    }
-    #nav {
-        display: flex;
-        padding: 20px;
-    }
-    #nav li a {
-        border: 1px solid #ccc;
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        margin-bottom: 2px;
-        text-align: center;
-        line-height: 50px;
-        margin-right: 2px ;
-    }
-    #nav li a:hover,
-    #nav li a.active{
-        border-color: #000;
-        background-color: #000;
-        color: #fff;
-    }
-    #main{
-        margin: 20px;
-        margin-left: 0;
-        border: 1px solid #ccc;
-        width: calc(100% - 40px);
-    }
-</style>
 <body>
+    <h2>2023 웹디자인 기능사 실기 연습</h2>
     <div id="wrap">
         <nav id="nav">
             <ul>
-                <li><a class="active" href="wd/A1.html">A-1</a></li>
+                <li class="active"><a href="wd/A1.html">A-1</a></li>
                 <li><a href="wd/A2.html">A-2</a></li>
                 <li><a href="wd/A3.html">A-3</a></li>
                 <li><a href="wd/A4.html">A-4</a></li>
-                
                 <li><a href="wd/B1.html">B-1</a></li>
                 <li><a href="wd/B2.html">B-2</a></li>
                 <li><a href="wd/B3.html">B-3</a></li>
                 <li><a href="wd/B4.html">B-4</a></li>
-                
                 <li><a href="wd/C1.html">C-1</a></li>
                 <li><a href="wd/C2.html">C-2</a></li>
                 <li><a href="wd/C3.html">C-3</a></li>
                 <li><a href="wd/C4.html">C-4</a></li>
-                
-                <li><a href="wd/D1.HTML">D-1</a></li>
-                <li><a href="wd/D2.HTML">D-2</a></li>
-                <li><a href="wd/D3.HTML">D-3</a></li>
-                <li><a href="wd/D4.HTML">D-4</a></li>
-                
-                <li><a href="wd/E1.HTML">E-1</a></li>
-                <li><a href="wd/E2.HTML">E-2</a></li>
-                <li><a href="wd/E3.HTML">E-3</a></li>
-                <li><a  href="wd/E4.HTML">E-4</a></li>
+                <li><a href="wd/D1.html">D-1</a></li>
+                <li><a href="wd/D2.html">D-2</a></li>
+                <li><a href="wd/D3.html">D-3</a></li>
+                <li><a href="wd/D4.html">D-4</a></li>
+                <li><a href="wd/E1.html">E-1</a></li>
+                <li><a href="wd/E2.html">E-2</a></li>
+                <li><a href="wd/E3.html">E-3</a></li>
+                <li><a href="wd/E4.html">E-4</a></li>
             </ul>
             <ul>
                 <li><a href="menu/m1.html">M-1</a></li>
@@ -90,57 +91,30 @@
                 <li><a href="menu/m4.html">M-4</a></li>
                 <li><a href="menu/m5.html">M-5</a></li>
                 <li><a href="menu/m6.html">M-6</a></li>
-
             </ul>
             <ul>
-                <li><a href="menw/s-1" >s-1</a></li>
-                <li><a href="menw/s-2" >s-2</a></li>
-                <li><a href="menw/s-3" >s-3</a></li>
+                <li><a href="menu/s1.html">S-1</a></li>
+                <li><a href="menu/s2.html">S-2</a></li>
+                <li><a href="menu/s3.html">S-3</a></li>
             </ul>
         </nav>
         <main id="main">
-            <iframe src="" frameborder="0"></iframe>
+            <iframe src="wd/A1.html" frameborder="0"></iframe>
         </main>
-    </div>
+    </div> 
     <script>
-        const navi = document.querySelectorAll("#nav ul li");
-        const navIframe = document.querySelector("#main iframe");
-
-        navi.forEach((li, i)=>{
-            li.addEventListener("click" , (e)=>{
+        document.querySelectorAll("#nav ul li").forEach(li => {
+            li.addEventListener("click", e => {
                 e.preventDefault();
                 let href = li.querySelector("a").getAttribute("href");
-                navIframe.setAttribute("src",  href);
-                li.querySelectorAll("a").forEach(re =>{
-                    re.classList
-                })
-                
-                // e.querySelectorAll("a").forEach(el2 =>{
-                //     el2.classList.remove("active");
-                // });
-                // li.querySelectorAll("a").classList.remove("active");
+                document.querySelector("iframe").src = href;
 
-            });
-            
-        });
-
-        // const wrap = document.querySelector("#wrap");
-        // const navList = wrap.querySelectorAll("#nav ul li");
-        // navList.forEach(li => {
-        //     li.addEventListener("click",(e,i) => {
-        //         // const Name = e.getAttribute("href");
-        //         // // console.log(Name);
-        //         // mainIframe.inntext = setAttribute("src");
-        //         e.preventDefault();
-        //         let href = li.querySelector("a").getAttribute("href");
-        //         document.querySelector("#main iframe").setAttribute("src",href);
-        //         navList.forEach(el => {
-        //             el.classList.remove("active");
-        //         })
-        //         li.classList.add("active")
-        //     })
-        // });
-
+                document.querySelectorAll("#nav ul li").forEach(el => {
+                    el.classList.remove("active");
+                });
+                li.classList.add("active");
+            })
+        })
     </script>
 </body>
 </html>

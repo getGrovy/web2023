@@ -179,27 +179,27 @@
         //     $(this).find(".submenu").stop().slideUp();
 
         // });
-        document.querySelectorAll(".nav > ul > li").forEach(li => {
-            li.addEventListener("mouseover", () => {
-                li.querySelector("ul").style.display = "block";
-            });
-            li.addEventListener("mouseout", () => {
-                li.querySelector("ul").style.display = "none";
-            });
-        });
-        
         // document.querySelectorAll(".nav > ul > li").forEach(li => {
         //     li.addEventListener("mouseover", () => {
-        //         document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //             li.querySelector(".submenu").style.display = "block";
-        //         })
-        //     })
+        //         li.querySelector("ul").style.display = "block";
+        //     });
         //     li.addEventListener("mouseout", () => {
-        //         document.querySelectorAll(".nav > ul > li").forEach(li => {
-        //             li.querySelector(".submenu").style.display = "none";
-        //         })
-        //     })
+        //         li.querySelector("ul").style.display = "none";
+        //     });
         // });
+        
+        document.querySelectorAll(".nav > ul > li").forEach(li => {
+            li.addEventListener("mouseover", () => {
+                document.querySelectorAll(".nav > ul > li").forEach(li => {
+                    li.querySelector(".submenu").style.display = "block";
+                })
+            })
+            li.addEventListener("mouseout", () => {
+                document.querySelectorAll(".nav > ul > li").forEach(li => {
+                    li.querySelector(".submenu").style.display = "none";
+                })
+            })
+        });
     </script>
 </body>
 </html>

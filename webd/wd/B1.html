@@ -4,24 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>웹디자인 레이아웃 실기 B유형 1번 레이아웃</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
-            margin: 0 auto;
-            width: 100%;
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            font-size: 16px;
         }
-        .contaniner{
+        #wrap {
+            width: 100%;
+            height: 700px;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #e5f7ff;
+        }
+        #header .container {
+            display: flex;
+        }
+        #header h1 {
+            width: 20%;
+            background-color: #B3E5FC;
+        }
+        #header nav {
+            width: 80%;
+            background-color: #81D4FA;
+        }
+        #slider {
+            width: 100%;
+            height: 300px;
+        }
+        #contents {
+            width: 100%;
+            height: 200px;
+        }
+        #contents .container {
+            display: flex;
+        }
+        #contents .content1 {
+            width: 33.3333%;
+            background-color: #29B6F6;
+        }
+        #contents .content2 {
+            width: 33.3333%;
+            background-color: #03A9F4;
+        }
+        #contents .content3 {
+            width: 33.3333%;
+            background-color: #039BE5;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #E1F5FE;
+        }
+        #footer .container {
+            display: flex;
+        }
+        #footer .footer2 {
+            width: 20%;
+            background-color: #0288D1;
+        }
+        #footer .footer1 {
+            width: 80%;
+        }
+        .footer1 .footer1-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #60b0db;
+        }
+        .footer1 .footer1-2 {
+            width: 100%;
+            height: 50px;
+            background-color: #9ed8f7;
+        }        
+        .container {
             width: 1200px;
-        }    
+            height: inherit;
+            margin: 0 auto;
+            background-color: #ff0000;
+
+        }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <header></header>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <h1>로고</h1>
+                <nav>메뉴</nav>
+            </div>
+        </div>
+        <div id="slider">
+            <div class="container">이미지 슬라이드</div>
+        </div>
+        <div id="contents">
+            <div class="container">
+                <div class="content1">공지사항/갤러리</div>
+                <div class="content2">배너</div>
+                <div class="content3">바로가기</div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer2">로고</div>
+                <div class="footer1">
+                    <div class="footer1-1">하단 메뉴</div>
+                    <div class="footer1-2">COPYRIGHT</div>
+                </div>                
+            </div>
+        </div>
     </div>
 </body>
 </html>
