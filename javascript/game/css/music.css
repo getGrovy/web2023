@@ -7,12 +7,11 @@
             + music__footer
 */
 
-body{
+html{
 	background-image: url(../img/bg.gif);
 	background-size: cover;
-	/* background-position: center; */
-	background-repeat: no-repeat;
-	/* height: 100%; */
+	height: 100%;
+
 }
 
 .music__inner {
