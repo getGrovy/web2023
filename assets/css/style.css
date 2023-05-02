@@ -2434,6 +2434,7 @@
 	text-transform: uppercase;
 
 }
+
 /* 
 .donutImg h5 {
 	animation: neon 2s ease infinite;
@@ -2459,7 +2460,7 @@
 	/* margin-top: 20px; */
 	color: #555;
 	font-size: 18px;
-	/* font-family: "nexon" */
+	font-family: "nexon"
 }
 
 .donutImg span {
