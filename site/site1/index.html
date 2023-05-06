@@ -16,11 +16,23 @@
     <link rel="apple-touch-icon" href="assets/ico/favicon.png"/> 
 
     <!-- css -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+        .swiper {
+            width: 100%;
+            height: 600px;
+        }
+        .swiper-pagination,
+        .swiper-button-next,
+        .swiper-button-prev{
+            color: aliceblue;
+        }
+    </style>
 </head>
 <body>
     <div id="skip">
@@ -34,15 +46,84 @@
         <a href="#">푸터 영역 바로가기</a>
     </div>
     <!-- //skip -->
-    <header id="headerType">
+    <!-- <header id="headerType">
         <h1>사이트 로고</h1>
+    </header> -->
+    <header class="header__wrap nexon">
+        <div class="header_inner">
+            <h1 class="header__logo">Counting star</h1>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#">소개</a></li>                
+                    <li><a href="#">밤하늘엔!</a></li>                
+                    <li><a href="#">해뜬하늘!</a></li>                
+                    <li><a href="#">해질녁</a></li>                
+                    <li><a href="#">새벽</a></li>                
+                    <li><a href="#">별빛</a></li>                
+                </ul>
+            </nav>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+        </div>
     </header>
     <!-- //headerType -->
     <main id="mainType">
         <section id="sliderType" class="nexon ">
             <h2 class="blind">슬라이드영역</h2>
             <div class="slider__inner">
-                <div class="slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider img1">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">반짝반짝 거리는 밤 하늘</h3>    
+                                    <p class="desc">반짝반짝 작은별을 세다 보면 잠이 스르륵 들어요 <br>잠에 들지 못하는 당신들을 위해</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slider img2">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">반짝반짝 거리는 밤 하늘</h3>    
+                                    <p class="desc">반짝반짝 작은별을 세다 보면 잠이 스르륵 들어요 <br>잠에 들지 못하는 당신들을 위해</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slider img3">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h3 class="title">반짝반짝 거리는 밤 하늘</h3>    
+                                    <p class="desc">반짝반짝 작은별을 세다 보면 잠이 스르륵 들어요 <br>잠에 들지 못하는 당신들을 위해</p>
+                                    <div class="btn">
+                                        <a href="#">자세히 보기</a>
+                                        <a href="#">상담 신청</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <!-- <div class="slider">
                         <div class="slider__info container">
                             <span class="small">event</span>
                             <h3 class="title">반짝반짝 거리는 밤 하늘</h3>    
@@ -65,7 +146,7 @@
                             <a href="#" class="play"><span class="blind">플레이</span></a>
                             <a href="#" class="stop"><span class="blind">정지</span></a>
                         </div>
-                </div>
+                </div> -->
 
             </div>
         </section>
@@ -287,5 +368,43 @@
         </div>
     </footer>
     <!-- //footerType -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true
+            },
+  
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction : false,
+                
+            }
+        });
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop  = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display ="none";
+        btnStop.addEventListener("click",()=>{
+            swiper.autoplay.stop();
+            btnStop.style.display ="none";
+            btnStart.style.display ="block";
+        })
+        btnStart.addEventListener("click",()=>{
+            swiper.autoplay.start();
+            btnStop.style.display ="block";
+            btnStart.style.display ="none";
+
+
+        })
+    </script>
 </body>
 </html>

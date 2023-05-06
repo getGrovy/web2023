@@ -75,11 +75,15 @@
                     <li><a href="#sample24">24. 함수 유형 : 아규먼트 함수</a></li>
                     <li><a href="#sample25">25. 함수 유형 : 재귀함수 함수</a></li>
                     <li><a href="#sample26">😫function animation()</a></li>
-                    <li><a href="#sample27">26. 함수 유형 : 콜백 함수</a></li>
-                    <li><a href="#sample28">27. 함수 유형 : 내부 함수</a></li>
-                    <li><a href="#sample29">28. 함수 유형 : 내부 함수 : 스코프, 클로저</a></li>
-                    <li><a href="#sample30">30. 클래스</a></li>
-                    <li><a href="#sample31">31. 클래스 상속</a></li>
+                    <li><a href="#sample27">26. 함수 유형 : 콜백 함수(다른함수에 인수로 넘겨지는함수)</a></li>
+                    <li><a href="#sample27">27. 함수 유형 : 콜백 함수(반복문)</a></li>
+                    <li><a href="#sample27">28. 함수 유형 : 콜백 함수(동기/비동기)</a></li>
+
+
+                    <li><a href="#sample28">00. 함수 유형 : 내부 함수</a></li>
+                    <li><a href="#sample29">00. 함수 유형 : 내부 함수 : 스코프, 클로저</a></li>
+                    <li><a href="#sample30">00. 클래스</a></li>
+                    <li><a href="#sample31">00. 클래스 상속</a></li>
                 </ul>
             </div>
             <div class="main__sample">
@@ -784,7 +788,7 @@
 
                 <div id ="sample26" class="sample">
                     <h3>26. 함수 유형 : 콜백 함수</h3>
-                    <p>함수안에서 또다른 함수를 순서에 맞게 실행해야할때 쓰는 함수</p>
+                    <p>함수안에서 또다른 함수를 순서에 맞게 실행해야할때 쓰는 함수(다른함수에 인수로 넘겨지는 함수)</p>
 <pre class="line-numbers"><code class="language-js">{
     function func(){
         document.write("2번함수실행");
@@ -1383,6 +1387,92 @@
         //     }
         //     callback(func);
         // }
+
+        // // 27. 콜백함수 : 반복문
+        // {
+        //     function func(index){
+        //         console.log(index+" 함수가실행되었습니다.")
+        //     }
+
+        //     function callback(num){
+        //         for(let i = 1 ; i <=10 ; i++){
+        //             num(i);
+        //         }
+        //     }
+
+        //     callback(func);
+        // }
+        //  28. 콜백함수 동기 비동기
+        {
+            // // 01
+            // function funcA(){
+            //     console.log("funcA가 실행되었습니다.");
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행되었습니다.");
+            // }
+            // funcA();
+            // funcB();
+            // // a b 
+
+            // // 02
+            // function funcA(){
+            //     setTimeout(()=>{
+            //         console.log("funcA가 실행되었습니다.");
+            //     },1000)
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행되었습니다.");
+            // }
+            // funcA();
+            // funcB();
+            
+            // // 03
+            // function funcA(callback){
+            //     setTimeout(()=>{
+            //         console.log("funcA가 실행되었습니다.");
+            //         callback();
+            //     },1000)
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행되었습니다.");
+            // }
+            // funcA(function(){
+            //     funcB();
+            // });
+            
+            // 04 콜백 지옥 나쁜소스
+            function funcA(callback){
+                setTimeout(()=>{
+                    console.log("funcA가 실행되었습니다");
+                    callback();
+                },1000)
+            }
+            function funcB(callback){
+                setTimeout(()=>{
+                    console.log("funcB가 실행되었습니다");
+                    callback();
+                },1000)
+            }
+            function funcC(callback){
+                setTimeout(()=>{
+                    console.log("funcC가 실행되었습니다");
+                    callback();
+                },1000)
+            }
+            function funcD(){
+                setTimeout(()=>{
+                    console.log("funcD가 실행되었습니다");
+                },1000)
+            }
+            funcA(function(){
+                funcB(function(){
+                    funcC(function(){
+                        funcD();
+                    })
+                })
+            })
+        }
         </script>
     </body>
 </html>
