@@ -1441,37 +1441,37 @@
             //     funcB();
             // });
             
-            // 04 콜백 지옥 나쁜소스
-            function funcA(callback){
-                setTimeout(()=>{
-                    console.log("funcA가 실행되었습니다");
-                    callback();
-                },1000)
-            }
-            function funcB(callback){
-                setTimeout(()=>{
-                    console.log("funcB가 실행되었습니다");
-                    callback();
-                },1000)
-            }
-            function funcC(callback){
-                setTimeout(()=>{
-                    console.log("funcC가 실행되었습니다");
-                    callback();
-                },1000)
-            }
-            function funcD(){
-                setTimeout(()=>{
-                    console.log("funcD가 실행되었습니다");
-                },1000)
-            }
-            funcA(function(){
-                funcB(function(){
-                    funcC(function(){
-                        funcD();
-                    })
-                })
-            })
+            // // 04 콜백 지옥 나쁜소스
+            // function funcA(callback){
+            //     setTimeout(()=>{
+            //         console.log("funcA가 실행되었습니다");
+            //         callback();
+            //     },1000)
+            // }
+            // function funcB(callback){
+            //     setTimeout(()=>{
+            //         console.log("funcB가 실행되었습니다");
+            //         callback();
+            //     },1000)
+            // }
+            // function funcC(callback){
+            //     setTimeout(()=>{
+            //         console.log("funcC가 실행되었습니다");
+            //         callback();
+            //     },1000)
+            // }
+            // function funcD(){
+            //     setTimeout(()=>{
+            //         console.log("funcD가 실행되었습니다");
+            //     },1000)
+            // }
+            // funcA(function(){
+            //     funcB(function(){
+            //         funcC(function(){
+            //             funcD();
+            //         })
+            //     })
+            // })
         }
         </script>
     </body>
