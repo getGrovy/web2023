@@ -178,9 +178,7 @@ root.render(hello);
 
 //Hello getgrovy
 </code></pre>
-
-                    <h4 id="intro3-3" class="page-header">3.함수와 객체를 사용한 경우</h4>
-                    <P>함수를 생성하여 object 타입에 접근해봤어요 !</P>
+                    <p>함수를 사용해서 출력</p>
 <pre><code class="language-js">import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -197,21 +195,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(hello);
 //Hello getgrovy
 </code></pre>
-
-                    <h4 id="intro3-4" class="page-header">4. 렌더링</h4>
-                    <P>ReactDOM.render으로 랜더링을 했어요 ! </P>
+                    
+                    <h4 id="intro3-3" class="page-header">3. 렌더링</h4>
+<P>ReactDOM.render으로 랜더링을 했어요 ! </P>
 <pre><code class="language-js">import React from 'react'
 import ReactDOM from 'react-dom'
 
 function clock(){
     const element = (
-    <div>
-        <div>hello, getgrovy</div>
-        <h2>지금은 {new Date().toLocaleDateString()}입니다.</h2>
-    </div>
+        &lt;div&gt;
+            &lt;div&gt;hello, getgrovy&lt;/div&gt;
+            &lt;h2&gt;지금은 {new Date().toLocaleDateString()}입니다.&lt;/h2&gt;
+        &lt;/div&gt;
     );
-    ReactDOM.render(element, document.getElementById('root'));
 }
+ReactDOM.render(element, document.getElementById('root'));
 
 
 export default clock;
@@ -220,6 +218,54 @@ export default clock;
 
 //지금은 2023. 5. 8.입니다.
 </code></pre>
+                    <h4 id="intro3-4" class="page-header">4. 컴포넌트</h4>
+                    <p>function 대문자+### 형식으로 컴포넌트로 생성 문법으로 생성함 쓸때는 &lt; &gt; 안에 넣어서 쓴다</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(){
+    return &lt;h1&gt;hello, getgrovy&lt;/h1&gt;
+}
+const element = &lt;Hello/&gt;;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+</code></pre>
+                    <p>컴포넌트를 쓰는 법 2</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome(props){
+    return &lt;h1&gt;hello, {props.name}&lt;/h1&gt;
+}
+function App(){
+    return(
+    &lt;div&gt;
+        &lt;Welcome name ="getgrovy"/&gt;
+        &lt;Welcome name ="그루비"/&gt;
+        &lt;Welcome name ="프로그래머?"/&gt;
+    &lt;/div&gt;
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+</code></pre>
+
+                    <h4 id="intro3-5" class="page-header">5. props</h4>
+                    <p>props 라는 변수를 넣어서 출력시켜준다</p>
+<pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return &lt;h1&gt;hello, {props.name}&lt;/h1&gt;
+}
+const element = &lt;Hello name="getgrovy1"/&gt;;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+</code></pre>
+                   
                 </div>
                 <!-- //intro3 -->
             </div>
@@ -232,8 +278,9 @@ export default clock;
                             <ul class="nav">
                                 <li><a href="#intro3-1">출력하기</a> </li>
                                 <li><a href="#intro3-2">JSX</a> </li>
-                                <li><a href="#intro3-3">함수와 객체</a> </li>
-                                <li><a href="#intro3-4">렌더링</a> </li>
+                                <li><a href="#intro3-3">랜더링</a> </li>
+                                <li><a href="#intro3-4">컴포넌트</a> </li>
+                                <li><a href="#intro3-5">props</a> </li>
                             </ul>
                         </li>
                         
