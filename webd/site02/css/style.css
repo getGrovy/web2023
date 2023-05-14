@@ -100,9 +100,16 @@ img {
     height: 300px;
     background-color: #bbb;
 }
-#slider .sliderWrap{}
+#slider .container{
+    overflow: hidden;
+}
+#slider .sliderWrap{
+    display: flex;
+    width: 4800px;
+}
 #slider .sliderWrap .slider{
     position: relative;
+    width: 1200px;
 }
 #slider .sliderWrap .slider img{}
 #slider .sliderWrap .slider .text{
