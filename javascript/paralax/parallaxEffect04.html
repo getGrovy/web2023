@@ -4,48 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>페럴렉스 이팩트01</title>
+    <title>페럴렉스 이팩트04</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/paralax.css">
     <style>
-        .parallax__nav {
-            top: -100px;
-            transition: all 0.6s;
+        /*  한번에 나타나기 */
+        /* .parallax__wrap > section {
+            opacity: 0;
+            transition: all 1s;
         }
-        .parallax__nav.show {
-            top: 10px;
+        .parallax__wrap > section.show {
+            opacity: 1;
+        } */
+        /* 개별적으로 나타나기  */
+        
+        .parallax__wrap > section .parallax__item__num{
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s 0.1s cubic-bezier(0.83, 0.26, 0.19, 0.61);
         }
+        .parallax__wrap > section .parallax__item__title{
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s 0.5s cubic-bezier(0.83, 0.26, 0.19, 0.61);
+        }
+        .parallax__wrap > section:nth-child(even) .parallax__item__title{
+            transform: translateX(100px);
+        }
+        .parallax__wrap > section .parallax__item__imgWrap{
+            opacity: 0;
+            transform: translateY(200px) rotate(30deg) skew(20deg);
+            transition: all 1s 0.9s cubic-bezier(0, 0, 0.13, 1);
+        }
+        .parallax__wrap > section .parallax__item__desc{
+            opacity: 0;
+            transform: skew(100deg) translateX(-100px);
+            transition: all 1s 0.9s cubic-bezier(0, 0, 0.13, 1);
+        }
+        .parallax__wrap > section:nth-child(even) .parallax__item__desc{
+            transform: translateX(100px);
+        }
+        
+        .parallax__wrap > section.show .parallax__item__num{
+            transform: translateY(0);
+            opacity: 0.07;
+        }
+        .parallax__wrap > section.show .parallax__item__title{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .parallax__wrap > section.show .parallax__item__imgWrap{
+            transform: translateY(0) rotate(0) skew(0);
+            opacity: 1;
+        }
+        .parallax__wrap > section.show .parallax__item__desc{
+            transform: skew(0) translateX(0);
+            opacity: 1;
+        }
+        
     </style>
 </head>
 <body class = "font06 bg02">
     <header id="header">
-        <h1>Javascript Parallax Effect03</h1>
-        <p>페럴랙스 이펙트 : 숨김 메뉴 / 탑 버튼</p>
+        <h1>Javascript Parallax Effect04</h1>
+        <p>페럴랙스 이펙트 : 나타나기</p>
         <ul>
             <li ><a href="parallaxEffect01.html">1</a></li>
             <li><a href="parallaxEffect02.html">2</a></li>
-            <li class="active"><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li  class="active"><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //header-->
-    <nav class="parallax__nav ">
-        <ul>
-            <li class="active"><a href="#section01">메뉴1</a></li>
-            <li><a href="#section02">메뉴2</a></li>
-            <li><a href="#section03">메뉴3</a></li>
-            <li><a href="#section04">메뉴4</a></li>
-            <li><a href="#section05">메뉴5</a></li>
-            <li><a href="#section06">메뉴6</a></li>
-            <li><a href="#section07">메뉴7</a></li>
-            <li><a href="#section08">메뉴8</a></li>
-            <li><a href="#section09">메뉴9</a></li>
-        </ul>
-    </nav>
-    <!-- parallax__nav -->
+
     <main id="main">
        <div class="parallax__wrap">
             <section id="section01" class="parallax__item">
@@ -132,79 +167,26 @@
        </div>
     </main>
     <!-- //main-->
-    <aside class="parallax__info">
-        <div class="scroll">scrollTop : <span>0</span>px</div>
-    </aside>
-    <!-- parallax__info -->
-    <div class="parallax__top "><a href="#header">Top</a></div>
+    
     <footer id="footer">
         <a href="mailto:getgrovy@gmail.com">getgrovy@gmail.com</a>
     </footer>
     <!-- //footer-->
    
     <script>
-        let scrollHeight = document.body.scrollHeight;
-
-        window.addEventListener("scroll" ,()=>{
-            // let scrollTop = window.pageYOffset || window.scrollX;
-
-            // 메뉴 01
-            // // 메뉴 높이에 따라 보이고 안보이고 
-            // if(scrollTop >0) {
-            //     document.querySelector(".parallax__nav").classList.add("show");
-            // }else{
-            //     document.querySelector(".parallax__nav").classList.remove("show");
-            // }
-            // document.querySelector(".scroll span").innerText = Math.round(scrollTop);
-
-            // 문서의 높이
-            // document.body.scrollHeight, 상단미포함
-            // document.body.offsetHeight, 상단미포함
-            // document.documentElement.clientHeight, 브라우저상단포함 
-            // document.documentElement.scrollHeight, 브라우저상단포함 
-
-            // top버튼
-            if(scrollTop >(scrollHeight - 1000)) {
-                document.querySelector(".parallax__top").classList.add("show");
-            }else{
-                document.querySelector(".parallax__top").classList.remove("show");
-            }
-        });
-        
-        // top 버튼 애니메이션
-            document.querySelector(".parallax__top a").addEventListener("click",(e)=>{
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-        })
-        // 메뉴 02
-        let nowScroll = true;
-        let lastScroll = 0;
-        function scrollProgress(){
-            nowScroll = true;
-            setInterval(()=>{
-                if(nowScroll){
-                    nowScroll = false;
-                    hasScroll();
-                }
-            }, 300);
-        }
-
-        function hasScroll (){
+        function scroll(){
             let scrollTop = window.pageYOffset || window.scrollY;
-            if(scrollTop < lastScroll){
-                document.querySelector(".parallax__nav").classList.add("show");
-            }else{
-                document.querySelector(".parallax__nav").classList.remove("show");
-            }
-            lastScroll = scrollTop;
-            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
-            
+
+            document.querySelectorAll(".parallax__item").forEach(item=>{
+                if(scrollTop > item.offsetTop-window.innerHeight/2){
+                    item.classList.add("show");
+                }
+            });
+
+            requestAnimationFrame(scroll);
         }
-       
-        window.addEventListener("scroll", scrollProgress);
+        
+        scroll();
     </script>
     
 </body>

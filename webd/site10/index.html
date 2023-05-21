@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        color: #333333;
+        background-color: #ffffff;
+    }
+    ul,li{
+        text-decoration: none;
+        display: block;
+
+    }
+    .wrap{
+        width: 1000px;
+        height: 650px;
+        display: flex;
+        border: 1px solid #000;
+    }
+    .left{ 
+        width: 15%;
+        height: 650px;
+        display: flex;
+        flex-wrap: wrap;
+        border-right: 1px solid #000;
+    }
+
+    .left .logo{
+        width: 100%;
+        height: 100px;
+        background-color: #ffffff;
+        background-image: url(../img/logo01.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    aside {
+        width: 100%;
+        height: 550px;
+        
+        text-align: center;
+    }
+    aside >ul{
+        padding: 10px;
+
+    }
+    aside >ul >li{
+        border: 1px solid #333333;
+        padding: 10px 0;
+        /* margin: 10px 0; */
+        /* display: inline-block; */
+        position: relative;
+    }
+    aside >ul >li> ul{
+        position: absolute;
+        width: 150px;
+        left: 150px;
+        top:  0px;
+        border: 1px solid #333333;
+        display: none;
+    }
+    aside >ul >li> ul >li{
+        padding: 10px ;
+        border: 1px solid #333333;
+    }
+
+    .right{ 
+        width: 85%;
+    }
+    .imageWrap{
+        width: 100%;
+        height: 350px;
+        box-sizing: border-box;
+        /* overflow: hidden; */
+    }
+    .imageInner{
+    }
+    .imageWrap .imageInner .slider {
+        background-color: #ddd;
+        width: 100%;
+        height: 350px;
+        
+    }
+    section{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+    }
+    section > div{
+        box-sizing: border-box;
+        width: 33.333%;
+        height: 200px;
+        padding: 10px;
+    }
+    .info{
+    }
+    .info .title, .gallery .title, .link .title{
+        width: 80px;
+        border: 1px solid #333;
+        border-bottom: 0px;
+        text-align: center;
+    }
+    .info .notice, .gallery .notice, .link .notice{
+        border: 1px solid #333;
+        padding: 10px;
+    }
+    .info .notice ul li{
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .info .notice ul li em{
+        font-size: 14px;
+        font-style: normal;
+        /* vertical-align: bottom; */
+    }
+    .info .notice ul li:hover a{
+        text-decoration: underline;
+    }
+    .info .notice ul li a{
+        text-decoration: none;
+    }
+    .gallery{
+    }
+    .gallery .notice{
+        height: 124px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .gallery .notice img{
+        margin-top: 20px;
+        width: 32%;
+        display: inline;
+    }
+    .link .notice{
+        height: 124px;
+        background-image: url(../img/notice04.jpg);
+        background-position: center;
+        position: relative;
+    }
+    .link .notice a{
+        position: absolute;
+        text-decoration: none;
+        padding: 20px;
+        left: 50%;
+        top: 50%;
+        color: #fff;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: all 0.5s;
+    }
+    .link .notice a:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #000;
+    }
+    footer{
+        width: 100%;
+        height: 98px;
+        display: flex;
+    }
+    footer .flogo{
+        width: 20%;
+        height: 98px;
+        
+        background-color: #ffffff;
+        background-image: url(../img/logo01.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    footer .copyright{
+        width: 50%;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .family{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <div class="left">
+            <div class="logo"></div>
+            <aside class="nav">
+                <ul>
+                    <li>축제소개
+                        <ul>
+                            <li>Festival소개</li>
+                            <li>행사장안내</li>
+                            <li>조직위원회</li>
+                        </ul>
+                    </li>
+                    <li>예약안내
+                        <ul>
+                            <li>예약하기</li>
+                            <li>예약확인</li>
+                            <li>단체예약문의</li>
+                        </ul>
+                    </li>
+                    <li>아티스트
+                        <ul>
+                            <li>고릴라즈</li>
+                            <li>메이저레이저</li>
+                            <li>아우스게인</li>
+                            <li>타임로드</li>
+                        </ul>
+                    </li>
+                    <li>커뮤니티
+                        <ul>
+                            <li>공지사항</li>
+                            <li>사진갤러리</li>
+                            <li>영상갤러기</li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="right">
+            <div class="imageWrap">
+                <div class="imageInner">
+                    <div class="slider">
+                       이미지1
+                    </div>
+                    <div class="slider">
+                        이미지2
+                     </div>
+                     <div class="slider">
+                        이미지3
+                     </div>
+                    <!-- <div class="image">
+                        <figure>
+                            <a href="#"><img src="../img/banner02.jpg" alt="이미지"></a>
+                        </figure>
+                    </div> -->
+                </div>
+            </div>
+            <section>
+                <div class="info">
+                    <div class="title">공지사항</div>
+                    <div class="notice">
+                        <ul>
+                            <li><a href="#">사고발생시 메뉴얼</a><em>2023. 02. 01</em></li>
+                            <li><a href="#">행사장 운영시간</a><em>2023. 02. 01</em></li>
+                            <li><a href="#">사진촬영 가이드</a><em>2023. 02. 01</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="title">갤러리</div>
+                    <div class="notice">
+                        <img src="../img/notice01.jpg">
+                        <img src="../img/notice02.jpg">
+                        <img src="../img/notice03.jpg">
+                    </div>
+                </div>
+                <div class="link">
+                    <div class="title">바로가기</div>
+                    <div class="notice">
+                        <a href="#">클릭</a>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="flogo">
+
+                </div>
+                <div class="copyright">
+                    Copyright
+                </div>
+                <div class="family">
+                    familysite&nbsp;
+                    <select>
+                        <option value="0">롯대백화점</option>
+                        <option value="1">롯대면세점</option>
+                        <option value="2">롯대제과</option>
+                    </select>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        let navMenu = document.querySelectorAll(".nav > ul > li");
+        navMenu.forEach((e)=>{
+            e.addEventListener("mouseover",function(){
+                console.log(e)
+            })
+        })
+        
+    </script>
+</body>
+</html>
