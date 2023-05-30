@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹표준 사이트 만들기</title>
+    <link rel="icon" type="image/svg+xml" href="images/webs.svg" />
+    <meta name="author" content="getgrovy">
+    <meta name="description" content="getgrovy의 사이트 튜토리얼입니다.">
+    <meta name="keyword" content="getgrovy사이트, 사이트 만들기, 튜토리얼">
+    <meta name="robots" content="all">
+</head>
+<body class="nexon" >
+    <div id ="skip">
+        <!-- <a href="#">슬라이드 영역 바로가기</a> -->
+        <a href="#introSection">소개 바로가기</a>
+        <a href="memberSection">멤버소개 바로가기</a>
+        <a href="#portSection">포트폴리오 영역 바로가기</a>
+        <a href="#youtubeSection">youtube 영역 바로가기</a>
+        <a href="#unsplashSection">unsplash 영역 바로가기</a>
+        <a href="##moviesSection">movies 영역 바로가기</a>
+        <a href="#reviewSection">리뷰 영역 바로가기</a>
+    </div>
+    <!-- //skip  -->
+
+    <header id="header" class="header__wrap bg-blue" role="heading">
+        <div class="header__inner container">
+            <h1 class="header__log"><a href="#"> grovy <em>site</em></a></h1>
+            <nav class="header__nav" role="navigation">
+                <ul>
+                    <li><a href="#introSection">소개</a></li>
+                    <li><a href="#memberSection">맴버소개</a></li>
+                    <li><a href="#portSection">포트폴리오</a></li>
+                    <li><a href="#youtubeSection">유튜부</a></li>
+                    <li><a href="#unsplashSection">이미지</a></li>
+                    <li><a href="#moviesSection">영화</a></li>
+                    <li><a href="#reviewSection">리뷰</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <main id="main" role="main">
+        <section id="sliderSection" class="slider__wrap section">
+            <div class="slider__inner">
+                <h2 class="blind">이미지슬라이드</h2>
+                <div class="slider__img">
+                    <div class="slider s1 container">
+                        <div class="text">
+                            <h3>New<br>portfolio</h3>
+                            <p>codding coffee<br>커피한잔을 하며 코딩을 매일같이 하는 사람이 있다구요.</p>
+                            <a href="#" class="more button-red">더 알아보기</a>
+                        </div>
+                        <div class="img" aria-label="hidden">
+                            <img src="images/compass.png" alt="이미지1">
+                            <img src="images/cup.png" alt="이미지2">
+                            <img src="images/hat.png" alt="이미지3">
+                        </div>
+                    </div>
+                    <div class="circle" aria-label="hidden">
+                        <span class="circle c1"></span>
+                        <span class="circle c2"></span>
+                        <span class="circle c3"></span>
+                        <span class="circle c4"></span>
+                        <span class="circle c5"></span>
+                    </div>
+                    <!-- <div class="slider s2">
+                       <div class="text">
+                            <h3>New<br>portfolio</h3>
+                            <p>codding coffee<br>커피한잔을 하며 코딩을 매일같이 하는 사람이 있다구요.</p>
+                            <a href="#">더 알아보기</a>
+                        </div>
+                        <div class="img">
+                            
+                        </div>
+                    </div>
+                    <div class="slider s3">
+                        <div class="text">
+                            <h3>New<br>portfolio</h3>
+                            <p>codding coffee<br>커피한잔을 하며 코딩을 매일같이 하는 사람이 있다구요.</p>
+                            <a href="#">더 알아보기</a>
+                        </div>
+                        <div class="img">
+                            
+                        </div>
+                    </div> -->
+                </div>
+                <div class="slider__btn">
+                    <a href="#" class="left"><span class="ir">이전이미지</span></a>
+                    <a href="#" class="right"><span class="ir">다음이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="#" class="dot active"><span class="ir">1번 이미지</span></a>
+                    <a href="#" class="dot"><span class="ir">2번 이미지</span></a>
+                    <a href="#" class="dot"><span class="ir">3번 이미지</span></a>
+                </div>
+            </div>
+        </section> 
+        <!-- // slider__wrap -->
+        <section id="introSection" class="intro__wrap section bg-blue" >
+            <h3 class="blind">grovy 소개</h3>
+            <div class="intro__inner container" >
+                <div class="intro__title">
+                    <span>FRONTEND</span>
+                    <h3>프론트앤드<br>전문과정</h3>
+                    <p>프론트앤드 개발자로 취업하기 위한<br>
+                    전문 과정입니다.<br>
+                    여러분들도 도전해보세요!</p> 
+                </div>
+                <div class="intro__desc">
+                    <div>
+                        <h4 class="icon-bg1">웹디자인</h4>
+                        <p>웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작할</p>    
+                    </div>
+                    <div>
+                        <h4 class="icon-bg2">웹퍼블리셔</h4>
+                        <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</p>
+                    </div>
+                    <div>
+                        <h4 class="icon-bg3">프론트앤드 개발자</h4>
+                        <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</p>
+                    </div>
+                    <div>
+                        <h4 class="icon-bg4">백앤드 개발자</h4>
+                        <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <!-- // intro__wrap -->
+        <section id="memberSection" class="member__wrap" >
+            <div class="member__inner"> <h3>grovy 멤버 소개</h3></div>
+        </section>
+        <!-- // member__wrap -->
+        <section id="portSection" class="port__wrap" >
+            <div class="port__inner"> <h3>grovy 포폴</h3></div>
+        </section>
+        <!-- // port__wrap -->
+        <section id="youtubeSection" class="youtube__wrap" >
+            <div class="youtube__inner"> <h3>커피 유튜브</h3></div>
+        </section>
+        <!-- // youtube__wrap -->
+        <section id="unsplashSection" class="unsplash__wrap" >
+            <div class="unsplash__inner"> <h3>커피 이미지</h3></div>
+        </section>
+        <!-- // unsplash__wrap -->
+        <section id="moviesSection" class="movies__wrap" >
+            <div class="movies__inner"> <h3>커피 영화</h3></div>
+        </section>
+        <!-- // movies__wrap -->
+        <section id="reviewSection" class="review__wrap" >
+            <div class="review__inner"> <h3>리뷰 소개</h3></div>
+        </section>
+        <!-- // review__wrap -->
+    </main>
+    <footer id="footer" class="footer__wrap" role="contentinfo">
+
+    </footer>
+    <!-- //footer -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="getgrovy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords"
+        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, getgrovy, publisher, css3, html, markup, design">
+    <title>getGrovy | Class</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/ico/favicon-16x16.png">
+    <link rel="manifest" href="../assets/ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../assets/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="getGrovy" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://getgrovy.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="getGrovy" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="getGrovy" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://getgrovy.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">getGrovy &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://codepen.io/getgrovy">Codepen</a></li>
+                    <li><a href="https://github.com/getgrovy">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>webpack v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://getgrovy.tistory.com/" target="_blank">getgrovy_blog</a></p>
+        </div>
+    </div>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 class="">webpack !</h2>
+                <div class="bs-docs-section">
+                    <h3 id="intro1" class="page-header">webpack 이란? :D </h3>
+                    <p class="lead">Webpack은 JavaScript 애플리케이션을 위한 정적 모듈 번들러입니다.</p>
+                    <p> 모듈 번들러란 프로젝트의 여러 개별적인 모듈들을 하나의 번들 파일로 결합하는 도구를 말합니다. 이는 웹 개발에서 여러 개의 JavaScript 파일, CSS 파일, 이미지
+                        파일 등을 하나의 파일로 번들링하여 웹 애플리케이션의 성능을 향상시키는 데 도움이 됩니다.</p>
+                    <p>로더는 웹팩이 모듈을 해석할 때 사용되며, 다양한 파일 형식을 처리하고 변환하는 역할을 합니다. 예를 들어, JavaScript 파일을 해석하기 위해 Babel 로더를 사용하여 ES6+ 코드를 ES5로 변환하거나, CSS 파일을 해석하기 위해 CSS 로더를 사용하여 CSS를 JavaScript로 변환할 수 있습니다. 이 외에도 이미지 파일, 폰트 파일 등 다양한 파일 형식을 처리하기 위한 로더들이 존재합니다.
+                    </p>
+                </div>
+                <!-- //intro1 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro2" class="page-header">webpack 설치 :D </h3>
+                    <div class="bs-callout bs-callout-info">
+                        1. Node.js 설치하기</br>
+                    </div>
+                    <p>
+                        웹펙을 시작하기전에 Node.js를 설치해야 합니다.
+                    </p>
+
+                    
+                    <div id="intro2-1" class="bs-callout bs-callout-info">
+                        1. 2 npm 초기화</br>
+                    </div>
+                    <pre><code class="language-js">npm init;
+</code></pre>
+                    
+<pre><code class="language-js">C:\Users\getgr\webpack>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (webpack) game
+version: (1.0.0)
+description: game javascript
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to C:\Users\getgr\webpack\package.json:
+
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "game javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+C:\Users\getgr\webpack>
+</code></pre>
+                    <p>
+                       
+                    </p>
+                    <div id="intro2-2" class="bs-callout bs-callout-info">
+                        1. 3 webpack 설치</br>
+                    </div>
+                    <p>
+                        
+                    </p>
+                    <pre><code class="language-js">npm install webpack webpack-cli --save-dev</code></pre>
+                    <pre><code class="language-js">C:\Users\getgr\webpack>npm install webpack webpack-cli --save-dev
+
+added 117 packages, and audited 118 packages in 14s
+
+15 packages are looking for funding
+    run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Users\getgr\webpack>
+</code></pre>
+                <div id="intro2-3" class="bs-callout bs-callout-info">
+                    1. 4 webpack.config.js 설정</br>
+                </div>
+                <pre><code class="language-js">const path = require('path');
+module.exports = {
+    mode: 'production', //production,development
+    entry: {
+        index : './src/index.js'
+    },
+    output:{
+        path: path.resolve(__dirname,'public'),
+        filename: 'js/[name].js'
+    }
+}</code></pre>
+                <p>
+                    webpack.config.js 설정한뒤 npx webpack을 Terminal에서 실행하면 파일이 번들링 됩니다.                    
+                </p>
+                
+                <div id="intro2-4" class="bs-callout bs-callout-info">
+                    1. 5 webpack-dev-server 설정</br>
+                </div>
+                <pre><code class="language-js">npm install webpack-dev-server --save-dev</code></pre>
+                <pre><code class="language-js">{
+    "name": "game",
+    "version": "1.0.0",
+    "description": "game javascript",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^5.83.1",
+        "webpack-cli": "^5.1.1",
+        "webpack-dev-server": "^4.15.0"
+    }
+}
+</code></pre>
+                <p>
+                    npm install webpack-dev-server --save-dev명령어를 Terminal에서 실행시키면<br> "webpack-dev-server": "^4.15.0" 가 추가됨
+                </p>
+                <div id="intro2-5" class="bs-callout bs-callout-info">
+                    1. 6 HTML 번들러 설정</br>
+                </div>
+                <pre><code class="language-js">npm install html-webpack-plugin --save-dev</code></pre>
+                <pre><code class="language-js">{
+    "name": "game",
+    "version": "1.0.0",
+    "description": "game javascript",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack server --open"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "html-webpack-plugin": "^5.5.1",
+        "webpack": "^5.83.1",
+        "webpack-cli": "^5.1.1",
+        "webpack-dev-server": "^4.15.0"
+    }
+}
+</code></pre>
+                <p>
+                    npm install html-webpack-plugin --save-dev명령어를 Terminal에서 실행시키면<br> "html-webpack-plugin": "^5.5.1"가 추가됨<br><br>
+                    const HtmlWebpackPlugin = require('html-webpack-plugin');와 plugins: [new HtmlWebpackPlugin()]는 <br>
+                    webpack.config.js에 추가
+                </p>
+<pre><code class="language-js">const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    mode: 'production', //production,development
+    entry: {
+        index : './src/index.js'
+    },
+    output:{
+        path: path.resolve(__dirname,'public'),
+        filename: 'js/[name].js'
+    },
+    plugins: [new HtmlWebpackPlugin({
+        template : './src/index.html', //번들전
+        filename : './index.html',     //번들후
+        hash: true,                    //해쉬설정
+        showErrors: true               //에러설정
+    })],
+}
+</code></pre>
+<div id="intro2-6" class="bs-callout bs-callout-info">
+    1. 7 CSS 번들러 설정</br>
+</div>
+<pre><code class="language-js">npm install --save-dev style-loader css-loader</code></pre>
+<pre><code class="language-js">{
+"name": "game",
+"version": "1.0.0",
+"description": "game javascript",
+"main": "index.js",
+"scripts": {
+"build": "webpack",
+"start": "webpack server --open"
+},
+"author": "",
+"license": "ISC",
+"devDependencies": {
+"css-loader": "^6.7.4",
+"html-webpack-plugin": "^5.5.1",
+"style-loader": "^3.3.3",
+"webpack": "^5.83.1",
+"webpack-cli": "^5.1.1",
+"webpack-dev-server": "^4.15.0"
+}
+}
+</code></pre>
+<p>
+    "css-loader": "^6.7.4",와 "style-loader": "^3.3.3",가 package.json에 추가됨<br><br>
+    webpack.config.js에 module: {}추가
+</p>
+<pre><code class="language-js">const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+mode: 'production', //production,development
+entry: {
+index : './src/index.js'
+},
+output:{
+path: path.resolve(__dirname,'public'),
+filename: 'js/[name].js'
+},
+plugins: [new HtmlWebpackPlugin({
+template : './src/index.html', //번들전
+filename : './index.html',     //번들후
+hash: true,                    //해쉬설정
+showErrors: true               //에러설정
+})],
+module: {
+rules: [
+{
+test: /\.css$/i,
+use: ["style-loader", "css-loader"],
+},
+],
+},
+}
+</code></pre>
+                <div id="intro2-7" class="bs-callout bs-callout-info">
+                    1. 8 CSS 파일분리 설정</br>
+                </div>
+<pre><code class="language-js">npm install --save-dev mini-css-extract-plugin</code></pre>
+<pre><code class="language-js">{
+    "name": "game",
+    "version": "1.0.0",
+    "description": "game javascript",
+    "main": "index.js",
+    "scripts": {
+      "build": "webpack",
+      "start": "webpack server --open"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "css-loader": "^6.7.4",
+      "html-webpack-plugin": "^5.5.1",
+      "mini-css-extract-plugin": "^2.7.6",
+      "style-loader": "^3.3.3",
+      "webpack": "^5.83.1",
+      "webpack-cli": "^5.1.1",
+      "webpack-dev-server": "^4.15.0"
+    }
+  }
+  
+</code></pre>
+                <p>
+                    "mini-css-extract-plugin": "^2.7.6" 가 package.json에 추가됨<br><br>
+                    webpack.config.js에 스크립트추가
+                </p>
+<pre><code class="language-js">const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+    mode: 'production', //production,development
+    entry: {
+        index : './src/index.js'
+    },
+    output:{
+        path: path.resolve(__dirname,'public'),
+        filename: 'js/[name].js'
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: './css/style.css',   //번들후 css 분리위치
+        }),
+        new HtmlWebpackPlugin({
+            template : './src/index.html', //번들전
+            filename : './index.html',     //번들후
+            hash: true,                    //해쉬설정
+            showErrors: true               //에러설정
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                // use: ["style-loader", "css-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                exclude: '/node_modules'        //요 경로는 제외시킴
+            },
+        ],
+    },
+}
+</code></pre>
+            </div>
+                <!-- //intro2 -->
+                <div class="bs-docs-section">
+                    <h3 id="intro3" class="page-header">Vite가 무엇이니? :D </h3>
+                    <p>Vite.js는 Vite 플랫폼을 위한 공식 JavaScript 프레임워크입니다. Vite.js는 빠른 개발 속도와 효율적인 성능을 제공하기 위해 설계되었습니다.</p>
+                    <h4 id="intro3-1" class="page-header">1. hello world 출력하기</h4>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;h1&gt;Hello World&lt;/h1&gt;);
+
+//Hello World
+</code></pre>
+
+                    <h4 id="intro3-2" class="page-header">2. JSX</h4>
+                    <P>JSX는 React에서 사용되는 자바스크립트 문법 확장입니다. JSX는 HTML과 유사한 구문을 사용하여 UI 구성 요소를 만들 수 있게 해줍니다.</P>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+const name = "getgrovy";
+
+const hello = &lt;h1&gt;hellow {name}&lt;/h1&gt;;;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(hello);
+
+//Hello getgrovy
+</code></pre>
+                    <p>함수를 사용해서 출력</p>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function helloName(){
+    return name.nick
+}
+
+const name = {
+    nick : "getgrovy",
+}
+
+const hello = &lt;h1&gt;Hello, {helloName()}&lt;/h1&gt;;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(hello);
+//Hello getgrovy
+</code></pre>
+
+                    <h4 id="intro3-3" class="page-header">3. 렌더링</h4>
+                    <P>ReactDOM.render으로 랜더링을 했어요 ! </P>
+                    <pre><code class="language-js">import React from 'react'
+import ReactDOM from 'react-dom'
+
+function clock(){
+    const element = (
+        &lt;div&gt;
+            &lt;div&gt;hello, getgrovy&lt;/div&gt;
+            &lt;h2&gt;지금은 {new Date().toLocaleDateString()}입니다.&lt;/h2&gt;
+        &lt;/div&gt;
+    );
+}
+ReactDOM.render(element, document.getElementById('root'));
+
+
+export default clock;
+
+//hello, getgrovy
+
+//지금은 2023. 5. 8.입니다.
+</code></pre>
+                    <h4 id="intro3-4" class="page-header">4. 컴포넌트</h4>
+                    <p>function 대문자+### 형식으로 컴포넌트로 생성 문법으로 생성함 쓸때는 &lt; &gt; 안에 넣어서 쓴다</p>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(){
+    return &lt;h1&gt;hello, getgrovy&lt;/h1&gt;
+}
+const element = &lt;Hello/&gt;;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+</code></pre>
+                    <p>컴포넌트를 쓰는 법 2</p>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome(props){
+    return &lt;h1&gt;hello, {props.name}&lt;/h1&gt;
+}
+function App(){
+    return(
+    &lt;div&gt;
+        &lt;Welcome name ="getgrovy"/&gt;
+        &lt;Welcome name ="그루비"/&gt;
+        &lt;Welcome name ="프로그래머?"/&gt;
+    &lt;/div&gt;
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+</code></pre>
+
+                    <h4 id="intro3-5" class="page-header">5. props</h4>
+                    <p>props 라는 변수를 넣어서 출력시켜준다</p>
+                    <pre><code class="language-js">import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Hello(props){
+    return &lt;h1&gt;hello, {props.name}&lt;/h1&gt;
+}
+const element = &lt;Hello name="getgrovy1"/&gt;;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+</code></pre>
+
+                </div>
+                <!-- //intro3 -->
+            </div>
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li class="active"><a href="#intro1">webpack개념</a></li>
+                        <li><a href="#intro2">webpack 설치</a>
+                            <ul class="nav">
+                                <li><a href="#intro2-1">npm 초기화</a></li>
+                                <li><a href="#intro2-2">webpack 패키지 설치</a></li>
+                                <li><a href="#intro2-3">webpack.config.js 설정</a></li>
+                                <li><a href="#intro2-4">webpack-dev-server 설정</a></li>
+                                <li><a href="#intro2-5">HTML 번들러 설정</a></li>
+                                <li><a href="#intro2-6">CSS 번들러 설정</a></li>
+                                <li><a href="#intro2-7">CSS 파일 분리 설정</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#intro3">Vite 개념</a>
+                            <ul class="nav">
+                                <li><a href="#intro3-1">출력하기</a> </li>
+                                <li><a href="#intro3-2">JSX</a> </li>
+                                <li><a href="#intro3-3">랜더링</a> </li>
+                                <li><a href="#intro3-4">컴포넌트</a> </li>
+                                <li><a href="#intro3-5">props</a> </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //container -->
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li><a href="https://getgrovy.tistory.com/">getgrovy.tistory.com</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>

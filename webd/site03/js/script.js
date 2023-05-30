@@ -18,10 +18,5 @@ $(function(){
     $(".nav > ul > li").mouseout(function(){
         $(this).find(".submenu").stop().slideUp(200);
     });
-    // $(".popup-btn").click(function(){
-    //     $(".popup-view").show();
-    // });
-    // $(".popup-close").click(function(){
-    //     $(".popup-view").hide();
-    // });
+
 });
