@@ -1,0 +1,28 @@
+// youtube__wrap
+.movies__wrap{}
+.movies__inner{
+    h3{
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+    p{
+        font-size: 22px;
+        margin-bottom: 30px
+    }
+    a{
+        @include border(40px);
+        margin-bottom: 120px;
+    }
+}
+
+.movies__item{
+    display: flex;
+    
+    div {
+        margin: 0 10px;
+    }
+    
+    img{
+        // @include border(30px)
+    }
+}

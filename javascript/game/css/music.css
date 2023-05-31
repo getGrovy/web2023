@@ -19,9 +19,9 @@ html{
     background: rgba(57, 116, 243, 0.5);
     backdrop-filter: blur(20px);
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 10%;
+    /* top: 100%; */
+    transform: translate(50%, 10%);
     padding: 20px 22px;
     border-radius: 20px;
     box-shadow: 0 60px 100px rgba(0,0,0,0.4);

@@ -1,5 +1,34 @@
+// 중앙
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+// 양쪽정렬
+@mixin flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+// 절대값 가운대
+@mixin position-center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+//한줄효과 
+@mixin line{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+// 두줄효과이상
+@mixin line($num){
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
 // 버튼
-
 @mixin button($bg-color, $text-color){
     display: inline-block;
     padding: 10px 50px;
@@ -13,7 +42,10 @@
         background-color: darken($bg-color, 20%);
     }
 }
-
+// 보더
+@mixin border($radius){
+    border-radius: ($radius);
+}
 @mixin icon($bg-color, $icon-image){
     position: relative;
     padding-top: 70px;
