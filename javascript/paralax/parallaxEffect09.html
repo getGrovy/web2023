@@ -133,11 +133,13 @@
         const secion4 = document.querySelector("#section4").offsetTop;
         function scroll(){
             let scrollTop = window.pageYOffset;
+            
             let goLeft = scrollTop - document.querySelector("#section4").offsetTop
             if(scrollTop >= secion4){
                 gsap.to(".sec4", {left: -goLeft, ease: "linear"})
             }
             document.querySelector(".scroll span").innerHTML = Math.round(scrollTop);
+            console.log(scrollTop)
             requestAnimationFrame(scroll);
         }
         scroll();

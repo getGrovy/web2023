@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap 패럴랙스 이펙트01</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <style>
+        #header {
+            position: fixed;
+            z-index: 10000;
+        }
+        
+        .parallaxs__item {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #section1 {background-color: #111; }
+        #section2 {background-color: #222; }
+        #section3 {background-color: #333; }
+        #section4 {background-color: #444; }
+        #section5 {background-color: #555; }
+        #section6 {background-color: #666; }
+        #section7 {background-color: #777; }
+        #section8 {background-color: #888; }
+        #section9 {background-color: #999; }
+        .parallaxs__item__num {
+            position: absolute;
+            left :50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            font-size: 10vw;
+            z-index: 1000;
+        }
+            .parallaxs__item__img{
+            position: absolute;
+            width: 50vw;
+            height: 50vh;
+            left :50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            font-size: 10vw;
+            /* z-index: 1000; */
+            /* background-image: url(img/1.png); */
+            background-position: center;
+            background-size: cover;
+            filter: none;
+
+        }
+        .parallaxs__item:nth-child(1) .parallaxs__item__img{
+            background-image: url(img/slideEffect01-min.jpg);
+        }
+        .parallaxs__item:nth-child(2) .parallaxs__item__img{
+            background-image: url(img/slideEffect02-min.jpg);
+        }
+        .parallaxs__item:nth-child(3) .parallaxs__item__img{
+            background-image: url(img/slideEffect03-min.jpg);
+        }
+        .parallaxs__item:nth-child(4) .parallaxs__item__img{
+            background-image: url(img/slideEffect04-min.jpg);
+        }
+        .parallaxs__item:nth-child(5) .parallaxs__item__img{
+            background-image: url(img/slideEffect05-min.jpg);
+        }
+        .parallaxs__item:nth-child(6) .parallaxs__item__img{
+            background-image: url(img/slideEffect06-min.jpg);
+        }
+        .parallaxs__item:nth-child(7) .parallaxs__item__img{
+            background-image: url(img/slideEffect07-min.jpg);
+        }
+        .parallaxs__item:nth-child(8) .parallaxs__item__img{
+            background-image: url(img/slideEffect08-min.jpg);
+        }
+        .parallaxs__item:nth-child(9) .parallaxs__item__img{
+            background-image: url(img/slideEffect09-min.jpg);
+        }
+        .parallax__info {
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body class="img01 bg01 font01">
+    <header id="header">
+        <h1>gsapParallax01</h1>
+        <p>gsap패럴랙스 이펙트 : 나타나기</p>
+        <ul>
+            <li class="active"><a href="gsapParallax01.html">1</a></li>
+            <li><a href="gsapParallax02.html">2</a></li>
+            <li><a href="gsapParallax03.html">3</a></li>
+            <li><a href="gsapParallax04.html">4</a></li>
+            <li><a href="gsapParallax05.html">5</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="parallaxs__wrap">
+            <section id="section1" class="parallaxs__item">
+                <span class="parallaxs__item__num">01</span>
+                <div class="parallaxs__item__img"></div>
+            </section>
+            <!-- //section1 -->
+            <section id="section2" class="parallaxs__item">
+                <span class="parallaxs__item__num">02</span>
+                <div class="parallaxs__item__img"></div>
+            </section>
+            <!-- //section2 -->
+            <section id="section3" class="parallaxs__item">
+                <span class="parallaxs__item__num">03</span>
+                <div class="parallaxs__item__img"></div>
+            </section>
+            <!-- //section3 -->
+            <section id="section4" class="parallaxs__item">
+                <span class="parallaxs__item__num">04</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section4 -->
+            <section id="section5" class="parallaxs__item">
+                <span class="parallaxs__item__num">05</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section5 -->
+            <section id="section6" class="parallaxs__item">
+                <span class="parallaxs__item__num">06</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section6 -->
+            <section id="section7" class="parallaxs__item">
+                <span class="parallaxs__item__num">07</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section7 -->
+            <section id="section8" class="parallaxs__item">
+                <span class="parallaxs__item__num">08</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section8 -->
+            <section id="section9" class="parallaxs__item">
+                <span class="parallaxs__item__num">09</span>
+                <div class="parallaxs__item__img"></div>
+
+            </section>
+            <!-- //section9 -->
+        </div>
+    </main>
+    <!-- //main -->
+    <aside class="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside>
+    <!-- parallax__info -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.utils.toArray(".parallaxs__item").forEach(function(item){
+                item_tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        scrub: true,
+                        markers: true
+                    }
+                });
+                item_tl.from(item, {opacity: 0, duration: 0.5});
+                item_tl.to(item, {opacity: 0, duration: 0.5});
+            });
+            gsap.utils.toArray(".parallaxs__item__img").forEach(item => {
+            ScrollTrigger.create({
+                trigger :img,
+                start :"top 80%",
+                end :"bottom 20%",
+                markers: true,
+
+                onEnger:function(){},
+                onLeave:function(){},
+                onEnterBack:function(){},
+                onLeaveBack:function(){}
+            })
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
